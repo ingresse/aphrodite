@@ -1,10 +1,25 @@
 {
-  "name": "aphrodite",
+  "name": "aphrodite-ui",
+  "description": "UI framework from ingresse.com",
   "version": "1.0.0",
+  "author": "Ingresse Dev Team <devel@ingresse.com>",
   "private": false,
-  "engines": {
-    "node": ">=0.10.0"
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ingresse/aphrodite.git"
   },
+  "bugs": {
+    "url": "https://github.com/ingresse/aphrodite/issues"
+  },
+  "homepage": "https://github.com/ingresse/aphrodite",
+  "keywords": [
+    "ingresse",
+    "aphrodite",
+    "ui",
+    "css",
+    "framework"
+  ],
+  "license": "MIT",
   "devDependencies": {
     "bower": "^1.7.9",
     "browser-sync": "^2.15.0",
