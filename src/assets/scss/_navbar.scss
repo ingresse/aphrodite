@@ -1,0 +1,373 @@
+/* Navbar
+-------------------------------------------------------------------------- */
+$this: ".aph.navbar";
+#{$this} {
+    position: relative;
+
+    width     : 100%;
+    min-height: $navbar-min-height;
+
+    color           : $color-blue;
+    background-color: $color-white;
+    box-shadow      : 0 0 8px rgba($color-black, .25);
+
+    @include border-radius(3px);
+    @include transition();
+
+    &__nav {
+        width     : 100%;
+        min-height: $navbar-min-height;
+
+        margin : 0;
+        padding: 0;
+
+        &:before {
+            display: table;
+            content: " ";
+        }
+
+        #{$this} {
+            &__brand,
+            &__menu {
+                float: left;
+            }
+
+            &__brand {
+                max-width: 320px;
+                height   : $navbar-min-height;
+
+                padding    : 15px 10px;
+                margin-left: -#{$container-horizontal-padding / 2};
+
+                white-space  : nowrap;
+                overflow     : hidden;
+                text-overflow: ellipsis;
+
+                font-size  : 24px;
+                line-height: 1.25;
+                font-weight: 300;
+
+                color: $color-grey;
+
+                outline: 0;
+                text-decoration: none;
+                @include transition;
+
+                &__logo {
+                    display       : inline-block;
+                    vertical-align: middle;
+
+                    width : 32px;
+                    height: 32px;
+
+                    margin: -4px 0 0;
+
+                    background-size    : 32px 32px;
+                    background-repeat  : no-repeat;
+                    background-position: center;
+                    background-image   : url("#{map-get($path-assets, images)}/application-logo.svg");
+                }
+
+                &__slogan {
+                    font-size: 50%;
+                    opacity  : 0.5;
+                }
+            }
+
+            &__menu {
+                margin    : 0;
+                list-style: none;
+
+                &:before {
+                    display: table;
+                    content: " ";
+                }
+
+                &__drawer {
+                    float: left;
+                    position: relative;
+                    z-index : 2;
+
+                    display: none;
+
+                    margin : 0;
+                    padding: 18px 17px;
+                    cursor: pointer;
+
+                    width : $navbar-min-height;
+                    height: $navbar-min-height;
+
+                    background-size    : 25px 30px;
+                    background-repeat  : no-repeat;
+                    background-position: center;
+                    background-image   : url("#{map-get($path-assets, icons)}/icon--hamburger-menu--blue.svg");
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        outline: 0;
+                    }
+
+                    &__checkbox {
+                        opacity : 0;
+                        position: absolute;
+                        top : 0;
+                        left: 0;
+                        z-index: 1;
+
+                        cursor: pointer;
+
+                        width : $navbar-min-height;
+                        height: $navbar-min-height;
+                    }
+                }
+
+                &.list {
+                    font-size: 16px;
+                    line-height: 1.5;
+
+                    .list__border,
+                    .list__item,
+                    .list__item__link {
+                        float : left;
+                        height: $navbar-min-height;
+
+                        margin : 0;
+                        padding: {
+                            top   : 18px;
+                            bottom: 18px;
+                        }
+                    }
+
+                    .list__border {
+                        border-left: 1px solid rgba($color-black, .1);
+                        margin: {
+                            left: 10px;
+                            right: 10px;
+                        }
+                    }
+
+                    .list__item {
+                        padding: 0;
+
+                        &__link {
+                            padding: 18px 10px;
+
+                            &:hover,
+                            &:focus,
+                            &:active,
+                            &.active {
+                                color: $color-blue;
+                            }
+                        }
+
+                        &.active {
+                            color: $color-blue;
+                        }
+
+                        .btn {
+                            margin: 10px 0;
+                        }
+                    }
+                }
+
+                &__user {
+                    max-width: 150px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+
+                    &__avatar {
+                        display: inline-block;
+                        float: left;
+                        width: 32px;
+                        height: 32px;
+                        margin: 14px 0 14px 12px;
+                        border: 1px solid $color-light-grey;
+                        @include border-radius(50%);
+                    }
+                }
+
+                &--right {
+                    float: right;
+
+                    &.list {
+                        .list__item {
+                            &:last-of-type {
+                                margin-right: -10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .aph[class*="icon-"]:before {
+            position: relative;
+            font-size: 35px;
+            line-height: 0;
+            margin: 0 6px 0 0;
+            top: 5px;
+        }
+    }
+
+    &--inverted {
+        background-color: $color-blue;
+        color: $color-white;
+
+        &--black {
+            background-color: $color-black;
+        }
+
+        &--orange {
+            background-color: $color-orange;
+        }
+
+        #{$this} {
+            &__brand {
+                color: $color-white;
+
+                &__logo {
+                    background-image: url("#{map-get($path-assets, images)}/application-logo--inverted.svg");
+                }
+            }
+        }
+
+        #{$this}__nav {
+            #{$this}__menu__drawer {
+                color: $color-white;
+            }
+
+            #{$this}__menu {
+
+                &.list {
+                    .list__border {
+                        border-color: rgba($color-white, .25);
+                    }
+
+                    .list__item,
+                    .list__item__link {
+                        color: $color-white;
+
+                        &:hover,
+                        &:focus,
+                        &:active,
+                        &.active {
+                            color: $color-white;
+                        }
+                    }
+                }
+
+                &__item {
+                    color: $color-white;
+
+                    &__link:not(.button) {
+                        color: $color-white;
+                    }
+
+                    &.dropdown {
+                        &:after {
+                            border-top-color: $color-white;
+                        }
+                    }
+                }
+
+                &__border {
+                    border-left: 1px solid rgba($color-white, .2);
+                }
+
+                &__user {
+                    &__avatar {
+                        background-color: $color-white;
+                        border-color: $color-white;
+                    }
+                }
+            }
+        }
+    }
+
+    &--static-top,
+    &--fixed-top {
+        top  : 0;
+        right: 0;
+        left : 0;
+        @include border-radius(0);
+
+        #{$this} {
+            &__nav {
+                padding: {
+                    left: 0;
+                    right: 0;
+                }
+            }
+        }
+    }
+
+    &--fixed-top {
+        position: fixed;
+        z-index: 1030;
+    }
+}
+
+@include xs {
+    #{$this} {
+        .container {
+            padding: 0;
+        }
+
+        &__nav {
+            position: relative;
+            padding : 0;
+
+            #{$this} {
+                &__brand,
+                &__menu__drawer {
+                    position: absolute;
+                }
+
+                &__brand {
+                    margin-left: 0;
+
+                    left     : 50%;
+                    transform: translateX(-50%);
+
+                    &__logo {
+                        width : 52px;
+                        height: 42px;
+
+                        background-size: 42px 42px;
+
+                        margin-top: -6px;
+                    }
+
+                    &__title,
+                    &__slogan {
+                        display: none;
+                    }
+                }
+
+                &__menu {
+                    display: none;
+
+                    &__drawer {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        &--inverted {
+            #{$this} {
+                &__nav {
+                    #{$this} {
+                        &__menu {
+                            &__drawer {
+                                background-image   : url("#{map-get($path-assets, icons)}/icon--hamburger-menu--white.svg");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

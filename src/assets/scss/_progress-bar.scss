@@ -1,0 +1,92 @@
+$this: ".aph.progress";
+$i   : 1;
+
+#{$this} {
+    display : block;
+    position: relative;
+
+    width     : 100%;
+    min-height: 30px;
+    padding   : 0;
+
+    font-size  : 15px;
+    line-height: .7;
+
+    border: 1px solid $color-blue;
+    @include border-radius(3px);
+
+    &--small {
+        min-height: 10px;
+        @include border-radius(5px);
+
+        #{$this} {
+            &__label {
+                display: none;
+            }
+
+            &__bar {
+                padding: 0;
+                border-top-left-radius   : 3px;
+                border-bottom-left-radius: 3px;
+
+                &--100 {
+                    border-top-right-radius   : 3px;
+                    border-bottom-right-radius: 3px;
+                }
+
+                &__label {
+                    display: none;
+                }
+            }
+        }
+
+    }
+
+    &__label {
+        position: absolute;
+
+        top : 9px;
+        left: 10px;
+
+        color: $color-blue;
+    }
+
+    &__bar {
+        position: absolute;
+
+        width : 0;
+
+        top   : 0;
+        bottom: 0;
+        left  : 0;
+
+        padding: 9px 0;
+
+        overflow   : hidden;
+        white-space: nowrap;
+
+        color           : $color-white;
+        background-color: $color-blue;
+        border-top-left-radius   : 1px;
+        border-bottom-left-radius: 1px;
+
+        transition: width .5s ease-in-out, background-color .5s ease-out;
+
+        @while $i < 101 {
+            &--#{$i} {
+                width: (1% * $i);
+            }
+
+            $i: $i + 1;
+        }
+
+        &--100 {
+            border-bottom-right-radius: 1px;
+            border-top-right-radius   : 1px;
+        }
+
+        &__label {
+            margin-left: 10px;
+        }
+    }
+}

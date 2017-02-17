@@ -1,0 +1,40 @@
+<div class="aph loader"
+     data-ng-hide="activities.length === 0 && errors.length === 0">
+    <div class="aph loader__content">
+        <div class="aph container">
+            <figure class="aph loader__content__spinner"
+                 data-ng-show="activities.length !== 0">
+                <img class="aph loader__content__spinner__image"
+                     data-ng-src="./assets/images/loader--spinner.gif"
+                     alt="Loading" />
+            </figure>
+
+            <div class="aph loader__content__message"
+                 data-ng-repeat="activity in activities">
+                <div data-ng-if="!activity.title && !activity.text"
+                     data-ng-bind-html="activity | unsafe">
+                </div>
+
+                <div class="aph loader__content__message__title"
+                     data-ng-if="activity.title"
+                     data-ng-bind-html="activity.title | unsafe">
+                </div>
+
+                <div class="aph loader__content__message__text"
+                     data-ng-if="activity.text"
+                     data-ng-bind-html="activity.text | unsafe">
+                </div>
+            </div>
+
+            <div class="aph loader__content__error"
+                 data-ng-repeat="error in errors">
+                <div data-ng-bind-html="error | unsafe"></div>
+                <button class="aph loader__content__error__icon"
+                        data-ng-click="clearError(error)"
+                        title="Fechar esta mensagem">
+                    ×
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

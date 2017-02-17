@@ -1,0 +1,101 @@
+<nav class="aph navbar navbar--static-top">
+
+    <div class="aph container huge">
+
+        <div class="aph navbar__nav">
+            <a class="aph navbar__brand"
+               title="Start"
+               data-ng-click="goTo()">
+                <span class="aph navbar__brand__logo"></span>
+                <span class="aph navbar__brand__title">
+                    aph
+                </span>
+                <small class="aph navbar__brand__slogan">
+                    v1.0 beta
+                </small>
+            </a>
+
+            <ul class="aph navbar__menu navbar__menu--right list">
+
+                <li class="aph list__item dropdown dropdown--right"
+                    data-dropdown
+                    data-click-outside="closeDropdown();"
+                    data-ng-repeat="item in menu">
+                    <a class="aph list__item__link dropdown__toggle">
+                       {{ item.title }}
+                    </a>
+                    <ul class="aph dropdown__content">
+                        <li class="aph dropdown__content__item"
+                            data-ng-repeat="subitem in item.items | orderBy: 'title'">
+                            <a class="aph dropdown__content__item__link"
+                               data-ng-click="goTo(item.path + subitem.id)">
+                                {{ subitem.title }}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="aph list__border"></li>
+
+                <li class="aph list__item">
+                    <a class="aph btn btn--bordered"
+                       href="https://github.com/ingresse/aphrodite"
+                       target="_blank">
+                        GitHub
+                    </a>
+                </li>
+
+            </ul>
+
+            <label class="aph navbar__menu__drawer"
+                   for="drawer"
+                   data-drawer="drawer-menu">
+
+                <input class="aph navbar__menu__drawer__checkbox"
+                       type="checkbox"
+                       name="drawer"
+                       id="drawer"
+                       data-click-outside="closeDrawer();"
+                       data-outside-if-not="drawer-menu"
+                       />
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<div class="aph drawer"
+     id="drawer-menu">
+
+    <ul class="aph list drawer__menu">
+        <li class="aph list__header">
+            Aphrodite UI Framework
+        </li>
+        <li class="aph list__item"
+            data-ng-repeat="item in menu">
+            {{ item.title }}
+
+            <ul class="aph list">
+                <li class="aph list__item"
+                    data-ng-repeat="subitem in item.items | orderBy: 'title'">
+                    <a class="aph list__item__link"
+                       data-ng-click="goTo(item.path + subitem.id);">
+                        {{ subitem.title }}
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="aph list__border"></li>
+        <li class="aph list__item">
+            <a class="aph btn btn--bordered btn--block"
+               href="https://github.com/ingresse/aph"
+               target="_blank">
+                GitHub
+            </a>
+        </li>
+    </ul>
+
+</div>

@@ -1,0 +1,117 @@
+$this: ".aph.overlay";
+
+#{$this} {
+    position  : fixed;
+    z-index   : 1060;
+    box-sizing: border-box;
+    display   : table;
+
+    width : 100%;
+    height: 100%;
+
+    top   : 0;
+    right : 0;
+    bottom: 0;
+    left  : 0;
+
+    cursor: not-allowed;
+
+    animation: fadeIn .25s;
+
+    &.ng-hide-add,
+    &.ng-leave {
+        animation: fadeOut .25s;
+    }
+
+    &__content {
+        position  : relative;
+        box-sizing: border-box;
+
+        display       : table-cell;
+        vertical-align: middle;
+
+        margin-right: auto;
+        margin-left : auto;
+
+        &__title {
+        }
+
+        &__text {
+            font-size  : 13px;
+            line-height: 1.25;
+
+            margin    : 16px 0;
+            max-height: 80px;
+            overflow  : auto;
+        }
+
+        &__actions {
+            margin: 8px 0 -8px;
+
+            text-align: right;
+
+            &__button {
+                font-weight: bold;
+                font-size  : 13px;
+                line-height: .8;
+
+                color: $color-grey;
+
+                padding: 10px 0;
+                margin : 0 0 0 10px;
+
+                outline   : 0;
+                border    : 0;
+                background: transparent;
+
+                @include transition();
+
+                &:hover {
+                    color: $color-dark-grey;
+                }
+
+                &:first-of-type {
+                    color: $color-blue;
+
+                    &:hover {
+                        color: $color-lochmara;
+                    }
+                }
+
+                @include xs {
+                    display   : block;
+                    text-align: center;
+
+                    width : 100%;
+                    margin: 0 0 5px;
+
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        .aph.alert {
+            max-width: 420px;
+
+            padding-right: 20px;
+            padding-left : 20px;
+            margin-right : auto;
+            margin-left  : auto;
+
+            text-align: left;
+
+            cursor: auto;
+
+            color           : $color-grey;
+            background-color: $color-white;
+            box-shadow      : 0 0 10px 0 $color-light-grey;
+        }
+    }
+
+    // Apply in body to block scroll
+    &-active {
+        overflow: hidden;
+    }
+}

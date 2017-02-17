@@ -1,0 +1,53 @@
+$this: ".aph.divider";
+
+#{$this} {
+    margin: 10px 0;
+    height: 0;
+
+    line-height   : .5;
+    text-transform: uppercase;
+
+    border: 0;
+    border-bottom: 1px solid $color-grey;
+
+    color: $color-blue;
+
+    @include no-select();
+    -webkit-tap-highlight-color: transparent;
+
+    &--horizontal {
+        display: table;
+        height : auto;
+        border : 0;
+
+        text-align: center;
+        white-space: nowrap;
+
+        &:before,
+        &:after {
+            content : "";
+            display : table-cell;
+            position: relative;
+
+            top  : 50%;
+            width: 50%;
+
+            background-repeat: no-repeat;
+            background-image : url("#{map-get($path-assets, images)}/divider--horizontal.png");
+        }
+
+        &:before {
+            background-position: right 0 top 50%;
+        }
+
+        &:after {
+            background-position: left 0 top 50%;
+        }
+    }
+
+    .aph {
+        &.tag {
+            margin: 0 -1px;
+        }
+    }
+}

@@ -1,0 +1,147 @@
+<page-header
+    data-properties="{
+        title   : 'Selector',
+        subtitle: 'Component',
+        bg      : 'grey',
+    }">
+</page-header>
+
+<section>
+
+    <div class="aph container large">
+
+        <component
+            data-properties="{
+                title       : 'Basic Selector',
+                templateUrl : 'docs/components/selector/selector-default.html',
+                hideTemplate: true
+            }">
+
+            <div>
+                A <strong>checkbox</strong> directive component for boolean response.
+            </div>
+
+            <br />
+
+            <form class="aph form">
+
+                <div class="aph form__field">
+
+                    <selector data-ng-model="newsletter"
+                              data-title="Newsletter">
+                    </selector>
+
+                </div>
+
+            </form>
+
+            <br />
+
+            <strong>
+                Receive newsletter?
+            </strong>
+            <br />
+            {{ newsletter }}
+
+        </component>
+
+        <component
+            data-properties="{
+                title       : 'Custom Value Selector',
+                templateUrl : 'docs/components/selector/selector-custom-values.html',
+                hideTemplate: true
+            }">
+
+            <div>
+                <strong>Without directive</strong>.
+                <br />
+                Use <pre>data-ng-true-value</pre> and <pre>data-ng-false-value</pre>.
+            </div>
+
+            <br />
+
+            <form class="aph form">
+
+                <div class="aph form__field">
+
+                    <div class="aph selector">
+
+                        <input type="checkbox"
+                               class="aph selector__input"
+                               data-ng-model="status"
+                               data-ng-true-value="'on'"
+                               data-ng-false-value="'off'"
+                               id="selector-status"
+                               />
+
+                        <label for="selector-status"
+                               class="aph selector__label">
+                            {{ status }}
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+            <br />
+
+            <strong>
+                Status:
+            </strong>
+            <br />
+            {{ status }}
+
+        </component>
+
+        <component
+            data-properties="{
+                title       : 'Array Selector',
+                templateUrl : 'docs/components/selector/selector-array.html',
+                hideTemplate: true
+            }">
+
+            <form class="aph form">
+
+                <div class="aph form__field">
+                    <button class="aph link"
+                            data-ng-click="selectAllSessions()">
+                        Select all
+                    </button>
+                </div>
+
+                <div class="aph form__field">
+
+                    <div class="row">
+
+                        <div class="col-sm-3"
+                             data-ng-repeat="session in sessions">
+
+                            <selector data-array="selectedSessions"
+                                      data-value="session.id"
+                                      data-prefix="{{ session.weekDay | limitTo:3 | uppercase }}"
+                                      data-title="{{ session.date + ' - ' + session.time }}">
+                            </selector>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+            <br />
+
+            <strong>
+                Selected Sessions:
+            <strong>
+            <br />
+            {{ selectedSessions }}
+
+        </component>
+
+    </div>
+
+</section>

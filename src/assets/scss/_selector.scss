@@ -1,0 +1,93 @@
+$this: ".aph.selector";
+
+#{$this} {
+    position: relative;
+    display : block;
+
+    line-height: 0;
+
+    &__input {
+        position: absolute;
+        display : inline-block;
+        opacity : 0;
+
+        &:focus {
+            + #{$this}__label {
+                color : $color-blue;
+                border: 1px solid $color-blue;
+            }
+
+            &:checked {
+                + #{$this}__label {
+                    background-color: $color-lochmara;
+
+                    #{$this}__label__prefix {
+                        border-right: 1px solid $color-white;
+                    }
+                }
+            }
+        }
+
+        &:checked + #{$this}__label {
+            color           : $color-white;
+            background-color: $color-blue;
+            border-color    : $color-blue;
+
+            #{$this} {
+                &__label {
+                    &__prefix {
+                        background-color: transparent;
+
+                        border-color: $color-white;
+                    }
+                }
+            }
+        }
+    }
+
+    &__label {
+        position: relative;
+        display : inline-block;
+        padding : 10px 8px;
+
+        font-size  : 13px;
+        line-height: .65;
+        text-align : left;
+
+        white-space: nowrap;
+        overflow   : hidden;
+
+        color           : $color-black;
+        background-color: $color-white-smoke;
+        border          : 1px solid $color-light-grey;
+
+        @include border-radius (3px);
+        @include transition (.15s);
+        @include no-select ();
+
+        &__prefix {
+            display  : inline-block;
+            min-width: 45px;
+
+            text-align: center;
+
+            padding: 10px 5px;
+            margin : -10px 8px -10px -8px;
+
+            border-top-left-radius   : 2px;
+            border-bottom-left-radius: 2px;
+
+            background-color: $color-light-grey;
+
+            border-right: 1px solid $color-light-grey;
+        }
+
+        &[for] {
+            cursor: pointer;
+
+            #{$this}__label__prefix {
+                background-color: transparent;
+            }
+        }
+    }
+}

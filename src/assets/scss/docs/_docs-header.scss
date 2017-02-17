@@ -1,0 +1,43 @@
+// Docs Header
+$this: ".docs-header";
+
+#{$this} {
+    display: block;
+    padding: 66px 0;
+
+    box-shadow: inset 0 -4px 5px -2px rgba($color-black, .05);
+
+    h1.aph,
+    h2.aph {
+        &#{$this} {
+            &__title {
+                margin: 3px 0 18px;
+
+                text-transform: uppercase;
+
+                overflow-y   : hidden;
+                white-space  : nowrap;
+                text-overflow: ellipsis;
+            }
+
+            &__subtitle {
+                margin: -6px 0 3px;
+            }
+        }
+    }
+
+    a {
+        color: $color-blue;
+        text-decoration: none;
+    }
+
+    &.bg-blue {
+        a {
+            color: $color-white;
+        }
+    }
+}
+
+#gridRuler {
+    display: none;
+}

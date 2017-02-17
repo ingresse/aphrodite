@@ -1,0 +1,465 @@
+$this: ".aph.form";
+#{$this} {
+    -webkit-tap-highlight-color: rgba($color-white, 0);
+
+    * {
+        -webkit-tap-highlight-color: rgba($color-white, 0);
+    }
+
+    &--with-fields {
+        margin-top   : -#{$container-horizontal-padding};
+        margin-bottom: -#{$container-horizontal-padding};
+    }
+
+    &__label {
+        display: inline-block;
+        margin : -5px 0 8px;
+
+        font-size     : 13px;
+        line-height   : 1.1;
+        font-weight   : 500;
+        text-transform: uppercase;
+
+        color: $color-dark-grey;
+
+        &[for] {
+            cursor: pointer;
+        }
+
+        + .aph.form__switch {
+            margin-top: 9px;
+        }
+    }
+
+    select#{$this}__control,
+    textarea#{$this}__control,
+    &__control[type="text"],
+    &__control[type="password"],
+    &__control[type="datetime"],
+    &__control[type="datetime-local"],
+    &__control[type="date"],
+    &__control[type="month"],
+    &__control[type="time"],
+    &__control[type="week"],
+    &__control[type="number"],
+    &__control[type="email"],
+    &__control[type="url"],
+    &__control[type="search"],
+    &__control[type="tel"],
+    &__control[type="color"],
+    &__control[type="file"] {
+        display: block;
+        width  : 100%;
+
+        padding: $input-padding-base;
+        margin : 0;
+
+        font-size: $font-size;
+        color    : $text-default-color;
+
+        -moz-box-sizing   : border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing        : border-box;
+
+        -webkit-appearance: none;
+
+        background-color: $color-white;
+        box-shadow      : none;
+
+        border : 1px solid $input-border-color;
+        @include border-radius(3px);
+        @include transition;
+
+        &::placeholder {
+            line-height: normal;
+            @include placeholder-style;
+        }
+
+        &::-webkit-input-placeholder {
+            z-index    : 99;
+            line-height: normal !important;
+            @include placeholder-style;
+        }
+
+        &::-moz-placeholder {
+            line-height: 2.1;
+           @include placeholder-style;
+        }
+
+        &:-ms-input-placeholder {
+            line-height: 1.5;
+            @include placeholder-style;
+        }
+
+        &:focus {
+            outline     : none;
+            border-color: $input-border-focus-color;
+        }
+
+        &.invalid:not(:focus),
+        &.ng-invalid.ng-dirty:not(:focus) {
+            color       : $input-invalid-text;
+            border-color: $input-invalid-border;
+        }
+
+        &:disabled,
+        &.disabled {
+            color           : $input-disabled-text;
+            border-color    : $input-disabled-border;
+            background-color: $input-disabled-background;
+
+            &::-webkit-input-placeholder {
+                color: $input-disabled-text;
+            }
+
+            &:-moz-placeholder {
+                color: $input-disabled-text;
+            }
+
+            &::-moz-placeholder {
+                color: $input-disabled-text;
+            }
+
+            &:-ms-input-placeholder {
+                color: $input-disabled-text;
+            }
+        }
+    }
+
+    &__control {
+        height: $input-height-base;
+
+        /* Firefox 18- */
+        &:-moz-placeholder {
+           color      : $color-light-grey;
+           font-style : italic;
+           font-weight: bold;
+        }
+
+        /* Firefox 19+ */
+        &::-moz-placeholder {
+           color      : $color-light-grey;
+           font-style : italic;
+           font-weight: bold;
+        }
+
+        &:-ms-input-placeholder {
+           color      : $color-light-grey;
+           font-style : italic;
+           font-weight: bold;
+        }
+
+        &[type="hidden"] {
+            height: auto;
+        }
+
+        &[type=number]::-webkit-inner-spin-button,
+        &[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        &[type="file"] {
+            padding-top: 7px;
+        }
+
+        &[type="checkbox"],
+        &[type="radio"] {
+            position: absolute;
+            z-index : 1;
+            opacity : 0;
+
+            width : 22px;
+            height: 22px;
+
+            margin: -1px 0 10px;
+
+            cursor: pointer;
+
+            + #{$this}__label {
+                display : inline-block;
+                position: relative;
+
+                padding: 0 30px;
+                margin : 0 0 -1px;
+
+                font-size     : 16px;
+                font-weight   : normal;
+                line-height   : 1.25;
+                text-transform: none;
+
+                color: $color-black;
+
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 1;
+                }
+
+                &:before,
+                &:after {
+                    content : " ";
+                    position: absolute;
+                    display : inline-block;
+
+                    bottom: 0;
+                    left  : 0;
+
+                    margin-right: 10px;
+
+                    border          : 1px solid $input-border-color;
+                    background-color: transparent;
+
+                    box-sizing: border-box;
+
+                    @include border-radius(3px);
+                    @include transition;
+                }
+
+                &:before {
+                    border: none;
+
+                    top: -1px;
+
+                    width : 15px;
+                    height: 15px;
+
+                    margin: 3px;
+                }
+
+                &:after {
+                    top   : -1px;
+                    width : 21px;
+                    height: 21px;
+                }
+            }
+
+            &:checked {
+                & + #{$this}__label {
+                    &:before {
+                        text-align: center;
+
+                        @include animation ("scaleUp", .25s, "normal");
+                    }
+
+                    &:after {
+                        border-color: $input-border-focus-color;
+                    }
+                }
+            }
+
+            &:disabled {
+                cursor: default;
+
+                + #{$this}__label {
+                    cursor: default;
+                    color : $color-grey;
+
+                    &:before,
+                    &:after {
+                        cursor: default;
+                    }
+
+                    &:after {
+                        border-color    : $color-light-grey;
+                        background-color: $input-disabled-background;
+                    }
+                }
+
+                &:checked {
+                    + #{$this}__label {
+                        &:before {
+                            z-index: 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        &[type="radio"] {
+            @include border-radius(50%);
+
+            + #{$this}__label {
+                &:before,
+                &:after {
+                    @include border-radius(50%);
+                }
+            }
+
+            &:focus {
+                + #{$this}__label {
+                    &:before {
+                        border-color: transparent;
+                    }
+                }
+            }
+
+            &:checked {
+                + #{$this}__label {
+                    &:before {
+                        background-color: $input-border-focus-color;
+                    }
+                }
+
+                &:disabled + #{$this}__label {
+                    &:before {
+                        background-color: $color-light-grey;
+                    }
+                }
+            }
+        }
+
+        &[type="checkbox"] {
+            + #{$this}__label {
+                &:before {
+                    background-image   : none;
+                    background-position: center;
+                    background-repeat  : no-repeat;
+                    background-size    : 15px;
+                }
+            }
+
+            &:checked {
+                + #{$this}__label {
+                    &:before {
+                        background-image: url("#{map-get($path-assets, icons)}/icon--check--blue.svg");
+                    }
+                }
+            }
+
+            &:disabled {
+                &:checked + #{$this}__label {
+                    &:before {
+                        background-image: url("#{map-get($path-assets, icons)}/icon--check--grey.svg");
+                    }
+                }
+            }
+
+            &:focus {
+                + #{$this}__label {
+                    &:after {
+                        border-color: $input-border-focus-color;
+                    }
+                }
+
+                &:checked {
+                    + #{$this}__label {
+                        &:after {
+                            border-color: $color-lochmara;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        &.ng-pristine {
+            border: 1px solid $input-border-color;
+            color : $text-default-color;
+        }
+
+        &::-webkit-input-placeholder {
+            color     : $color-light-grey;
+            font-style: italic;
+        }
+    }
+
+    select {
+        position: relative;
+
+        -moz-appearance   : none;
+        -webkit-appearance: none;
+
+        background-image   : url("#{map-get($path-assets, icons)}/icon--arrow--down.svg");
+        background-repeat  : no-repeat;
+        background-position: 98.5% center;
+        background-size    : 9px;
+
+        -moz-background-position: -9999px -9999px;
+
+        cursor: pointer;
+
+        padding: 8px;
+
+        line-height: 1.15;
+
+        &:disabled,
+        &--disabled,
+        &#{$this}__control--grey-arrow {
+            background-image: url("#{map-get($path-assets, icons)}/icon--arrow--down--grey.svg");
+        }
+
+        &:focus,
+        &#{$this}__control--grey-arrow:focus {
+            background-image: url("#{map-get($path-assets, icons)}/icon--arrow--down--blue.svg");
+        }
+    }
+
+    textarea {
+        resize : vertical;
+        height : 140px;
+        padding: 8px 10px 6px;
+
+        &[rows="2"] {
+            height: 60px;
+        }
+        &[rows="3"] {
+            height: 70px;
+        }
+        &[rows="4"] {
+            height: 90px;
+        }
+        &[rows="5"] {
+            height: 100px;
+        }
+    }
+
+    &__field {
+        margin     : #{$container-horizontal-padding} 0;
+        line-height: .5;
+
+        &--large {
+            margin: #{$container-horizontal-padding * 2} 0;
+        }
+
+        #{$this} {
+            &__switch {
+                margin-bottom: -1px;
+            }
+
+            &__control {
+                &[type="checkbox"],
+                &[type="radio"] {
+                    + #{$this}__label {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &__helper {
+        font-size  : 13px;
+        line-height: 1.5;
+
+        margin : 0 0 -9px;
+        padding: 5px 0;
+
+        &--error {
+            color: $color-red;
+
+            animation : fadeIn .2s;
+            transition: line-height .2s linear;
+
+            &.ng-hide {
+                line-height: 0;
+
+                &-add {
+                    animation: fadeOut .2s;
+                }
+            }
+        }
+    }
+
+    @import "_form__control-with-icon";
+}

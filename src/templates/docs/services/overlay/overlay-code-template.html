@@ -1,0 +1,38 @@
+
+<!-- Controller Example
+"use strict";
+
+angular.module("example-app", [ "aphrodite" ])
+.controller("ExampleController", function ($scope, Overlay) {
+
+    /*
+     * Overlay Component
+     */
+    var overlay;
+
+    $scope.createOverlay = function () {
+        overlay = new Overlay.create({
+            title: "Overlay Dialog Test #1",
+            text : "Venus, Ingresse, Backstage, Brazil, Amazonas, Manaus, São Paulo.",
+
+            cancelText: "Oh, wait. I won't do this",
+            cancel    : function () {
+                console.log("Cancelled by user.");
+            };,
+
+            continueText: "Yep! Go ahead",
+            continue    : function () {;
+                console.log("Authorized by user.");
+            };
+        });
+    };
+
+});
+-->
+
+
+<!-- Markup -->
+<button class="aph button"
+        data-ng-click="createOverlay()">
+    Overlay Dialog Test
+</button>

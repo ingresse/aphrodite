@@ -1,0 +1,25 @@
+
+<form class="aph form">
+    <div class="aph form__field">
+
+        <label class="aph form__switch form__switch--right"
+               for="switch-right-with-text">
+            <input class="aph form__switch__check"
+                   type="checkbox"
+                   id="switch-right-with-text"
+                   data-ng-click="switchRightField=!switchRightField"
+                   data-ng-checked="true" />
+            <div class="aph form__switch__slider"></div>
+            Example Text
+        </label>
+
+    </div>
+
+    <div class="aph form__field"
+         data-ng-show="switchRightField">
+        <input class="aph form__control"
+               type="text"
+               placeholder="Insert your text"
+               data-ng-model="switchText" />
+    </div>
+</form>

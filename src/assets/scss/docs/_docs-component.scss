@@ -1,0 +1,96 @@
+// Docs Component
+$this: ".docs-component";
+
+#{$this} {
+    position: relative;
+    display : block;
+
+    padding: 20px 0;
+    margin : 20px 0;
+
+    line-height: 1.9;
+
+    animation: pulse .25s;
+
+    &:first-of-type {
+        margin-top: 40px;
+    }
+
+    &__description {
+        min-height: 10px;
+        margin    : 0;
+
+        pre {
+            display: inline-block;
+            padding: 2px 5px;
+            margin : 0 5px;
+
+            font-size: 13px;
+
+            background-color: $color-light-blue;
+
+            &:first-of-type {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &__content {
+        margin: 20px 0;
+    }
+
+    &__code {
+        animation: fadeIn .25s;
+
+        &.ng-hide-add,
+        &.ng-leave {
+            animation: fadeOut .25s;
+        }
+    }
+
+    &__view-code {
+        position: absolute;
+
+        top  : 10px;
+        right: 0;
+
+        &__button {
+            border : 0;
+            outline: 0;
+
+            background: none;
+
+            cursor: pointer;
+
+            font-size  : 22px;
+            line-height: .75;
+            font-weight: normal;
+
+            padding: 15px 10px;
+
+            color: $color-grey;
+
+            @include border-radius(5px);
+            @include transition();
+
+            &:active,
+            &:focus,
+            &:hover,
+            &.active {
+                outline: 0;
+            }
+
+            &:hover,
+            &.active {
+                color           : $color-blue;
+                background-color: $color-white-smoke;
+            }
+        }
+    }
+
+    &__alert {
+        .aph.alert {
+            margin-bottom: 20px;
+        }
+    }
+}

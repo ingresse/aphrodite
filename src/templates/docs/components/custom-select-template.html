@@ -1,0 +1,101 @@
+<page-header
+    data-properties="{
+        title   : 'Custom Select',
+        subtitle: 'Component',
+        bg      : 'grey',
+    }">
+</page-header>
+
+<section>
+
+    <div class="aph container large">
+
+        <component
+            data-properties="{
+                title      : 'Basic',
+                templateUrl: 'docs/components/custom-select/custom-select-default.html',
+                hideTemplate: true
+            }">
+
+            <form class="aph form">
+
+                <div class="aph form__field">
+
+                    <label class="aph form__label">
+                        Your Wallet
+                    </label>
+
+                    <custom-select
+                        data-ng-model="selectedTicket"
+                        data-ng-required="true"
+                        data-options="tickets"
+                        data-options-label="title"
+                        data-options-value="price"
+                        data-placeholder="Select a ticket">
+                    </custom-select>
+
+                </div>
+
+                <div class="aph form__field">
+
+                    <h6 class="aph">
+                        Ticket Price
+                    </h6>
+                    <div>
+                        {{ selectedTicket || 0 | currency: 'R$ ' }}
+                    </div>
+
+                </div>
+
+            </form>
+
+            <br />
+
+        </component>
+
+        <component
+            data-properties="{
+                title      : 'Disabled',
+                templateUrl: 'docs/components/custom-select/custom-select-disabled.html',
+                hideTemplate: true
+            }">
+
+            <form class="aph form">
+
+                <div class="aph form__field">
+
+                    <label class="aph form__label">
+                        Your Wallet
+                    </label>
+
+                    <custom-select
+                        data-ng-model="selectedTicket"
+                        data-ng-disabled="true"
+                        data-options="tickets"
+                        data-options-label="title"
+                        data-options-value="price"
+                        data-placeholder="Select a ticket">
+                    </custom-select>
+
+                </div>
+
+                <div class="aph form__field">
+
+                    <h6 class="aph">
+                        Ticket Price
+                    </h6>
+                    <div>
+                        {{ selectedTicket || 0 | currency: 'R$ ' }}
+                    </div>
+
+                </div>
+
+            </form>
+
+            <br />
+
+        </component>
+
+    </div>
+
+</section>

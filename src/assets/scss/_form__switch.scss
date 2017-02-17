@@ -1,0 +1,127 @@
+$this: ".aph.form__switch";
+
+#{$this} {
+    position  : relative;
+    display   : block !important;
+    min-height: 30px;
+
+    margin : 0;
+    padding: 6px 0 6px 60px;
+
+    font-size     : 13px;
+    font-weight   : 500;
+    line-height   : 1.5;
+    text-transform: uppercase;
+
+    color: $color-dark-grey;
+
+    cursor: pointer;
+
+    @include no-select();
+
+    &:after {
+        content: " ";
+        display: block;
+    }
+
+    &--right {
+        padding-right: 60px;
+        padding-left : 0;
+
+        #{$this} {
+            &__check,
+            &__slider {
+                right : 0;
+                left  : auto;
+            }
+        }
+    }
+
+    &__check {
+        display : inline-block;
+        position: absolute;
+        top     : -1px;
+        opacity : 0;
+
+        &:checked + #{$this}__slider {
+            background-color: $color-green;
+
+            &:before {
+                -webkit-transform: translateX(20px);
+                -ms-transform    : translateX(20px);
+                transform        : translateX(20px);
+
+                border-color: $color-green;
+                box-shadow  : -1px 0 2px -1px rgba($color-black, .25);
+            }
+        }
+
+        &:disabled,
+        &--disabled {
+            + #{$this}__slider {
+                cursor: default;
+                background-color: $color-light-grey;
+
+                &:before {
+                    background-color: $color-white-smoke;
+                    border-color    : $color-light-grey;
+                }
+            }
+
+            &:checked {
+                + #{$this}__slider {
+                    background-color: lighten($color-green, 30%);
+                }
+            }
+        }
+
+        &:focus,
+        &:active {
+            + #{$this}__slider {
+                box-shadow: 0 0 8px $color-light-grey;
+            }
+        }
+    }
+
+    &__check,
+    &__slider {
+        width : 50px;
+        height: 30px;
+        left  : 0;
+    }
+
+    &__slider {
+        position: absolute;
+        cursor  : pointer;
+
+        top   : 49%;
+        bottom: 0;
+
+        -webkit-transform: translateY(-49%);
+        -ms-transform    : translateY(-49%);
+        transform        : translateY(-49%);
+
+        background-color: $color-grey;
+
+        border-radius: 2px;
+
+        transition: .1s;
+
+        &:before {
+            position: absolute;
+            content : " ";
+
+            width : 28px;
+            height: 28px;
+            top   : 0;
+            left  : 0;
+
+            background-color: $color-white;
+            border          : 1px solid $color-grey;
+            border-radius   : 3px;
+            box-shadow      : 1px 0 2px -1px rgba($color-black, .25);
+
+            transition: .1s;
+        }
+    }
+}

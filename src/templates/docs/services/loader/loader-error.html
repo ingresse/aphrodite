@@ -1,0 +1,28 @@
+
+<!-- Controller Example
+"use strict";
+
+angular.module("example-app", [ "aphrodite" ])
+.controller("ExampleController", function ($scope, loader) {
+
+    $scope.error = {
+        message:
+            text: "Example: Something's wrong. Please contact our support.",
+        },
+    };
+
+    $scope.loaderErrorTest = function (activity) {
+        loader.error(activity);
+    };
+
+});
+-->
+
+
+<!-- Markup -->
+<button type="button"
+        class="aph btn btn--red"
+        data-ng-click="loaderErrorTest(error.message.text)">
+    Loader Error
+</button>
+<!-- Markup -->

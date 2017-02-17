@@ -1,0 +1,218 @@
+
+<div class="row center-md">
+
+    <div class="col-sm-12 col-md-6">
+
+        <form class="aph form form--with-fields"
+              name="register"
+              novalidate
+              data-form-validation="register"
+              data-ng-submit="register.$valid && register()">
+
+            <div class="aph form__field">
+                <h5 class="aph">
+                    Register
+                </h5>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="aph form__field">
+
+                        <label class="aph form__label"
+                               for="register-name">
+                            NAME*
+                        </label>
+                        <input class="aph form__control"
+                               type="text"
+                               id="register-name"
+                               name="register-name"
+                               placeholder="Ex.: Steve"
+                               data-ng-required="true"
+                               data-ng-model="register.name" />
+
+                        <div class="aph form__helper form__helper--error"
+                             data-ng-show="register['register-name'].$invalid && !register['register-name'].$pristine">
+                            This field is required
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="aph form__field">
+
+                        <label class="aph form__label"
+                               for="register-lastname">
+                            LASTNAME*
+                        </label>
+                        <input class="aph form__control"
+                               type="text"
+                               id="register-lastname"
+                               name="register-lastname"
+                               placeholder="Ex.: Wozniack"
+                               data-ng-required="true"
+                               data-ng-model="register.lastname" />
+
+                        <div class="aph form__helper form__helper--error"
+                             data-ng-show="register['register-lastname'].$invalid && !register['register-lastname'].$pristine">
+                            This field is required
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="aph form__field">
+
+                        <label class="aph form__label"
+                               for="register-username">
+                            USERNAME*
+                        </label>
+                        <input class="aph form__control"
+                               type="text"
+                               id="register-username"
+                               name="register-username"
+                               placeholder="Ex.: steve.wozniack"
+                               data-ng-required="true"
+                               data-ng-model="register.username" />
+
+                        <div class="aph form__helper form__helper--error"
+                             data-ng-show="register['register-username'].$invalid && !register['register-username'].$pristine">
+                            This field is required
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="aph form__field">
+
+                        <label class="aph form__label"
+                               for="register-email">
+                            EMAIL*
+                        </label>
+                        <input class="aph form__control"
+                               type="email"
+                               id="register-email"
+                               name="register-email"
+                               placeholder="Ex.: steve@wozniack.com"
+                               data-ng-required="true"
+                               data-ng-model="register.email" />
+
+                        <div class="aph form__helper form__helper--error"
+                             data-ng-show="register['register-email'].$invalid && !register['register-email'].$pristine">
+                            This field is required and need a valid e-mail address
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="aph form__field">
+
+                        <label class="aph form__label"
+                               for="register-password">
+                            PASSWORD*
+                        </label>
+                        <input class="aph form__control"
+                               type="password"
+                               id="register-password"
+                               name="register-password"
+                               placeholder="Your personal password"
+                               data-ng-required="true"
+                               data-ng-model="register.password" />
+
+                        <div class="aph form__helper form__helper--error"
+                             data-ng-show="register['register-password'].$invalid && !register['register-password'].$pristine">
+                            This field is required
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="aph form__field">
+
+                        <label class="aph form__label"
+                               for="register-confirm-password">
+                            CONFIRM PASSWORD*
+                        </label>
+                        <input class="aph form__control"
+                               type="password"
+                               id="register-confirm-password"
+                               name="register-confirm-password"
+                               placeholder="Your personal password"
+                               data-ng-required="true"
+                               data-ng-model="register.confirmPassword" />
+
+                        <div class="aph form__helper form__helper--error"
+                             data-ng-show="register['register-confirm-password'].$invalid && !register['register-confirm-password'].$pristine">
+                            This field is required
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="aph form__field">
+
+                        <label class="aph form__label"
+                               for="register-cellphone">
+                            CELLPHONE*
+                        </label>
+                        <input class="aph form__control"
+                               type="text"
+                               id="register-cellphone"
+                               name="register-cellphone"
+                               placeholder="Ex.: (99) 999-999-999"
+                               data-ng-required="true"
+                               data-ng-model="register.cellphone" />
+
+                        <div class="aph form__helper form__helper--error"
+                             data-ng-show="register['register-cellphone'].$invalid && !register['register-cellphone'].$pristine">
+                            This field is required
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="aph form__field">
+
+                        <label class="aph form__label"
+                               for="register-private">
+                            PRIVATE
+                        </label>
+
+                        <!-- SWITCH -->
+                        <label class="aph form__switch"
+                               for="register-private">
+
+                            <input class="aph form__switch__check"
+                                   type="checkbox"
+                                   id="register-private"
+                                   name="register-private"
+                                   data-ng-model="register.private" />
+
+                            <div class="aph form__switch__slider"></div>
+
+                        </label>
+                        <!-- SWITCH -->
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row center-md">
+                <div class="col-xs-12 col-sm-8 col-md-6">
+                    <div class="aph form__field">
+
+                        <button class="aph btn btn--orange btn--block"
+                                type="submit">
+                            REGISTER
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+

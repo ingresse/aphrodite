@@ -1,0 +1,167 @@
+$this: ".aph.form__range";
+
+#{$this} {
+    width  : 100%;
+    margin : 0;
+
+    font-size  : 13px;
+    line-height: 1;
+
+    &__content {
+        display     : table;
+        table-layout: fixed;
+
+        position: relative;
+        width   : 100%;
+
+        margin    : -5px 0 0;
+        text-align: center;
+
+        &:before {
+            position: absolute;
+            content : " ";
+
+            top  : 75%;
+            left : 1px;
+            right: 1px;
+
+            width: auto;
+            height: 3px;
+
+            background-color: $color-light-grey;
+        }
+
+        &__input {
+            display: inline-block;
+            z-index: 1;
+            opacity: 0;
+
+            &:focus,
+            &:active {
+                + #{$this}__content__label {
+                    &:after {
+                        border    : 1px solid $color-blue;
+                        box-shadow: 0 0 8px $color-light-grey;
+                    }
+                }
+
+                &:checked {
+                    + #{$this}__content__label {
+                        &:after {
+                            background-color: $color-lochmara;
+                            box-shadow      : 0 0 8px rgba($color-grey, .5);
+                        }
+                    }
+                }
+            }
+
+            &:disabled {
+                + #{$this}__content__label {
+                    &:after {
+                        border-color    : $input-disabled-border;
+                        background-color: $input-disabled-background;
+                    }
+                }
+
+                &:checked {
+                    + #{$this}__content__label {
+                        &:after {
+                            background-color: $input-disabled-border !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__label {
+            z-index : 2;
+            position: relative;
+            display : table-cell;
+            width   : 100%;
+            padding : 0 0 20px;
+
+            white-space: nowrap;
+            text-align : center;
+
+            @include no-select();
+
+            &[for] {
+                cursor: pointer;
+
+                &:after {
+                    position: absolute;
+                    content : " ";
+
+                    top: 62%;
+
+                    left     : 50%;
+                    transform: translateX(-50%);
+
+                    width : 11px;
+                    height: 11px;
+
+                    border          : 1px solid $color-light-grey;
+                    background-color: $color-white;
+
+                    @include border-radius(3px);
+                    @include transition(.25s);
+                }
+
+                &:not(:last-of-type) {
+                    &:first-of-type {
+                        text-align: left;
+
+                        &:after {
+                            left     : 0;
+                            transform: none;
+                        }
+                    }
+                }
+
+                &:last-of-type {
+                    text-align: right;
+
+                    &:after {
+                        left     : auto;
+                        right    : 0;
+                        transform: none;
+                    }
+                }
+            }
+
+            .aph {
+                &[class*="icon-"] {
+                    position: relative;
+                    bottom  : -1px;
+
+                    font-size  : 20px;
+                    line-height: .65;
+                }
+            }
+        }
+
+        &__input:checked + &__label {
+            &[for] {
+                &:after {
+                    top   : 56%;
+                    width : 16px;
+                    height: 16px;
+                    border: 0;
+
+                    background-color: $color-blue;
+                }
+            }
+        }
+    }
+
+    &__output {
+        display   : block;
+        font-style: italic;
+        color     : $color-dark-grey;
+    }
+
+    &__footer {
+        margin : 8px 0 0;
+        padding: 0 0 2px;
+    }
+}

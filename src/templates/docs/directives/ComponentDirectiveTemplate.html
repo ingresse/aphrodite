@@ -1,0 +1,36 @@
+<div class="docs-component__view-code"
+     data-ng-if="!properties.hideCode">
+
+    <button class="docs-component__view-code__button"
+            data-ng-click="visibility()"
+            data-ng-class="{ 'active' : visible }"
+            title="View source code">
+        &lt;/&gt;
+    </button>
+
+</div>
+
+<h2 class="aph text-dark-grey docs-component__title"
+    data-ng-if="properties.title">
+    {{ properties.title }}
+</h2>
+
+<div class="docs-component__description"
+     data-ng-transclude>
+</div>
+
+<div class="docs-component__content"
+     data-ng-if="!properties.hideTemplate">
+    <ng-include src="properties.templateUrl"></ng-include>
+</div>
+
+<div data-ng-if="!properties.hideCode">
+
+    <div class="docs-component__code"
+         data-ng-show="visible">
+
+        <code-show file="{{ properties.templateUrl }}"></code-show>
+
+    </div>
+
+</div>

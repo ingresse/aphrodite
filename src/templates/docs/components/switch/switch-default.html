@@ -1,0 +1,26 @@
+
+<form class="aph form">
+    <div class="aph form__field">
+
+        <label class="aph form__switch"
+               for="switch-default-with-text">
+            <input class="aph form__switch__check"
+                   type="checkbox"
+                   id="switch-default-with-text"
+                   data-ng-click="switchDefault=!switchDefault" />
+            <div class="aph form__switch__slider"></div>
+            Example Text
+        </label>
+
+    </div>
+
+    <div class="aph form__field"
+         data-ng-show="switchDefault">
+
+        <input class="aph form__control"
+               type="text"
+               placeholder="Insert your text"
+               data-ng-model="switchText" />
+
+    </div>
+</form>

@@ -1,0 +1,179 @@
+$this: ".aph.loader";
+#{$this} {
+    position: fixed;
+    z-index : 1050;
+
+    display : table;
+
+    top   : 0;
+    right : 0;
+    bottom: 0;
+    left  : 0;
+
+    height: 100%;
+    width : 100%;
+
+    font-size  : 16px;
+    line-height: 1.25;
+    text-align : left;
+
+    color           : $color-grey;
+    background-color: rgba($color-white, .9);
+
+    animation: fadeIn .75s;
+
+    &.ng-hide-add,
+    &.ng-leave {
+        animation: fadeOut .75s;
+    }
+
+    &__content {
+        box-sizing: border-box;
+
+        display       : table-cell;
+        vertical-align: middle;
+
+        margin-left : auto;
+        margin-right: auto;
+
+        position: relative;
+
+        &__spinner {
+            width : 100px;
+            height: 100px;
+
+            padding: 17px 18px;
+
+            animation: fadeInDown .5s;
+
+            &.ng-hide-add,
+            &.ng-leave {
+                animation: fadeOutUp .5s;
+            }
+        }
+
+        &__spinner,
+        &__spinner__image {
+            display: block;
+
+            margin-right: auto;
+            margin-left : auto;
+
+            border-radius   : 50%;
+            background-color: $color-white;
+        }
+
+        &__spinner__image {
+            width : 64px;
+            height: 64px;
+        }
+
+        &__spinner,
+        &__spinner__image,
+        &__message {
+            @include no-select();
+        }
+
+        &__message {
+            font-size  : 20px;
+            line-height: 1.25;
+            text-align : center;
+
+            margin: 10px 0;
+
+            animation : fadeInDown .75s;
+
+            &__text {
+                font-size : 16px;
+                margin-top: 10px;
+            }
+
+            &.ng-hide-add,
+            &.ng-leave {
+                color    : $color-blue;
+                animation: fadeOutUp .75s;
+            }
+        }
+
+        &__error {
+            position : relative;
+            display  : block;
+
+            width    : 100%;
+            max-width: 460px;
+
+            margin : 5px auto 0;
+            padding: 16px 35px 15px 20px;
+
+            border-radius: 4px;
+
+            color           : $color-dark-grey;
+            background-color: rgba($color-white, .9);
+            box-shadow      : 0 0 8px 0 rgba(0, 0, 0, .2);
+
+            animation: fadeInUp .75s;
+
+            strong,
+            &__title {
+                color      : $color-red;
+                font-weight: bold;
+            }
+
+            &__title {
+                margin-bottom: 10px;
+            }
+
+            &__icon {
+                position: absolute;
+
+                top      : 49%;
+                right    : 5px;
+                transform: translateY(-49%);
+
+                width : 32px;
+                height: 32px;
+
+                font-size  : 24px;
+                line-height: 1;
+
+                cursor: pointer;
+
+                background: none;
+                border    : none;
+
+                color: $color-red;
+
+                @include transition();
+
+                &:active,
+                &:focus,
+                &:hover {
+                    outline: 0;
+                    color: darken($color-red, 15%);
+                }
+            }
+
+            &.ng-hide-add,
+            &.ng-leave {
+                animation: fadeOutDown .75s;
+            }
+        }
+    }
+}
+
+@include xs {
+    #{$this} {
+        &__content {
+            &__error {
+                padding-right: 35px;
+                padding-left : 25px;
+            }
+        }
+    }
+}
+
+@include print {
+    #{$this} {
+        display: none;
+    }
+}

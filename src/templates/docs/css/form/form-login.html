@@ -1,0 +1,89 @@
+
+<div class="row center-sm center-md">
+
+    <div class="col-xs-12 col-sm-4">
+
+        <form class="aph form form--with-fields"
+              name="login"
+              novalidate
+              data-form-validation="login"
+              data-ng-submit="login.$valid && login()">
+
+            <div class="aph form__field">
+                <h5 class="aph">
+                    Login
+                </h5>
+            </div>
+
+            <div class="aph form__field">
+
+                <label class="aph form__label"
+                       for="login-email">
+                    E-mail:
+                </label>
+                <input class="aph form__control"
+                       type="email"
+                       id="login-email"
+                       name="login-email"
+                       placeholder="Ex.: aph@ingresse.com"
+                       data-ng-required="true"
+                       data-ng-model="login.email" />
+
+               <div class="aph form__helper form__helper--error"
+                    data-ng-show="login['login-email'].$invalid && !login['login-email'].$pristine">
+                   This field is required and
+                   need a valid e-mail address
+               </div>
+
+            </div>
+
+            <div class="aph form__field">
+
+                <label class="aph form__label"
+                       for="login-pass">
+                    Password:
+                </label>
+                <input class="aph form__control"
+                       type="password"
+                       id="login-pass"
+                       name="login-pass"
+                       placeholder="Your personal password"
+                       data-ng-required="true"
+                       data-ng-model="login.password" />
+
+               <div class="aph form__helper form__helper--error"
+                    data-ng-show="login['login-pass'].$invalid && !login['login-pass'].$pristine">
+                   This field is required
+               </div>
+
+            </div>
+
+            <div class="aph form__field">
+
+                <input class="aph form__control"
+                       type="checkbox"
+                       id="login-remember"
+                       name="login-remember"
+                       data-ng-model="login.remember" />
+                <label class="aph form__label"
+                       for="login-remember">
+                    Remember me
+                </label>
+
+            </div>
+
+            <div class="aph form__field">
+
+                <button class="aph btn btn--orange btn--block"
+                        type="submit">
+                    LOGIN
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+

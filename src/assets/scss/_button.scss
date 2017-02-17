@@ -1,0 +1,254 @@
+/* Button
+-------------------------------------------------------------------------- */
+$this: ".aph.btn";
+#{$this} {
+    position: relative;
+    display : inline-block;
+    cursor  : pointer;
+
+    vertical-align: top;
+
+    margin    : 0;
+    padding   : 11px 24px;
+    min-height: 40px;
+
+    font-size  : $font-size;
+    font-weight: $font-weight;
+    line-height: 18px;
+
+    text-transform : uppercase;
+    text-align     : center;
+    text-decoration: none;
+    border         : 0;
+    border-radius  : 20px;
+
+    background-image: none;
+    background-color: $color-blue;
+    color           : $color-white;
+
+    transition: .15s all linear;
+
+    &.active,
+    &:active {
+        box-shadow: 0 2px 4px rgba($color-black, .45) inset;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        outline         : 0;
+        background-image: none;
+    }
+
+    &:hover,
+    &:active {
+        background-color: darken($color-blue, 10%) !important;
+    }
+
+    &.disabled,
+    &:disabled {
+        cursor          : default;
+        color           : darken($color-light-grey, 15%) !important;
+        background-color: $color-light-grey !important;
+        border-color    : $color-light-grey !important;
+
+        &:hover,
+        &:active,
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    &--block {
+        display: block;
+        width  : 100%;
+    }
+
+    &--small {
+        min-height : 30px;
+        line-height: 30px;
+
+        font-size: 13px;
+
+        padding: 0 12px;
+    }
+
+    &--bordered {
+        background-color: transparent;
+        color           : $color-blue;
+        border          : 1px solid $color-blue;
+        padding-bottom  : 10px;
+
+        &:hover {
+            color           : $color-white;
+            background-color: $color-lochmara;
+            border-color    : $color-lochmara;
+        }
+
+        &.disabled,
+        &:disabled {
+            background-color: lighten($color-light-grey, 10%);
+            color           : darken($color-light-grey, 5%);
+            border-color    : lighten($color-light-grey, 10%);
+            box-shadow      : none;
+        }
+    }
+
+    &--link {
+        background-color: transparent;
+        color           : $color-blue;
+
+        &:hover:not(:disabled) {
+            background-color: rgba($color-black, .05);
+        }
+
+        &:active {
+            background-color: rgba($color-black, .15) !important;
+        }
+
+        &.disabled,
+        &:disabled {
+            color           : darken($color-light-grey, 15%) !important;
+            background-color: transparent !important;
+            box-shadow      : none;
+        }
+    }
+
+    &--labeled {
+        text-align: right;
+        padding-right: 30px;
+        padding-left: 60px;
+
+        &:active {
+            text-align: right;
+            padding-right: 30px;
+            padding-left: 60px;
+        }
+
+        > [class*="icon-"] {
+            font-size: 26px;
+            line-height: 16px;
+            position: absolute;
+            left: 30px;
+            top: 26%;
+        }
+
+        &.wide {
+            padding-top: 14px;
+            padding-bottom: 14px;
+            text-align: center;
+
+            > [class*="icon-"] {
+                position: relative;
+                left: inherit;
+                margin-right: 20px;
+                top: inherit;
+            }
+        }
+
+        > .icon-android,
+        > .icon-apple,
+        > .icon-facebook,
+        > .icon-gplus,
+        > .icon-twitter {
+            font-size: 40px;
+            left: 20px;
+            top: 22%;
+        }
+    }
+
+    //Button colors
+    $btn_colors:
+        ("orange",              $color-orange, 	            $color-white),
+        ("yellow",              $color-lightning-yellow,    $color-black),
+        ("green",               $color-green,               $color-white),
+        ("red",                 $color-red,                 $color-white),
+        ("black",               $color-black,               $color-white),
+        ("facebook",            $color-blue-facebook,       $color-white),
+    ;
+
+    @each $btn_class, $btn_bgColor, $btn_txtColor in $btn_colors {
+        &--#{$btn_class} {
+            color           : $btn_txtColor;
+            background-color: $btn_bgColor;
+
+            &:hover,
+            &:active {
+                background-color: darken($btn_bgColor, 10%) !important;
+            }
+
+            &#{$this} {
+                &--bordered {
+                    color           : $btn_bgColor;
+                    background-color: transparent;
+                    border-color    : $btn_bgColor;
+
+                    &:hover,
+                    &:active {
+                        color: $btn_txtColor;
+                    }
+
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        border-color: darken($btn_bgColor, 10%);
+                    }
+                }
+
+                &--link {
+                    color           : $btn_bgColor;
+                    background-color: transparent;
+
+                    &:hover {
+                        color: $color-white;
+                    }
+
+                    &:active {
+                        color           : $btn_bgColor;
+                        background-color: transparent !important;
+                    }
+
+                    &.disabled,
+                    &:disabled {
+                        color     : darken($color-light-grey, 15%) !important;
+                        box-shadow: none;
+                    }
+                }
+            }
+
+            &.disabled,
+            &:disabled {
+                color           : darken($color-light-grey, 15%) !important;
+                background-color: $color-light-grey !important;
+
+                &:hover,
+                &:active,
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+
+    &.dropdown {
+        min-width: 0;
+        padding  : 12px 20px 16px;
+
+        &:active {
+            padding: 23px 20px 15px;
+        }
+
+        &:after {
+            position: absolute;
+            content: "";
+            width: 0;
+            height: 0;
+            display: block;
+            border-style: solid;
+            border-color: $text-button-color transparent transparent transparent;
+            top: 45%;
+            left: 38%;
+            border-width: 4px 4px 0;
+        }
+    }
+}

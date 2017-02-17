@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>External Link</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="ExternalLink" transform="translate(-189.000000, -647.000000)" stroke="#fff" stroke-width="1.337">
+            <g id="Menus" transform="translate(19.000000, 277.000000)">
+                <g id="Visualizar-evento" transform="translate(1.000000, 370.000000)">
+                    <path d="M183.3405,1.0325 L175.76,8.613 M183.377,5.5315 L183.378,1 L178.8455,1 M181.865,7.985 L181.865,14.866 L170,14.866 L170,2.985 L176.052,2.985" id="GoToLink"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

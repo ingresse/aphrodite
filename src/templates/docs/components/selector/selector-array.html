@@ -1,0 +1,23 @@
+
+<form class="aph form">
+
+    <div class="row">
+
+        <div class="col-sm-3"
+             data-ng-repeat="session in sessions">
+
+            <div class="aph form__field">
+
+                <selector data-array="selectedSessions"
+                          data-value="session.id"
+                          data-prefix="{{ session.weekDay | limitTo:3 | uppercase }}"
+                          data-title="{{ session.date + ' - ' + session.time }}">
+                </selector>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</form>

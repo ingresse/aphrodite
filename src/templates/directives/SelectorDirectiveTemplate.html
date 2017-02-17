@@ -1,0 +1,42 @@
+<div data-ng-if="!array">
+    <input type="checkbox"
+           class="aph selector__input"
+           id="selector-{{ randomId }}"
+           name="{{ name }}"
+           data-ng-model="$parent.ngModel"
+           data-ng-attr-value="{{ value || undefined }}"
+           data-ng-required="ngRequired"
+           data-ng-checked="isChecked"
+           data-is-checked="{{ isChecked }}"
+           data-ng-disabled="ngDisabled"
+           />
+    <label for="selector-{{ randomId }}"
+           class="aph selector__label">
+        <span class="aph selector__label__prefix"
+              data-ng-if="prefix">
+            {{ prefix }}
+        </span>
+        {{ title }}
+    </label>
+</div>
+
+<div data-ng-if="array">
+    <input type="checkbox"
+           class="aph selector__input"
+           id="selector-array-{{ randomId }}"
+           name="{{ name }}"
+           data-ng-value="{{ value }}"
+           data-ng-click="checkArray()"
+           data-ng-checked="isChecked"
+           data-is-checked="{{ isChecked }}"
+           data-ng-disabled="ngDisabled"
+           />
+    <label for="selector-array-{{ randomId }}"
+           class="aph selector__label">
+        <span class="aph selector__label__prefix"
+              data-ng-if="prefix">
+            {{ prefix }}
+        </span>
+        {{ title }}
+    </label>
+</div>

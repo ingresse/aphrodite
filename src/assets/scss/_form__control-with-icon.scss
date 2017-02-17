@@ -1,0 +1,93 @@
+/* Input Icon
+-------------------------------------------------------------------------- */
+$this: ".aph.form__control-with-icon";
+$input-with-icon-side-padding: 35px;
+ #{$this} {
+    position: relative;
+    display : block;
+
+    .aph.form__control {
+        padding-right: $input-with-icon-side-padding;
+
+        &:focus {
+            + i.aph[class*="icon-"] {
+                color: $input-border-focus-color;
+            }
+        }
+    }
+
+    &__button,
+    i.aph[class*="icon-"] {
+        cursor: default;
+        position: absolute;
+        line-height: 1;
+        text-align: center;
+        top: 0;
+        right: 0;
+        margin: 0;
+        height: 100%;
+        width: $input-with-icon-side-padding;
+        font-size: 27px;
+        padding: 6px 4px 6px 0;
+        background: transparent;
+        border: 0;
+        color: $input-border-color;
+        @include transition;
+    }
+
+    &__button {
+        cursor: pointer;
+
+        &:focus,
+        &:active {
+            border: 0;
+            outline: 0;
+            color: $color-blue;
+
+            i.aph[class*="icon-"] {
+                color: $color-blue;
+            }
+        }
+
+        i.aph[class*="icon-"] {
+            cursor: pointer;
+        }
+    }
+
+    &--left {
+        .aph.form__control {
+            padding: {
+                right: 10px;
+                left: $input-with-icon-side-padding;
+            }
+        }
+
+        #{$this}__button,
+        i.aph[class*="icon-"] {
+            right: auto;
+            left : 0;
+            padding: {
+                right: 0;
+                left: 4px;
+            }
+        }
+    }
+}
+
+@include xs {
+    #{$this} {
+        &.hide-icon-mob {
+            .aph.form__control {
+                padding: {
+                    right: 10px;
+                    left : 10px;
+                }
+            }
+
+            #{$this}__button,
+            i.aph[class*="icon-"] {
+                display: none;
+            }
+        }
+    }
+}

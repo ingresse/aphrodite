@@ -1,0 +1,17 @@
+// Flexboxgrid Overrides
+
+$this: ".row";
+
+#{$this} {
+    margin-right: -#{$container-horizontal-padding / 2};
+    margin-left : -#{$container-horizontal-padding / 2};
+
+    &[class*="center-"] {
+        text-align: inherit;
+    }
+
+    [class*="col-"] {
+        padding-right: #{$container-horizontal-padding / 2};
+        padding-left : #{$container-horizontal-padding / 2};
+    }
+}

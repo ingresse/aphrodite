@@ -1,0 +1,17 @@
+$this: ".aph.img";
+
+#{$this} {
+    &-responsive {
+        display: block;
+        width  : 100%;
+        height : auto;
+    }
+
+    &-rounded {
+        border-radius: 4px;
+    }
+
+    &-circle {
+        border-radius: 50%;
+    }
+}

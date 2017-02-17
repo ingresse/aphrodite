@@ -1,0 +1,26 @@
+$this: ".aph.container";
+
+#{$this} {
+    width: 100%;
+    padding-right: #{$container-horizontal-padding};
+    padding-left : #{$container-horizontal-padding};
+
+    @media (min-width: $tablet-width) {
+        width    : 100%;
+        max-width: $tablet-width + 1em;
+    }
+
+    @media (min-width: $desktop-width) {
+        width    : 100%;
+        max-width: $desktop-width + 1em;
+    }
+
+    @media (min-width: $bigDesktop-width) {
+        width    : 100%;
+        max-width: $bigDesktop-width + 1em;
+    }
+
+    &.fluid {
+        max-width: 100% !important;
+    }
+}

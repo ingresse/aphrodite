@@ -1,0 +1,49 @@
+/* Media Querie mixins
+-------------------------------------------------------------------------- */
+$phone-width      : 47.9em;
+$tablet-width     : 48em;
+$desktop-width    : 64em;
+$bigDesktop-width : 75em;
+$hugeDesktop-width: 75.1em;
+
+@mixin xs {
+    @media (max-width: #{$tablet-width - .1em}) {
+        @content;
+    }
+}
+
+@mixin xs-sm {
+    @media (max-width: #{$desktop-width - .1em}) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - .1em}) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (min-width: #{$desktop-width}) and (max-width: #{$bigDesktop-width - .1em}) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (min-width: #{$bigDesktop-width}) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media (min-width: #{$hugeDesktop-width}) {
+        @content;
+    }
+}
+
+@mixin print {
+    @media print {
+        @content;
+    }
+}

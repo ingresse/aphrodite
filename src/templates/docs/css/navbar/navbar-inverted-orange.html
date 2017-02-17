@@ -1,0 +1,111 @@
+
+<nav class="aph navbar navbar--inverted navbar--inverted--orange">
+
+    <div class="aph container">
+
+        <div class="aph navbar__nav">
+
+            <a class="aph navbar__brand"
+               href="/#/"
+               title="Start">
+                <span class="aph navbar__brand__logo"></span>
+                <span class="aph navbar__brand__title">
+                    product
+                </span>
+                <small class="aph navbar__brand__slogan">
+                    slogan example
+                </small>
+            </a>
+
+            <ul class="aph navbar__menu navbar__menu--right list">
+                <li class="aph list__item">
+                    <a class="aph list__item__link"
+                       href="">
+                       <i class="aph icon-query"></i>
+                        Help
+                    </a>
+                </li>
+                <li class="aph list__item">
+                    <a class="aph list__item__link"
+                       href="">
+                       <i class="aph icon-add"></i>
+                        Add Something
+                    </a>
+                </li>
+                <li class="aph list__border"></li>
+                <li class="aph list__item">
+                    <a class="aph btn btn--black"
+                       href="">
+                        Action
+                    </a>
+                </li>
+                <li class="aph list__border"></li>
+                <li class="aph list__item dropdown dropdown--right"
+                    data-dropdown
+                    data-click-outside="closeDropdown();">
+                 <img class="aph navbar__menu__user__avatar"
+                      height="32" width="32"
+                      data-ng-src="./assets/images/application-logo.svg"
+                      />
+                    <a class="aph list__item__link navbar__menu__user dropdown__toggle"
+                       href="">
+                        Username
+                    </a>
+                    <ul class="aph dropdown__content">
+                        <li class="aph dropdown__content__item">
+                            <a class="aph dropdown__content__item__link">
+                                Dropdow Link
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <label class="aph navbar__menu__drawer"
+                   for="drawer-inverted-orange"
+                   data-drawer="drawer-inverted-orange-menu">
+
+                <input class="aph navbar__menu__drawer__checkbox"
+                       type="checkbox"
+                       name="drawer-inverted-orange"
+                       id="drawer-inverted-orange"
+                       data-click-outside="closeDrawer();"
+                       data-outside-if-not="drawer-inverted-orange-menu"
+                       />
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<div class="aph drawer"
+     id="drawer-inverted-orange-menu">
+
+    <ul class="aph list drawer__menu">
+        <li class="aph list__header">
+            Opened from "Navbar Inverted Orange"
+        </li>
+        <li class="aph list__item">
+            <a class="aph list__item__link"
+               href="">
+                Example Item
+            </a>
+        </li>
+        <li class="aph list__item">
+            <a class="aph list__item__link"
+               href="">
+                Example Item
+            </a>
+        </li>
+        <li class="aph list__border"></li>
+        <li class="aph list__item">
+            <a class="aph btn btn--block"
+               href="">
+                Example Item Button
+            </a>
+        </li>
+    </ul>
+
+</div>

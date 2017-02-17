@@ -1,0 +1,72 @@
+/* Variables
+-------------------------------------------------------------------------- */
+
+// Paths
+// Use: "#{map-get($path, $key)}";
+$path-assets: (
+    fonts : "./fonts",
+    icons : "./icons",
+    images: "./images",
+);
+
+/// Fonts
+$font-family: "Roboto", Helvetica Neue, Arial, sans-serif;
+$font-size  : 16px;
+$line-height: 20px;
+$font-weight: 400;
+
+// Container
+$container-horizontal-padding: 20px;
+$container-width             : 980px;
+$container-large-width       : 1060px;
+$container-big-width         : 1260px;
+$container-huge-width        : 1580px;
+
+// Navbar
+$navbar-min-height           : 60px;
+
+// Form
+$input-height-base           : 40px;
+$input-padding-base          : 5px 10px;
+
+// Text Color
+$text-default-color          : $color-black;
+
+// Buttons Color
+$text-button-color           : $color-white;
+
+// Label
+$label-font-color            : $color-blue;
+$label-border-color          : $color-blue;
+$label-focus-background      : #ccedf8;
+
+// Form
+$label-font-color            : $color-grey;
+$input-border-color          : $color-light-grey;
+$input-placeholder-color     : $color-light-grey;
+$input-border-focus-color    : $color-blue;
+$input-invalid-text          : #d62828;
+$input-invalid-border        : $rose;
+$input-disabled-background   : $ice;
+$input-disabled-border       : $cloud;
+$input-disabled-text         : $cloud;
+
+// Alerts
+$alert-defaul-background     : #fff;
+$alert-default-color         : $chick;
+$alert-green-color           : $pea;
+$alert-red-color             : $tomato;
+$alert-blue-color            : $sky;
+
+// Icons
+$icon-color-blue             : $sky;
+$icon-color-disabled         : $misty;
+$icon-color-dark             : #2d2d2d;
+
+// Steps
+$step-active                 : $sky;
+$step-disabled               : $misty;
+
+// Pagination
+$pagination-color            : $sky;
+$pagination-disabled         : $misty;

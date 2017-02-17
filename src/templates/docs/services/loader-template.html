@@ -1,0 +1,80 @@
+<page-header
+    data-properties="{
+        title   : 'Loader',
+        subtitle: 'Service',
+        bg      : 'black',
+    }">
+</page-header>
+
+<section>
+
+    <div class="aph container large">
+
+        <component
+            data-properties="{
+                title      : 'Default',
+                templateUrl: 'docs/services/loader/loader-default.html',
+                hideTemplate: true
+            }">
+            <button type="button"
+                    class="aph btn"
+                    data-ng-click="loaderTest()">
+                Basic Loader
+            </button>
+        </component>
+
+        <component
+            data-properties="{
+                title      : 'With Title',
+                templateUrl: 'docs/services/loader/loader-with-title.html',
+                hideTemplate: true
+            }">
+            <button type="button"
+                    class="aph btn btn--orange"
+                    data-ng-click="loaderTest({ title: 'Loading...' })">
+                Loader with Title
+            </button>
+        </component>
+
+        <component
+            data-properties="{
+                title      : 'With Text',
+                templateUrl: 'docs/services/loader/loader-with-text.html',
+                hideTemplate: true
+            }">
+            <button type="button"
+                    class="aph btn btn--green"
+                    data-ng-click="loaderTest({ title: 'Processing your payment', text: 'Please, wait a moment...' })">
+                Loader with Title and Text
+            </button>
+        </component>
+
+        <component
+            data-properties="{
+                title      : 'Error',
+                templateUrl: 'docs/services/loader/loader-error.html',
+                hideTemplate: true
+            }">
+            <button type="button"
+                    class="aph btn btn--red"
+                    data-ng-click="loaderErrorTest(error.message.text)">
+                Loader Error
+            </button>
+        </component>
+
+        <component
+            data-properties="{
+                title      : 'Error with Markup',
+                templateUrl: 'docs/services/loader/loader-error-with-markup.html',
+                hideTemplate: true
+            }">
+            <button type="button"
+                    class="aph btn btn--red btn--bordered"
+                    data-ng-click="loaderErrorTest(error.message.html)">
+                Loader Error (with markup)
+            </button>
+        </component>
+
+    </div>
+
+</section>

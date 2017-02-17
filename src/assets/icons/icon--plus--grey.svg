@@ -1,0 +1,24 @@
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   width="12"
+   height="12"
+   viewBox="0 0 12 12">
+  <g id="layer1"
+     transform="translate(0,-1040.3622)">
+    <rect
+       style="fill:#d4d7d9;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="rect3336"
+       width="2.0000002"
+       height="12.000004"
+       x="5"
+       y="1040.3622" />
+    <rect
+       style="fill:#d4d7d9;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="rect3336-3"
+       width="2.0000002"
+       height="12.000004"
+       x="1045.3622"
+       y="-12.000002"
+       transform="matrix(0,1,-1,0,0,0)" />
+  </g>
+</svg>

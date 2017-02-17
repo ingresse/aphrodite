@@ -1,0 +1,32 @@
+$this: ".aph.image-crop";
+
+#{$this} {
+    display: block;
+    width  : 200px;
+    height : 200px;
+
+    margin : 0 auto 50px;
+
+    &.croppie-container {
+        .cr {
+            &-boundary {
+                border-radius: 3px;
+            }
+
+            &-viewport {
+                border: 0;
+            }
+
+            &-slider {
+                color: $color-light-grey;
+            }
+        }
+    }
+
+    + .aph {
+        &.form__label {
+            display: block;
+            text-align: center;
+        }
+    }
+}

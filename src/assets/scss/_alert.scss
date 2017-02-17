@@ -1,0 +1,146 @@
+/* ALERTS */
+$this: ".aph.alert";
+
+#{$this} {
+    position: relative;
+
+    display: block;
+    padding: 15px;
+
+    vertical-align: middle;
+
+    font-size  : 16px;
+    line-height: 20px;
+    font-weight: normal;
+
+    text-align : left;
+
+    color     : $color-dark-grey;
+    background: rgba($color-white, .9);
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, .2);
+
+    animation : fadeIn .5s;
+    transition: .15s line-height linear;
+
+    @include border-radius(3px);
+
+    &--dismissable {
+        padding-right: 30px;
+    }
+
+    &__title {
+        color      : $color-blue;
+        font-weight: bold;
+    }
+
+    div#{$this}__title {
+        margin-bottom: 10px;
+    }
+
+    &__dismiss {
+        position: absolute;
+
+        top  : 50%;
+        right: 13px;
+
+        transform: translateY(-50%);
+
+        width  : 20px;
+        height : 20px;
+        padding: 2px;
+
+        font-weight: 100;
+        font-size  : 18px;
+        line-height: .8;
+        cursor     : pointer;
+
+        border          : 0;
+        outline         : 0;
+
+        background-color   : transparent;
+        background-image   : url("#{map-get($path-assets, icons)}/icon--close--blue.svg");
+        background-repeat  : no-repeat;
+        background-position: center center;
+        background-size    : 10px;
+
+        @include border-radius(50%);
+
+        color: $color-blue;
+    }
+
+    &--orange {
+        #{$this} {
+            &__title {
+                color: $color-orange;
+            }
+
+            &__dismiss {
+                color: $color-orange;
+                background-image: url("#{map-get($path-assets, icons)}/icon--close--orange.svg");
+            }
+        }
+    }
+
+    &--green {
+        #{$this} {
+            &__title {
+                color: $color-green;
+            }
+
+            &__dismiss {
+                color: $color-green;
+                background-image: url("#{map-get($path-assets, icons)}/icon--close--green.svg");
+            }
+        }
+    }
+
+    &--red {
+        #{$this} {
+            &__title {
+                color: $color-red;
+            }
+
+            &__dismiss {
+                color: $color-red;
+                background-image: url("#{map-get($path-assets, icons)}/icon--close--red.svg");
+            }
+        }
+    }
+
+    &__container {
+        display: block;
+        margin : 0 0 20px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__actions {
+        text-align: right;
+
+        margin: 14px 0 4px 0;
+    }
+
+    &.ng-hide {
+        line-height: 0;
+        animation  : fadeOut .15s;
+    }
+
+    .aph.btn {
+        font-size  : 13px;
+        font-weight: 500;
+
+        min-height : 30px;
+        padding    : 5px 15px;
+        margin-left: 15px;
+
+        &:first-of-type {
+            margin-left: 0;
+        }
+
+        @include xs {
+            margin-left: 0;
+        }
+    }
+}

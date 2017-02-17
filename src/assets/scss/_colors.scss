@@ -1,0 +1,106 @@
+/* Venus Colors
+-------------------------------------------------------------------------- */
+$sunshine: #fca311;
+$honeycomb: #ec820a;
+
+$seashore: #00a5db;
+$sky: #008bc1;
+
+$grass: #60c659;
+$pea: #19ae35;
+
+$rose: #f13335;
+$tomato: #c41f1f;
+
+$sunflower: #ffc61e;
+$chick: #d09d0c;
+
+$ice: #f8f8f8;
+$cloud: #d4d7d9;
+
+$misty: #aeb4b8;
+$blurry: #9da6ad;
+
+$twilight: #7a8085;
+$darkness: #333;
+
+/* Widget Colors
+-------------------------------------------------------------------------- */
+$color-white            : rgb(255, 255, 255);       // #FFFFFF
+$color-white-smoke      : rgb(248, 248, 248);       // #F8F8F8  OK  (Sector Background)
+
+$color-light-grey       : rgb(212, 215, 217);       // #D4D7D9  OK  (Sector Borders and Division Borders)
+$color-grey             : rgb(157, 166, 173);       // #9DA6AD  OK  (Input Borders)
+$color-dark-grey        : rgb(122, 128, 133);       // #7A8085  OK  (Labels)
+
+$color-black            : rgb(45, 45, 45);          // #2D2D2D  OK  (Text Base)
+
+$color-lightning-yellow : rgb(255, 198, 30);        // #FFC61E  OK  (Yellow)
+$color-gamboge          : rgb(216, 163, 13);        // #D8A30D  OK
+
+$color-orange           : rgb(252, 163, 17);        // #FCA311  OK  (Button Primary)
+$color-tahiti-gold      : #EC820A;                  // #EC820A  OK  (Button Primary Shadow)
+
+$color-light-blue       : rgb(245, 250, 252);       // #F5FAFC  OK  (Cart Resume Table Background)
+$color-blue             : rgb(0, 165, 219);         // #00A5DB  OK
+$color-lochmara         : rgb(0, 139, 193);         // #008BC1  OK  (Button Secondary Shadow)
+
+$color-blue-facebook    : rgb(58, 87, 149);         // #3A5795  OK
+
+$color-red              : rgb(241, 51, 53);         // #F13335  OK  (Error)
+$color-fire-engine-red  : rgb(196, 31, 31);         // #C41F1F  OK
+
+$color-green            : rgb(96,198,89);           // #60C659  OK  (Success)
+$color-dark-pastel-green: rgb(25, 174, 53);         // #19AE35  OK
+
+/* Widget Array Colors
+-------------------------------------------------------------------------- */
+
+// Selector Identifier, Principal Color, Inverse Color
+$principal-colors:
+    ("white",               $color-white,               $color-dark-grey),
+    ("white-smoke",         $color-white-smoke,         $color-dark-grey),
+    
+    ("light-grey",          $color-light-grey,          $color-dark-grey),
+    ("grey",                $color-grey,                $color-white),
+    ("dark-grey",           $color-dark-grey,           $color-white),
+    
+    ("black",               $color-black,               $color-white),
+    
+    ("lightning-yellow",    $color-lightning-yellow,    $color-white),
+    ("gamboge",             $color-gamboge,             $color-white),
+    
+    ("orange",              $color-orange, 	            $color-white),
+    ("tahiti-gold",         $color-tahiti-gold,         $color-white),
+    
+    ("light-blue",          $color-light-blue,          $color-blue),
+    ("blue",                $color-blue,                $color-white),
+    ("lochmara",            $color-lochmara,            $color-white),
+    
+    ("blue-facebook",       $color-blue-facebook,       $color-white),
+    
+    ("red",                 $color-red,                 $color-white),
+    ("fire-engine-red",     $color-fire-engine-red,     $color-white),
+    
+    ("green",               $color-green,               $color-white),
+    ("dark-pastel-green",   $color-dark-pastel-green,   $color-white)
+;
+
+
+/* Colors Utils
+-------------------------------------------------------------------------- */
+
+// Background
+@each $color-class, $color-primary, $color-inverse in $principal-colors {
+    .bg-#{$color-class} {
+        background-color: $color-primary;
+        color: $color-inverse;
+    }
+}
+
+// Text
+@each $color-class, $color-primary, $color-inverse in $principal-colors {
+    .text-#{$color-class} {
+        color: $color-primary;
+    }
+}

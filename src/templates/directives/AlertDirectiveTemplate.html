@@ -1,0 +1,11 @@
+<div class="aph alert {{ 'alert--' + alertOptions.color }}"
+     data-ng-class="{
+        'alert--dismissable': !alertOptions.notDismiss
+     }"
+     data-ng-show="alertVisibility">
+    <button class="aph alert__dismiss"
+            data-ng-if="!alertOptions.notDismiss"
+            data-ng-click="dismiss()">
+    </button>
+    <div data-ng-transclude></div>
+</div>

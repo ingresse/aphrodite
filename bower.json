@@ -1,0 +1,26 @@
+{
+  "name": "aphrodite",
+  "version": "1.0.0",
+  "main": [
+    "./dist/scripts/aphrodite.js",
+    "./dist/assets/aphrodite.css"
+  ],
+  "dependencies": {
+    "angular": "1.5.10",
+    "animate.css": "~3.*",
+    "angular-animate": "1.5.10",
+    "angular-click-outside": "^2.10.1",
+    "angular-scroll": "^1.0.0",
+    "flexboxgrid": "^6.3.2",
+    "angular-ui-utils": "~0.*",
+    "Croppie": "croppie#^2.4.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.*",
+    "angular-scenario": "~1.*",
+    "angular-route": "~1.5.10"
+  },
+  "resolutions": {
+    "angular": "1.5.10"
+  }
+}

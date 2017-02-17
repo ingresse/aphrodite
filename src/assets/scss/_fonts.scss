@@ -1,0 +1,188 @@
+// Roboto Font Family from Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Kalam:400,700');
+
+// Aphrodite Icons Font
+@font-face {
+    font-family: "VenusGlyphs-Regular";
+    src        : url("#{map-get($path-assets, fonts)}/VenusGlyphs-Regular.eot");
+    src        : local("☺"),
+                    url("#{map-get($path-assets, fonts)}/VenusGlyphs-Regular.svg#VenusGlyphs-Regular") format("svg"),
+                    url("#{map-get($path-assets, fonts)}/VenusGlyphs-Regular.woff") format("woff"),
+                    url("#{map-get($path-assets, fonts)}/VenusGlyphs-Regular.woff2") format("woff2"),
+                    url("#{map-get($path-assets, fonts)}/VenusGlyphs-Regular.ttf") format("truetype");
+}
+
+// Body
+body.aph {
+    font-family: $font-family;
+    font-size  : $font-size;
+    line-height: $line-height;
+    font-weight: $font-weight;
+
+    color: $color-black;
+}
+
+// Links
+a.aph:not(.btn) {
+    color : $color-blue;
+    cursor: pointer;
+
+    text-decoration: none;
+    @include transition();
+
+    &.active,
+    &:hover,
+    &:focus {
+        outline: 0;
+    }
+}
+
+.aph.link {
+    color  : $color-blue;
+    border : 0;
+    padding: 0;
+
+    text-decoration: none;
+    background     : none;
+
+    &:link,
+    &:visited,
+    &:active,
+    &:hover,
+    &:focus {
+        color  : $color-lochmara;
+        outline: 0;
+    }
+}
+
+// Headings
+h1,
+h2,
+h3 {
+    &.aph {
+        font-weight: $font-weight;
+        padding    : 0;
+
+        &.heavy {
+            font-weight: 900;
+        }
+
+        &.support {
+            font-weight: 700;
+            font-family: "Kalam", cursive;
+        }
+
+        small.aph,
+        .aph.small {
+            font-size: 65%;
+        }
+    }
+}
+
+h1.aph {
+    font-size  : 32px;
+    line-height: 40px;
+
+    margin: 29px 0 11px;
+
+    &.heavy {
+        font-size  : 60px;
+        line-height: 60px;
+    }
+}
+
+h2.aph {
+    font-size  : 27px;
+    line-height: 40px;
+
+    margin: 20px 0 10px;
+
+    &.heavy {
+        font-size  : 50px;
+        line-height: 60px;
+
+        margin: 22px 0 18px;
+
+        + p.aph {
+            margin-top: -10px;
+        }
+    }
+
+    + p.aph {
+        margin-top: 10px;
+    }
+}
+
+h3.aph {
+    font-size  : 22px;
+    line-height: 30px;
+
+    margin: 17px 0 13px;
+
+    &.heavy {
+        font-size  : 40px;
+        line-height: 40px;
+    }
+
+    + p.aph {
+        margin-top: 12px;
+    }
+}
+
+// Text
+p.aph {
+    padding: 0;
+    margin : 5px 0;
+
+    + p.aph {
+        margin-top: 10px;
+
+        &.small {
+            margin-top: 5px;
+        }
+    }
+}
+
+small.aph,
+.aph.small {
+    font-size  : 13px;
+    line-height: 20px;
+}
+
+// Alignment
+.aph.text-left           { text-align: left; }
+.aph.text-right          { text-align: right; }
+.aph.text-center         { text-align: center; }
+.aph.text-justify        { text-align: justify; }
+
+// Style
+.aph.text-italic        { font-style: italic; }
+.aph.text-bold          { font-weight: bold; }
+.aph.text-normal        { font-weight: 400; font-style: normal; }
+.aph.text-underline     { text-decoration: underline; }
+
+
+// Description Lists
+dl.aph {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+dt.aph,
+dd.aph {
+  line-height: 20px;
+}
+dt.aph {
+  font-weight: bold;
+}
+dd.aph {
+  margin-left: 0;
+}
+
+// Mobile version
+
+@include xs-sm {
+  h1.aph { font-size: 32px; }
+  h2.aph { font-size: 28px; }
+  h3.aph { font-size: 24px; }
+}

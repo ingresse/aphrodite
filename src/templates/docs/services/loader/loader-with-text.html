@@ -1,0 +1,26 @@
+
+<!-- Controller Example
+"use strict";
+
+angular.module("example-app", [ "aphrodite" ])
+.controller("ExampleController", function ($scope, $timeout, loader) {
+
+    $scope.loaderTest = function (activity) {
+        loader.start(activity);
+
+        $timeout(function () {
+            loader.stop(activity);
+        }, 5000);
+    };
+
+});
+-->
+
+
+<!-- Markup -->
+<button type="button"
+        class="aph btn btn--green"
+        data-ng-click="loaderTest({ title: 'Processing your payment', text: 'Please, wait a moment...' })">
+    Loader with Title and Text
+</button>
+<!-- Markup -->

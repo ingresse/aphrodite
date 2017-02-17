@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="12px" height="12px"
+     version="1.1"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g
+     id="layer1"
+     transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,741.64716,-738.13245)">
+    <rect
+       style="fill:#fca311;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="rect3336"
+       width="2.0000002"
+       height="12.000004"
+       x="5"
+       y="1040.3622" />
+    <rect
+       style="fill:#fca311;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="rect3336-3"
+       width="2.0000002"
+       height="12.000004"
+       x="1045.3622"
+       y="-12.000002"
+       transform="matrix(0,1,-1,0,0,0)" />
+  </g>
+</svg>

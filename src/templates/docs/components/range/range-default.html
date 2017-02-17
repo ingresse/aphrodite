@@ -1,0 +1,46 @@
+
+<div class="aph form__range">
+
+    <div class="aph form__range__content">
+
+        <input class="aph form__range__content__input"
+               type="radio"
+               value="Californication"
+               id="californication"
+               data-ng-model="rangeValue" />
+        <label class="aph form__range__content__label"
+               for="californication">
+            Californication
+        </label>
+
+        <input class="aph form__range__content__input"
+               type="radio"
+               value="By The Way"
+               id="by-the-way"
+               data-ng-model="rangeValue" />
+        <label class="aph form__range__content__label"
+               for="by-the-way">
+            By The Way
+        </label>
+
+        <input class="aph form__range__content__input"
+               type="radio"
+               value="Stadium Arcadium"
+               id="stadium-arcadium"
+               data-ng-model="rangeValue" />
+        <label class="aph form__range__content__label"
+               for="stadium-arcadium">
+            Stadium Arcadium
+        </label>
+
+    </div>
+
+    <div class="aph form__range__footer">
+
+        <output class="aph form__range__output"
+                id="range-value">
+            Album: {{ rangeValue || 'Freaky Styley' }}
+        </output>
+
+    </div>
+</div>

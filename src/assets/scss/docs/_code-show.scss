@@ -1,0 +1,51 @@
+.code-show {
+    padding    : 20px 10px 20px 40px;
+    line-height: 22px;
+
+    color           : $color-white;
+    background-color: $color-black;
+
+    font-family: monospace;
+    font-size  : 14px;
+
+    @include border-radius(3px);
+}
+
+.icons-example {
+    font-size: 12px;
+    line-height: 42px;
+
+    .aph.column {
+        padding: 10px 0;
+        background: transparent;
+    }
+
+    i {
+        font-size: 42px;
+        vertical-align: middle !important;
+        margin-right: 10px;
+    }
+
+    p {
+        margin: 5px 0px;
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+.color-circle {
+    display: inline-block;
+    margin: 20px;
+    padding: 52px 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+
+    text-align: center;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+    border: 1px solid rgba(0, 0, 0, .5);
+}

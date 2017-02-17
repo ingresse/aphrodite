@@ -1,0 +1,64 @@
+
+<div class="aph toggle">
+
+    <!-- navigation -->
+    <div class="aph toggle__nav">
+
+        <input class="aph toggle__radio"
+               type="radio"
+               name="tab"
+               id="tab-left"
+               value="left"
+               data-ng-model="properties.tab" />
+        <label for="tab-left"
+               class="aph toggle__label">
+            Left
+        </label>
+
+        <input class="aph toggle__radio"
+               type="radio"
+               name="tab"
+               id="tab-center"
+               value="center"
+               data-ng-model="properties.tab" />
+        <label for="tab-center"
+               class="aph toggle__label">
+            Center
+        </label>
+
+        <input class="aph toggle__radio"
+               type="radio"
+               name="tab"
+               id="tab-right"
+               value="right"
+               data-ng-model="properties.tab" />
+        <label for="tab-right"
+               class="aph toggle__label">
+            Right
+        </label>
+
+    </div>
+    <!-- navigation -->
+
+    <!-- tab -->
+    <div class="aph toggle__tab text-left bg-dark-grey"
+         data-ng-show="properties.tab === 'left'">
+        left toggle selected
+    </div>
+    <!-- tab -->
+
+    <!-- tab -->
+    <div class="aph toggle__tab text-center bg-light-grey"
+         data-ng-show="properties.tab === 'center'">
+        center toggle selected
+    </div>
+    <!-- tab -->
+
+    <!-- tab -->
+    <div class="aph toggle__tab text-right bg-black"
+         data-ng-show="properties.tab === 'right'">
+        right toggle selected
+    </div>
+    <!-- tab -->
+
+</div>

@@ -1,0 +1,416 @@
+/* Steps Icons */
+
+i.aph {
+	&[class*="icon-"] {
+		display: inline-block;
+		width: auto;
+		height: auto;
+		line-height: .65;
+		vertical-align: baseline;
+		background-image: none;
+		background-position: 0 0;
+		background-repeat: repeat;
+
+        position: relative;
+        top: 1px;
+
+		&:before {
+			font-family: 'VenusGlyphs-Regular';
+			font-weight: normal;
+			font-style: normal;
+            font-size  : 150%;
+            line-height: .65;
+			text-decoration: inherit;
+
+            position: relative;
+            top     : 1px;
+		}
+	}
+
+    &.icon {
+        &-android,
+        &-apple,
+        &-facebook,
+        &-twitter {
+            &:before {
+                font-size: 200%;
+            }
+        }
+    }
+
+	&.icon-add {
+		&:before {
+			content: '\00a1';
+		}
+	}
+	&.icon-arrow-left {
+		&:before {
+			content: '\006e';
+		}
+	}
+	&.icon-arrow-right {
+		&:before {
+			content: '\006f';
+		}
+	}
+	&.icon-arrow-up {
+		&:before {
+			content: '\0071';
+		}
+	}
+	&.icon-arrow-down {
+		&:before {
+			content: '\0072';
+		}
+	}
+	&.icon-android {
+		&:before {
+			content: '\004c';
+		}
+	}
+	&.icon-alert {
+		&:before {
+			content: '\002c';
+		}
+	}
+	&.icon-apple {
+		&:before {
+			content: '\004d';
+		}
+	}
+	&.icon-attach {
+		&:before {
+			content: '\002e';
+		}
+	}
+	&.icon-book {
+		&:before {
+			content: '\0061';
+		}
+	}
+	&.icon-bright {
+		&:before {
+			content: '\003f';
+		}
+	}
+	&.icon-brush {
+		&:before {
+			content: '\002f';
+		}
+	}
+	&.icon-bullet {
+		&:before {
+			content: '\0070';
+		}
+	}
+	&.icon-calendar {
+		&:before {
+			content: '\005c';
+		}
+	}
+	&.icon-cam {
+		&:before {
+			content: '\007c';
+		}
+	}
+	&.icon-card {
+		&:before {
+			content: '\0021';
+		}
+	}
+	&.icon-cart {
+		&:before {
+			content: '\0040';
+		}
+	}
+	&.icon-chat {
+		&:before {
+			content: '\0023';
+		}
+	}
+	&.icon-check {
+		&:before {
+			content: '\0024';
+		}
+	}
+	&.icon-check-list {
+		&:before {
+			content: '\0068';
+		}
+	}
+	&.icon-clock {
+		&:before {
+			content: '\0025';
+		}
+	}
+	&.icon-cloud {
+		&:before {
+			content: '\002a';
+		}
+	}
+	&.icon-directory {
+		&:before {
+			content: '\003b';
+		}
+	}
+	&.icon-download {
+		&:before {
+			content: '\0029';
+		}
+	}
+	&.icon-error {
+		&:before {
+			content: '\0026';
+		}
+	}
+	&.icon-esc {
+		&:before {
+			content: '\006a';
+		}
+	}
+	&.icon-facebook {
+		&:before {
+			content: '\004e';
+		}
+	}
+	&.icon-flag {
+		&:before {
+			content: '\0046';
+		}
+    &.thick {
+      &:before {
+        content: '\0062';
+      }
+    }
+	}
+	&.icon-filter {
+		&:before {
+			content: '\0063';
+		}
+		&.thick {
+			&:before {
+				content: '\0064';
+			}
+		}
+	}
+	&.icon-globe {
+		&:before {
+			content: '\002d';
+		}
+	}
+	&.icon-gplus {
+		&:before {
+			content: '\004f';
+		}
+	}
+	&.icon-graph {
+		&:before {
+			content: '\0065';
+		}
+	}
+	&.icon-heart {
+		&:before {
+			content: '\003d';
+		}
+	}
+	&.icon-home {
+		&:before {
+			content: '\005f';
+		}
+	}
+	&.icon-info {
+		&:before {
+			content: '\002b';
+		}
+	}
+	&.icon-less {
+		&:before {
+			content: '\0032';
+		}
+	}
+	&.icon-link {
+		&:before {
+			content: '\003c';
+		}
+	}
+	&.icon-lock {
+		&:before {
+			content: '\0066';
+		}
+	}
+	&.icon-mail {
+		&:before {
+			content: '\003e';
+		}
+	}
+	&.icon-mic {
+		&:before {
+			content: '\0031';
+		}
+	}
+	&.icon-mobile {
+		&:before {
+			content: '\0033';
+		}
+	}
+	&.icon-move {
+		&:before {
+			content: '\0034';
+		}
+	}
+	&.icon-movie {
+		&:before {
+			content: '\0035';
+		}
+	}
+	&.icon-pencil {
+		&:before {
+			content: '\0036';
+		}
+	}
+	&.icon-phone {
+		&:before {
+			content: '\0037';
+		}
+	}
+	&.icon-pic {
+		&:before {
+			content: '\0038';
+		}
+	}
+	&.icon-pin {
+		&:before {
+			content: '\0039';
+		}
+	}
+	&.icon-pause {
+		&:before {
+			content: '\006d';
+		}
+	}
+	&.icon-play {
+		&:before {
+			content: '\0030';
+		}
+	}
+	&.icon-print {
+		&:before {
+			content: '\2122';
+		}
+	}
+	&.icon-query {
+		&:before {
+			content: '\00a3';
+		}
+	}
+	&.icon-qrcode {
+		&:before {
+			content: '\0069';
+		}
+	}
+	&.icon-qrframe {
+		&:before {
+			content: '\006c';
+		}
+	}
+	&.icon-reload {
+		&:before {
+			content: '\00a2';
+		}
+	}
+	&.icon-sad {
+		&:before {
+			content: '\0047';
+		}
+	}
+	&.icon-search {
+		&:before {
+			content: '\00a7';
+		}
+	}
+	&.icon-send {
+		&:before {
+			content: '\00b6';
+		}
+	}
+	&.icon-settings {
+		&:before {
+			content: '\2022';
+		}
+	}
+	&.icon-smile {
+		&:before {
+			content: '\00aa';
+		}
+	}
+	&.icon-song {
+		&:before {
+			content: '\00ba';
+		}
+	}
+	&.icon-suitcase {
+		&:before {
+			content: '\003b';
+		}
+	}
+	&.icon-target {
+		&:before {
+			content: '\2013';
+		}
+	}
+	&.icon-text {
+		&:before {
+			content: '\005b';
+		}
+	}
+	&.icon-ticket {
+		&:before {
+			content: '\007b';
+		}
+	}
+	&.icon-tickets {
+		&:before {
+			content: '\007d';
+		}
+	}
+	&.icon-trash {
+		&:before {
+			content: '\005d';
+		}
+	}
+	&.icon-twitter {
+		&:before {
+			content: '\0050';
+		}
+	}
+	&.icon-undo {
+		&:before {
+			content: '\2264';
+		}
+	}
+	&.icon-unlock {
+		&:before {
+			content: '\0067';
+		}
+	}
+	&.icon-upload {
+		&:before {
+			content: '\006b';
+		}
+	}
+	&.icon-user {
+		&:before {
+			content: '\0055';
+		}
+	}
+	&.icon-wallet {
+		&:before {
+			content: '\00f7';
+		}
+	}
+	&.icon-watch {
+		&:before {
+			content: '\2026';
+		}
+	}
+}

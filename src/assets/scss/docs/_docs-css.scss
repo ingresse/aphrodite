@@ -1,0 +1,72 @@
+$this: ".docs-css";
+
+#{$this} {
+    padding: 20px 0;
+
+    &__grid {
+        .box-row {
+            min-height: 40px;
+            margin    : 0 0 10px;
+
+            color     : $color-white;
+            background: $color-blue;
+            border    : 4px solid $color-lochmara;
+
+            border-radius: 4px;
+        }
+    }
+
+    &__list-inverted-example {
+        padding: 10px $container-horizontal-padding $container-horizontal-padding;
+        border-radius: 4px;
+
+        &--without-header {
+            padding-top: $container-horizontal-padding;
+        }
+    }
+
+    &__icon {
+        margin : 10px 0;
+        padding: 19px 0 $container-horizontal-padding;
+
+        text-align: center;
+
+        transition   : .2s all linear;
+
+        border       : 1px solid transparent;
+        border-radius: 4px;
+
+        i.aph[class^="aph icon-"] {
+            display  : block;
+            margin   : 0;
+
+            &:before {
+                font-size: 60px;
+            }
+        }
+
+        code {
+            font-size: 10px;
+        }
+
+        &:hover {
+            color           : $color-blue;
+            border-color    : $color-light-grey;
+            background-color: $color-white-smoke;
+
+            code {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+@include xs {
+    #{$this} {
+        &__btn {
+            .aph.btn {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
