@@ -5,6 +5,8 @@ const gulp  = require('gulp'),
       paths = require('./paths'),
       SRC   = [
           './src/assets/aphrodite.css',
+          './src/assets/aphrodite-font-family.css',
+          './src/assets/aphrodite-icons.css',
           './src/assets/aphrodite-docs.min.css',
           './src/assets/fonts/*',
           './server/**/*',
@@ -12,6 +14,8 @@ const gulp  = require('gulp'),
       ],
       DIST  = [
           './src/assets/aphrodite.css',
+          './src/assets/aphrodite-font-family.css',
+          './src/assets/aphrodite-icons.css',
           './src/assets/fonts/*',
       ];
 

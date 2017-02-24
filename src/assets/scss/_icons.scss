@@ -1,4 +1,15 @@
-/* Steps Icons */
+/* Icons */
+
+// Aphrodite Icons Font
+@font-face {
+    font-family: "VenusGlyphs-Regular";
+    src        : url("#{map-get($path-assets, fonts)}/VenusGlyphs-Regular.eot");
+    src        : local("☺"),
+                    url("#{map-get($path-assets, fonts)}/VenusGlyphs-Regular.svg#VenusGlyphs-Regular") format("svg"),
+                    url("#{map-get($path-assets, fonts)}/VenusGlyphs-Regular.woff") format("woff"),
+                    url("#{map-get($path-assets, fonts)}/VenusGlyphs-Regular.woff2") format("woff2"),
+                    url("#{map-get($path-assets, fonts)}/VenusGlyphs-Regular.ttf") format("truetype");
+}
 
 i.aph {
 	&[class*="icon-"] {

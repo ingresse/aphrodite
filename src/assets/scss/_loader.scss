@@ -66,6 +66,11 @@ $this: ".aph.loader";
         &__spinner__image {
             width : 64px;
             height: 64px;
+
+            background-repeat  : no-repeat;
+            background-position: center;
+            background-size    : 64px;
+            background-image   : url('./images/loader--spinner.gif');
         }
 
         &__spinner,

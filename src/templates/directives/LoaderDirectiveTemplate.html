@@ -2,12 +2,11 @@
      data-ng-hide="activities.length === 0 && errors.length === 0">
     <div class="aph loader__content">
         <div class="aph container">
-            <figure class="aph loader__content__spinner"
+            <div class="aph loader__content__spinner"
                  data-ng-show="activities.length !== 0">
-                <img class="aph loader__content__spinner__image"
-                     data-ng-src="./assets/images/loader--spinner.gif"
-                     alt="Loading" />
-            </figure>
+                <span class="aph loader__content__spinner__image">
+                </span>
+            </div>
 
             <div class="aph loader__content__message"
                  data-ng-repeat="activity in activities">
