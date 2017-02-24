@@ -65,7 +65,7 @@ $this: ".aph.navbar";
                     background-size    : 32px 32px;
                     background-repeat  : no-repeat;
                     background-position: center;
-                    background-image   : url("#{map-get($path-assets, images)}/application-logo.svg");
+                    background-image   : url("/assets/images/application-logo.svg");
                 }
 
                 &__slogan {
@@ -188,6 +188,22 @@ $this: ".aph.navbar";
                     }
                 }
 
+                .aph.form {
+                    margin   : 10px 0 10px 20px;
+                    min-width: 320px;
+
+                    .aph.form__control {
+                        &[type="search"] {
+                            border-radius: 0;
+                            border-color : transparent;
+
+                            &:focus {
+                                border-bottom-color: $color-blue;
+                            }
+                        }
+                    }
+                }
+
                 &--right {
                     float: right;
 
@@ -197,6 +213,11 @@ $this: ".aph.navbar";
                                 margin-right: -10px;
                             }
                         }
+                    }
+
+                    .aph.form {
+                        margin-right: 20px;
+                        margin-left : 0;
                     }
                 }
             }
@@ -228,7 +249,19 @@ $this: ".aph.navbar";
                 color: $color-white;
 
                 &__logo {
-                    background-image: url("#{map-get($path-assets, images)}/application-logo--inverted.svg");
+                    background-image: url("/assets/images/application-logo--inverted.svg");
+                }
+            }
+
+            &__menu {
+                .aph.form {
+                    .aph.form__control {
+                        &[type="search"] {
+                            &:focus {
+                                border-bottom-color: $color-white;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -306,6 +339,21 @@ $this: ".aph.navbar";
     &--fixed-top {
         position: fixed;
         z-index: 1030;
+    }
+}
+
+@include sm {
+    #{$this} {
+        &__nav {
+            #{$this} {
+                &__menu.list {
+                    .aph.form {
+                        min-width  : 180px;
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
     }
 }
 

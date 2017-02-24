@@ -1,11 +1,12 @@
 {
   "name": "aphrodite",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": [
     "./dist/scripts/aphrodite.js",
     "./dist/assets/aphrodite.css"
   ],
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "angular": "1.5.10",
     "animate.css": "~3.*",
     "angular-animate": "1.5.10",
@@ -13,9 +14,7 @@
     "angular-scroll": "^1.0.0",
     "flexboxgrid": "^6.3.2",
     "angular-ui-utils": "~0.*",
-    "Croppie": "croppie#^2.4.0"
-  },
-  "devDependencies": {
+    "Croppie": "croppie#^2.4.0",
     "angular-mocks": "~1.*",
     "angular-scenario": "~1.*",
     "angular-route": "~1.5.10"

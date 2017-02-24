@@ -1,59 +1,63 @@
 /* Tooltip
 -------------------------------------------------------------------------- */
-$this: ".tooltip";
+$this: ".aph.tooltip";
 #{$this} {
     position: relative;
 
     &__content {
         position: absolute;
-        bottom: 28px;
-        left: calc(50% - 110px);
+        bottom  : 28px;
+        left    : calc(50% - 110px);
 
-        padding: 8px 4px;
-        width: 220px;
+        padding: 7px 4px 6px;
+        width  : 220px;
 
-        font-size: 10px;
-        font-weight: bold;
+        font-size  : 11px;
+        font-weight: normal;
         line-height: 1.3;
-        text-align: center;
+        text-align    : center;
         text-transform: none;
 
-        color: $color-grey;
-        border: 1px solid $color-light-grey;
-        background-color: $color-white-smoke;
-        word-break: keep-all;
+        color           : $color-black;
+        background-color: $color-white;
+        box-shadow      : 0 0 4px $color-light-grey;
+
+        word-break   : keep-all;
         border-radius: 4px;
-        transition: .25s;
+        transition   : .25s;
 
         visibility: hidden;
-        opacity: 0;
+        opacity   : 0;
 
         &:before,
         &:after {
-            content: " ";
+            content : " ";
             position: absolute;
-            top: 100%;
+
+            top : 100%;
             left: 46%;
-            width: 0;
+
+            width : 0;
             height: 0;
         }
 
         &:before {
-            border-top: 8px solid $color-light-grey;
+            border-top  : 8px solid #eeeeee;
             border-right: 8px solid transparent;
-            border-left: 8px solid transparent;
+            border-left : 8px solid transparent;
         }
 
         &:after {
-            border-top: 6px solid $color-white-smoke;
+            border-top  : 6px solid $color-white;
             border-right: 6px solid transparent;
-            border-left: 6px solid transparent;
+            border-left : 6px solid transparent;
+
             margin-left: 2px;
         }
 
         &--small {
             width: 132px;
-            left: calc(50% - 66px);
+            left : calc(50% - 66px);
 
             &:before,
             &:after {
@@ -67,19 +71,21 @@ $this: ".tooltip";
 
             &:before,
             &:after {
-                top: 50%;
+                top : 50%;
                 left: -15px;
             }
 
             &:before {
                 margin-top: -7px;
+
                 border-width: 7px;
                 border-style: solid;
             }
 
             &:after {
-                margin-top: -6px;
+                margin-top : -6px;
                 margin-left: 3px;
+
                 border-width: 6px;
                 border-style: solid;
             }
@@ -89,31 +95,32 @@ $this: ".tooltip";
             left: 180%;
 
             &:before {
-                border-color: transparent $color-light-grey transparent transparent;
+                border-color: transparent $color-white transparent transparent;
             }
 
             &:after {
-                border-color: transparent $color-white-smoke transparent transparent;
+                border-color: transparent #eeeeee transparent transparent;
             }
         }
 
         &--left {
             right: 180%;
-            left: auto;
+            left : auto;
 
             &:before,
             &:after {
                 right: -15px;
-                left: auto;
+                left : auto;
             }
 
             &:before {
-                border-color: transparent transparent transparent $color-light-grey;
+                border-color: transparent transparent transparent #eeeeee;
             }
 
             &:after {
-                border-color: transparent transparent transparent $color-white-smoke;
+                border-color: transparent transparent transparent $color-white;
                 margin-right: 3px;
+
                 margin-left: 0;
             }
         }
@@ -141,11 +148,11 @@ $this: ".tooltip";
 
             &.mob-reset {
                 right: auto;
-                left: calc(50% - 105px);
+                left : calc(50% - 105px);
 
                 &:before,
                 &:after {
-                    left: 50%;
+                    left : 50%;
                     right: auto;
                 }
             }
@@ -156,19 +163,21 @@ $this: ".tooltip";
 
                 &:before,
                 &:after {
-                    top: 50%;
+                    top : 50%;
                     left: -15px;
                 }
 
                 &:before {
                     margin-top: -7px;
+
                     border-width: 7px;
                     border-style: solid;
                 }
 
                 &:after {
-                    margin-top: -6px;
+                    margin-top : -6px;
                     margin-left: 3px;
+
                     border-width: 6px;
                     border-style: solid;
                 }
@@ -178,31 +187,32 @@ $this: ".tooltip";
                 left: 180%;
 
                 &:before {
-                    border-color: transparent $color-light-grey transparent transparent;
+                    border-color: transparent #eeeeee transparent transparent;
                 }
 
                 &:after {
-                    border-color: transparent $color-white-smoke transparent transparent;
+                    border-color: transparent $color-white transparent transparent;
                 }
             }
 
             &.mob-left {
                 right: 180%;
-                left: auto;
+                left : auto;
 
                 &:before,
                 &:after {
                     right: -15px;
-                    left: auto;
+                    left : auto;
                 }
 
                 &:before {
-                    border-color: transparent transparent transparent $color-light-grey;
+                    border-color: transparent transparent transparent #eeeeee;
                 }
 
                 &:after {
-                    border-color: transparent transparent transparent $color-white-smoke;
+                    border-color: transparent transparent transparent $color-white;
                     margin-right: 3px;
+
                     margin-left: 0;
                 }
             }

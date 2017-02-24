@@ -1,0 +1,17 @@
+/* Colors Utils
+-------------------------------------------------------------------------- */
+
+// Background
+@each $color-class, $color-primary, $color-inverse in $principal-colors {
+    .bg-#{$color-class} {
+        background-color: $color-primary;
+        color: $color-inverse;
+    }
+}
+
+// Text
+@each $color-class, $color-primary, $color-inverse in $principal-colors {
+    .text-#{$color-class} {
+        color: $color-primary;
+    }
+}

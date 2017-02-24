@@ -1,22 +1,15 @@
 $this: ".aph.form";
 #{$this} {
-    -webkit-tap-highlight-color: rgba($color-white, 0);
-
-    * {
-        -webkit-tap-highlight-color: rgba($color-white, 0);
-    }
-
     &--with-fields {
-        margin-top   : -#{$container-horizontal-padding};
-        margin-bottom: -#{$container-horizontal-padding};
+        margin-top: -#{$container-horizontal-padding / 2};
     }
 
     &__label {
         display: inline-block;
-        margin : -5px 0 8px;
+        margin : 5px 0;
 
         font-size     : 13px;
-        line-height   : 1.1;
+        line-height   : 20px;
         font-weight   : 500;
         text-transform: uppercase;
 
@@ -89,6 +82,11 @@ $this: ".aph.form";
         &:-ms-input-placeholder {
             line-height: 1.5;
             @include placeholder-style;
+        }
+
+        &:-webkit-autofill {
+            -webkit-box-shadow     : 0 0 0 1000px $color-light-blue inset !important;
+            -webkit-text-fill-color: $color-black !important;
         }
 
         &:focus {
@@ -415,11 +413,11 @@ $this: ".aph.form";
     }
 
     &__field {
-        margin     : #{$container-horizontal-padding} 0;
-        line-height: .5;
+        margin     : #{$container-horizontal-padding / 2} 0 0;
+        line-height: 20px;
 
         &--large {
-            margin: #{$container-horizontal-padding * 2} 0;
+            margin: #{$container-horizontal-padding} 0;
         }
 
         #{$this} {

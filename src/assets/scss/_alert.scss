@@ -119,20 +119,14 @@ $this: ".aph.alert";
     &__actions {
         text-align: right;
 
-        margin: 14px 0 4px 0;
+        margin: 15px 0 5px;
     }
 
     &.ng-hide {
-        line-height: 0;
-        animation  : fadeOut .15s;
+        animation: fadeOut .25s;
     }
 
     .aph.btn {
-        font-size  : 13px;
-        font-weight: 500;
-
-        min-height : 30px;
-        padding    : 5px 15px;
         margin-left: 15px;
 
         &:first-of-type {

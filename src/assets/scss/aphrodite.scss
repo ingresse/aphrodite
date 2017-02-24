@@ -1,4 +1,4 @@
-/* Version: 1.0.0 */
+/* Version: 1.1.0 */
 
 // CSS Reset
 @import '_reset';
@@ -11,8 +11,8 @@
 @import '_mixins';
 @import '_fonts';
 @import '_container';
-@import '_icons';
 @import '_keyframes';
+@import '_colors-utils';
 
 // Elements
 @import '_alert';
@@ -26,6 +26,8 @@
 @import '_form__control-with-icon';
 @import '_form__range';
 @import '_form__switch';
+@import '_image-crop';
+@import '_img';
 @import '_list';
 @import '_loader';
 @import '_navbar';

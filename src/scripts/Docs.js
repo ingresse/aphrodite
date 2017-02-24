@@ -2,7 +2,6 @@
 
 angular.module('aphrodite-docs', [
     'ngRoute',
-    'duScroll',
     'aphrodite'
 ])
 .config(function ($routeProvider) {

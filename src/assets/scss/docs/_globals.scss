@@ -4,48 +4,6 @@ html, body {
     height: 100%;
 }
 
-.docs {
-    &__header {
-        text-align: center;
-
-        background-color: $color-blue;
-        background-image: linear-gradient(to bottom, lighten($color-blue, 20%), lighten($color-orange, 20%));
-
-        &__image {
-            display: block;
-            margin : 10px auto 14px;
-
-            width : 150px;
-            height: 150px;
-
-            background-repeat  : no-repeat;
-            background-position: center;
-            background-size    : 150px 150px;
-            background-image   : url("#{map-get($path-assets, images)}/aphrodite-logo.svg");
-        }
-
-        .docs-header {
-            &__title {
-                color: $color-white;
-            }
-
-            &__subtitle {
-                color  : $color-dark-grey;
-                opacity: .5;
-            }
-
-            @include xs {
-                &__title {
-                    &.aph.heavy {
-                        font-size  : 50px;
-                        line-height: 50px;
-                    }
-                }
-            }
-        }
-    }
-}
-
 $navbar-override: ".aph.navbar";
 
 #{$navbar-override} {

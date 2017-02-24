@@ -16,7 +16,7 @@ $legacy_support_for_ie: false !default; // Used also in Compass
 
 
 // Set the default font family here so you don't have to override it later
-$normalized_font_family: "Roboto", "Helvetica Neue", sans-serif !default;
+$normalized_font_family: "Helvetica Neue", "Arial", sans-serif !default;
 
 $normalize_headings: true !default;
 
@@ -533,4 +533,9 @@ input {
   ::-webkit-scrollbar {
     display: none;
   }
+}
+
+
+* {
+  -webkit-tap-highlight-color: rgba(#ffffff, 0);
 }

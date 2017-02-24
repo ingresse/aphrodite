@@ -12,12 +12,10 @@ angular.module('aphrodite-docs')
         controller : function ($rootScope, $scope, $element) {
             $element.addClass('docs-component');
 
-            $scope.visible = false;
-
             $scope.visibility = function () {
-                $scope.visible = !$scope.visible;
+                $scope.properties.visible = !$scope.properties.visible;
 
-                if ($scope.visible) {
+                if ($scope.properties.visible) {
                     scroll.toTop($element[0].offsetTop - 60);
                 }
             };

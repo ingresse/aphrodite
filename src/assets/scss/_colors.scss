@@ -60,47 +60,28 @@ $color-dark-pastel-green: rgb(25, 174, 53);         // #19AE35  OK
 $principal-colors:
     ("white",               $color-white,               $color-dark-grey),
     ("white-smoke",         $color-white-smoke,         $color-dark-grey),
-    
+
     ("light-grey",          $color-light-grey,          $color-dark-grey),
     ("grey",                $color-grey,                $color-white),
     ("dark-grey",           $color-dark-grey,           $color-white),
-    
+
     ("black",               $color-black,               $color-white),
-    
+
     ("lightning-yellow",    $color-lightning-yellow,    $color-white),
     ("gamboge",             $color-gamboge,             $color-white),
-    
+
     ("orange",              $color-orange, 	            $color-white),
     ("tahiti-gold",         $color-tahiti-gold,         $color-white),
-    
+
     ("light-blue",          $color-light-blue,          $color-blue),
     ("blue",                $color-blue,                $color-white),
     ("lochmara",            $color-lochmara,            $color-white),
-    
+
     ("blue-facebook",       $color-blue-facebook,       $color-white),
-    
+
     ("red",                 $color-red,                 $color-white),
     ("fire-engine-red",     $color-fire-engine-red,     $color-white),
-    
+
     ("green",               $color-green,               $color-white),
     ("dark-pastel-green",   $color-dark-pastel-green,   $color-white)
 ;
-
-
-/* Colors Utils
--------------------------------------------------------------------------- */
-
-// Background
-@each $color-class, $color-primary, $color-inverse in $principal-colors {
-    .bg-#{$color-class} {
-        background-color: $color-primary;
-        color: $color-inverse;
-    }
-}
-
-// Text
-@each $color-class, $color-primary, $color-inverse in $principal-colors {
-    .text-#{$color-class} {
-        color: $color-primary;
-    }
-}

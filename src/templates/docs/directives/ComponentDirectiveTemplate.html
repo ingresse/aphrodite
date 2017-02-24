@@ -3,7 +3,7 @@
 
     <button class="docs-component__view-code__button"
             data-ng-click="visibility()"
-            data-ng-class="{ 'active' : visible }"
+            data-ng-class="{ 'active' : properties.visible }"
             title="View source code">
         &lt;/&gt;
     </button>
@@ -27,7 +27,7 @@
 <div data-ng-if="!properties.hideCode">
 
     <div class="docs-component__code"
-         data-ng-show="visible">
+         data-ng-show="properties.visible">
 
         <code-show file="{{ properties.templateUrl }}"></code-show>
 

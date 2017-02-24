@@ -16,7 +16,10 @@ var paths = {
         './src/templates/code-examples/{,*/,*/*/,*/*/*/}*.html',
         './src/templates/directives/docs/{,*/,*/*/,*/*/*/}*.html',
     ],
-    sass   : './src/assets/scss/aphrodite.scss',
+    sass   : [
+        './src/assets/scss/aphrodite.scss',
+        './src/assets/scss/aphrodite-icons.scss'
+    ],
     sassDoc: './src/assets/scss/docs/aphrodite-docs.min.scss',
     sassAll: './src/assets/scss/{,*/}*.scss',
     css    : './src/assets/css/*.css',

@@ -24,32 +24,38 @@ angular.module('aphrodite-docs')
                 title: 'Button',
             },
             {
-                id   : 'icons',
-                title: 'Icons',
-            },
-            {
-                id   : 'tag',
-                title: 'Tag',
-            },
-            {
-                id   : 'divider',
-                title: 'Divider',
-            },
-            {
-                id   : 'drag-and-drop',
-                title: 'Drag & Drop',
-            },
-            {
                 id   : 'table',
                 title: 'Table',
+            },
+            {
+                id   : 'lists',
+                title: 'Lists',
             },
             {
                 id   : 'navbar',
                 title: 'Navbar',
             },
             {
-                id   : 'lists',
-                title: 'Lists',
+                id   : 'drag-and-drop',
+                title: 'Drag & Drop',
+            },
+            {
+                id   : 'divider',
+                title: 'Divider',
+            },
+            {
+                id   : 'tag',
+                title: 'Tag',
+            },
+            {
+                id      : 'fonts',
+                title   : 'Fonts (Optional)',
+                optional: true,
+            },
+            {
+                id      : 'icons',
+                title   : 'Icons (Optional)',
+                optional: true,
             },
         ]
     },
@@ -59,20 +65,16 @@ angular.module('aphrodite-docs')
         path : '/components/',
         items: [
             {
+                id   : 'alert',
+                title: 'Alert',
+            },
+            {
                 id   : 'switch',
                 title: 'Switch',
             },
             {
-                id   : 'range',
-                title: 'Range',
-            },
-            {
-                id   : 'progress-bar',
-                title: 'Progress Bar',
-            },
-            {
-                id   : 'alert',
-                title: 'Alert',
+                id   : 'toggle',
+                title: 'Toggle',
             },
             {
                 id        : 'selector',
@@ -80,8 +82,12 @@ angular.module('aphrodite-docs')
                 controller: 'ComponentSelectorController'
             },
             {
-                id   : 'toggle',
-                title: 'Toggle',
+                id   : 'progress-bar',
+                title: 'Progress Bar',
+            },
+            {
+                id   : 'range',
+                title: 'Range',
             },
         ]
     },
