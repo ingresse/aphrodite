@@ -6,11 +6,11 @@ angular.module('aphrodite')
         restrict   : 'E',
         templateUrl: 'directives/LoaderDirectiveTemplate.html',
         scope      : {},
-        controller : function ($scope) {
-            $scope.activities = loader.activities;
-            $scope.errors     = loader.errors;
+        link       : function (scope) {
+            scope.activities = loader.activities;
+            scope.errors     = loader.errors;
 
-            $scope.clearError = function (error) {
+            scope.clearError = function (error) {
                 loader.clearError(error);
             };
         }

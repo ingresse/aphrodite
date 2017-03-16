@@ -1,7 +1,7 @@
 # Aphrodite
 ### UI framework from ingresse.com
 
-A front-end framework with Ingresse styles, using AngularJS 1.5.10.
+A front-end framework with Ingresse styles, using AngularJS 1.6.3.
 
 (If you want, can use just the CSS)
 

@@ -4,40 +4,29 @@ angular.module('aphrodite-docs', [
     'ngRoute',
     'aphrodite'
 ])
-.config(function ($routeProvider) {
+.config(function ($routeProvider, $locationProvider) {
+    $locationProvider.hashPrefix('');
+
     $routeProvider
         .when('/', {
             templateUrl: 'docs/main-template.html',
             controller : 'MainController',
         })
-        .when('/updates', {
-            templateUrl: 'docs/updates-template.html',
-            controller : 'UpdatesController'
-        })
-        .when('/css', {
-            templateUrl: 'docs/css-template.html',
-        })
         .when('/css/:featureId', {
             templateUrl: function (urlattr) {
-                return 'docs/css/' + urlattr.featureId + '-template.html';
+                return 'docs/docs-css/' + urlattr.featureId + '-template.html';
             },
             controller : 'CSSGenericController'
         })
-        .when('/components', {
-            templateUrl: 'docs/components-template.html',
-        })
-        .when('/components/:componentId', {
+        .when('/directives/:directiveId', {
             templateUrl: function (urlattr) {
-                return 'docs/components/' + urlattr.componentId + '-template.html';
+                return 'docs/docs-directives/' + urlattr.directiveId + '-template.html';
             },
-            controller : 'ComponentsGenericController'
-        })
-        .when('/services', {
-            templateUrl: 'docs/services-template.html',
+            controller : 'DirectivesGenericController'
         })
         .when('/services/:serviceId', {
             templateUrl: function (urlattr) {
-                return 'docs/services/' + urlattr.serviceId + '-template.html';
+                return 'docs/docs-services/' + urlattr.serviceId + '-template.html';
             },
             controller: 'ServicesGenericController'
         })

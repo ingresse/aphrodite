@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('aphrodite-docs')
-.controller('ComponentsGenericController', function ($scope) {
+.controller('DirectivesGenericController', function ($scope) {
 
     /*
-     * Selector Component
+     * Selector Directive
      */
 
     // Basic
@@ -62,7 +62,7 @@ angular.module('aphrodite-docs')
 
 
     /*
-     * Custom Select Component
+     * Custom Select Directive
      */
 
     $scope.selectedTicket = '';

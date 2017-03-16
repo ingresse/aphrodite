@@ -9,7 +9,7 @@
             </div>
 
             <div class="aph loader__content__message"
-                 data-ng-repeat="activity in activities">
+                 data-ng-repeat="activity in activities track by $index">
                 <div data-ng-if="!activity.title && !activity.text"
                      data-ng-bind-html="activity | unsafe">
                 </div>
@@ -26,7 +26,7 @@
             </div>
 
             <div class="aph loader__content__error"
-                 data-ng-repeat="error in errors">
+                 data-ng-repeat="error in errors track by $index">
                 <div data-ng-bind-html="error | unsafe"></div>
                 <button class="aph loader__content__error__icon"
                         data-ng-click="clearError(error)"
