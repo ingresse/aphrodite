@@ -60,9 +60,9 @@ angular.module('aphrodite-docs')
         ]
     },
     {
-        id   : 'components',
-        title: 'Components',
-        path : '/components/',
+        id   : 'directives',
+        title: 'Directives',
+        path : '/directives/',
         items: [
             {
                 id   : 'alert',

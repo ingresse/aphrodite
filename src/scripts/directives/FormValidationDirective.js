@@ -12,7 +12,7 @@ angular.module('aphrodite')
         link    : function (scope, element, attrs, formController) {
             if (!attrs.formValidation) {
                 return console.error(
-                    'VENUS FORM VALIDATION ERROR:\n' +
+                    'APH FORM VALIDATION ERROR:\n' +
                     'Need to declare the attribute "name" and send as param.\n' +
                     'Example:\n' +
                     '<form name="myForm" data-form-validation="myForm"></form>'
@@ -39,7 +39,7 @@ angular.module('aphrodite')
                 }
 
                 console.info(
-                    'VENUS FORM VALIDATION:\nForm marked as CHANGED.\n\n'
+                    'APH FORM VALIDATION:\nForm marked as CHANGED.\n\n'
                 );
 
                 formController.changed = true;
@@ -52,7 +52,7 @@ angular.module('aphrodite')
                 }
 
                 console.info(
-                    'VENUS FORM VALIDATION:\nElement "' +
+                    'APH FORM VALIDATION:\nElement "' +
                     evt.srcElement.name +
                     '" marked as DIRTY.\n\n'
                 );

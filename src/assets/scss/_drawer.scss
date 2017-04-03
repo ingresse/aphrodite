@@ -27,7 +27,7 @@ $this: ".aph.drawer";
 
     &.active {
         left: 0;
-        box-shadow: 0 0 10px 0 rgba($color-black, .9);
+        box-shadow: 1px 0 5px 0 rgba($color-dark-grey, .9);
     }
 
     &__menu {

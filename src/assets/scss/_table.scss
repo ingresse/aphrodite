@@ -54,8 +54,12 @@ $this: ".aph.table";
 
     &--hover {
         tbody {
-            tr:hover {
-                background-color: $color-white-smoke;
+            tr {
+                transition: background-color .15s linear;
+
+                &:hover {
+                    background-color: $color-white-smoke;
+                }
             }
         }
 

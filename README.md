@@ -1,7 +1,7 @@
 # Aphrodite
 ### UI framework from ingresse.com
 
-A front-end framework with Ingresse styles, using AngularJS 1.5.10.
+A front-end framework with Ingresse styles, using AngularJS 1.6.3.
 
 (If you want, can use just the CSS)
 
@@ -32,6 +32,10 @@ After, include files in your page.
           href="/assets/aphrodite-icons.css" />
 </head>
 <body>
+    ...
+    <!-- OPTIONAL: AngularJS -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js">
+    </script>
     ...
     <!-- OPTIONALS: Components and Services AngularJS based -->
     <script type="text/javascript" src="/scripts/aphrodite-vendors.js">
@@ -68,6 +72,10 @@ Include files in your App `index` file.
 </head>
 <body>
     ...
+    <!-- OPTIONAL: AngularJS -->
+    <script type="text/javascript" src="/bower_components/angular/angular.js">
+    </script>
+
     <!-- OPTIONALS: Components and Services AngularJS based -->
     <script type="text/javascript" src="/bower_components/aphrodite/dist/scripts/aphrodite-vendors.js">
     </script>
@@ -76,6 +84,15 @@ Include files in your App `index` file.
 </body>
 ...
 ```
+_
+
+## AngularJS dependencies included in 'aphrodite-vendors'
+- 3.x.xx [animate.css](https://github.com/daneden/animate.css/)
+- 1.6.03 [angular-animate](https://github.com/angular/bower-angular-animate)
+- 2.10.1 [angular-click-outside](https://github.com/IamAdamJowett/angular-click-outside)
+- 1.0.00 [angular-scroll](https://github.com/oblador/angular-scroll)
+- 0.x.xx [angular-ui-utils](https://github.com/angular-ui/ui-utils)
+
 _
 
 ## [Documentation](http://ingresse.github.io/aphrodite)
