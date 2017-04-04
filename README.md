@@ -1,7 +1,7 @@
 # Aphrodite
 ### UI framework from ingresse.com
 
-A front-end framework with Ingresse styles, using AngularJS 1.6.3.
+A front-end framework with Ingresse styles, using AngularJS 1.6.4.
 
 (If you want, can use just the CSS)
 
@@ -87,11 +87,11 @@ Include files in your App `index` file.
 _
 
 ## AngularJS dependencies included in 'aphrodite-vendors'
-- 3.x.xx [animate.css](https://github.com/daneden/animate.css/)
-- 1.6.03 [angular-animate](https://github.com/angular/bower-angular-animate)
+- 3.x [animate.css](https://github.com/daneden/animate.css/)
+- 1.6.4 [angular-animate](https://github.com/angular/bower-angular-animate)
 - 2.10.1 [angular-click-outside](https://github.com/IamAdamJowett/angular-click-outside)
-- 1.0.00 [angular-scroll](https://github.com/oblador/angular-scroll)
-- 0.x.xx [angular-ui-utils](https://github.com/angular-ui/ui-utils)
+- 1.0 [angular-scroll](https://github.com/oblador/angular-scroll)
+- 0.x [angular-ui-utils](https://github.com/angular-ui/ui-utils)
 
 _
 
