@@ -33,7 +33,7 @@ $this: ".aph.btn";
     &:focus {
         outline         : 0;
         background-image: none;
-        background-color: darken($color-blue, 10%) !important;
+        background-color: $color-lochmara;
     }
 
     &.disabled,
@@ -71,10 +71,12 @@ $this: ".aph.btn";
         padding-top   : 9px;
         padding-bottom: 9px;
 
-        &:hover {
+        &:hover,
+        &:focus,
+        &:active {
             color           : $color-white;
-            background-color: $color-lochmara;
-            border-color    : $color-lochmara;
+            background-color: $color-blue;
+            border-color    : $color-blue;
         }
 
         &.disabled,
@@ -98,16 +100,8 @@ $this: ".aph.btn";
         &:hover:not(:disabled),
         &:active,
         &:focus {
-            color: $color-white;
-        }
-
-        &:hover:not(:disabled) {
             color           : $color-white;
-            background-color: rgba($color-black, .05);
-        }
-
-        &:active {
-            background-color: rgba($color-black, .15);
+            background-color: $color-blue;
         }
 
         &.disabled,
@@ -181,7 +175,7 @@ $this: ".aph.btn";
             &:hover,
             &:active,
             &:focus {
-                background-color: darken($btn_bgColor, 10%) !important;
+                background-color: darken($btn_bgColor, 10%);
             }
 
             &#{$this} {
@@ -193,8 +187,8 @@ $this: ".aph.btn";
                     &:hover,
                     &:focus,
                     &:active {
-                        color       : $btn_txtColor;
-                        border-color: darken($btn_bgColor, 10%);
+                        color           : $btn_txtColor;
+                        background-color: $btn_bgColor;
                     }
                 }
 
@@ -206,11 +200,7 @@ $this: ".aph.btn";
                     &:focus,
                     &:active {
                         color: $btn_txtColor;
-                    }
-
-                    &:active {
-                        color           : $btn_bgColor;
-                        background-color: transparent !important;
+                        background-color: $btn_bgColor;
                     }
 
                     &.disabled,
@@ -235,25 +225,20 @@ $this: ".aph.btn";
         }
     }
 
-    &.dropdown {
-        min-width: 0;
-        padding  : 12px 20px 16px;
+    // Button White
+    &--white {
+        &#{$this} {
+            &--bordered {
+                color       : $color-white;
+                border-color: $color-white;
 
-        &:active {
-            padding: 23px 20px 15px;
-        }
-
-        &:after {
-            position: absolute;
-            content: "";
-            width: 0;
-            height: 0;
-            display: block;
-            border-style: solid;
-            border-color: $text-button-color transparent transparent transparent;
-            top: 45%;
-            left: 38%;
-            border-width: 4px 4px 0;
+                &:hover,
+                &:focus,
+                &:active {
+                    color           : $color-white;
+                    background-color: rgba($color-white, .25);
+                }
+            }
         }
     }
 }
