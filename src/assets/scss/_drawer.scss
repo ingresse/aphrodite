@@ -6,9 +6,9 @@ $this: ".aph.drawer";
     z-index : 1030;
 
     top   : 0;
-    left  :-300px;
+    left  :-230px;
 
-    width : 300px;
+    width : 230px;
     height: 100%;
 
     background: $color-white-smoke;
@@ -31,11 +31,44 @@ $this: ".aph.drawer";
     }
 
     &__menu {
+        &__user {
+            &__photo,
+            &__name {
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            &__photo {
+                width : 32px;
+                height: 32px;
+                margin: -1px 5px 0 0;
+                border-radius: 50%;
+            }
+
+            &__name {
+                margin: 0;
+                width : calc(100% - 50px);
+            }
+        }
+
         &.aph.list {
+            font-size  : 16px;
+            line-height: 20px;
+
+            &__item {
+                margin-bottom: 10px;
+            }
+
             &:first-child {
                 .aph.list__header {
                     margin-top: 14px;
                 }
+            }
+
+            i.aph[class*=icon-] {
+                top: 3px;
+                font-size: 23px;
+                margin-right: 4px;
             }
         }
     }

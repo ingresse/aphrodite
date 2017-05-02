@@ -1,0 +1,44 @@
+<ul class="aph pag">
+
+    <li class="aph pag__item pag__item--prev"
+        data-ng-show="current > 1"
+        data-ng-click="previous();"
+        title="Página anterior"
+        >&lsaquo;</li>
+
+    <li class="aph pag__item"
+        data-ng-click="selector(1);"
+        data-ng-show="2 < current - visibleHalf"
+        title="Primeira página"
+        >1</li>
+
+    <li class="aph pag__item pag__item--disabled"
+        data-ng-show="2 < current - visibleHalf"
+        title="Existem páginas entre o número anterior e o seguinte"
+        >...</li>
+
+    <li class="aph pag__item"
+        data-ng-class="{ 'pag__item--active': page === current }"
+        data-ng-repeat="page in getPages(last) track by $index"
+        data-ng-click="goTo(page);"
+        title="{{ page === current ? 'Você está nessa página' : 'Ir para a página ' + page }}"
+        >{{ page }}</li>
+
+    <li class="aph pag__item pag__item--disabled"
+        data-ng-show="last > current + visibleHalf"
+        title="Existem páginas entre o número anterior e o seguinte"
+        >...</li>
+
+    <li class="aph pag__item"
+        data-ng-click="selector(last);"
+        data-ng-show="last > current + visibleHalf"
+        title="Ir para a última página"
+        >{{ last }}</li>
+
+    <li class="aph pag__item pag__item--next"
+        data-ng-show="current < last"
+        data-ng-click="next();"
+        title="Próxima página"
+        >&rsaquo;</li>
+
+</ul>
