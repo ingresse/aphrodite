@@ -91,6 +91,12 @@ $this: ".aph.dropdown";
                 &:hover {
                     background-color: $color-white-smoke;
                 }
+
+                &--external {
+                    background-repeat  : no-repeat;
+                    background-position: 95% 8px;
+                    background-image   : url('/assets/icons/icon--external-link.svg');
+                }
             }
         }
     }

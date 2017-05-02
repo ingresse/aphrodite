@@ -12,7 +12,7 @@ angular.module('aphrodite')
 
             if (!attrs.drawer) {
                 console.error(
-                    'VENUS DRAWER DIRECTIVE:\n' +
+                    'APH DRAWER DIRECTIVE:\n' +
                     'Need to declare "drawer" ' +
                     'attribute with id of content element.'
                 );
@@ -22,7 +22,7 @@ angular.module('aphrodite')
 
             if (drawerNav.length === 0) {
                 console.error(
-                    'VENUS DRAWER DIRECTIVE:\n' +
+                    'APH DRAWER DIRECTIVE:\n' +
                     'Can\'t find "#' + attrs.drawer + '" ' +
                     'content element.'
                 );

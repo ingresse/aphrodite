@@ -1,41 +1,92 @@
-$this: ".aph.pagination";
+$this: ".aph.pag";
 #{$this} {
-    list-style: none;
     display: inline-block;
-    padding-left: 0;
-    @include font-size-pagination;
+    margin : 0 auto -4px;
+    padding: 6px 10px;
 
-    > li {
-        display: inline;
+    font-size  : 16px;
+    line-height: 20px;
 
-        > a,
-        > span {
-        position: relative;
-        float: left;
-        text-decoration: none;
-        color: $pagination-color;
-        background: transparent;
-        margin-left: -1px;
-        padding: 12px;
+    list-style: none;
 
-            &.disabled {
-                color: $pagination-disabled;
-                cursor: default;
-            }
-        }
+    border       : 1px solid $color-light-grey;
+    border-radius: 4px;
+    background   : $color-white;
+    box-shadow   : 0 0 2px 0 rgba(0, 0, 0, .2);
 
-        &:first-child {
-            > a,
-            > span {
-                margin-left: 0;
-            }
-        }
+    &:before,
+    &:after {
+        display: table;
+        content: " ";
     }
 
-    [class*="icon-"] {
-        font-size: 34px;
-        line-height: 20px;
-        position: relative;
-        top: -4px;
+    &-container {
+        display: block;
+        min-height: 50px;
+        text-align: center;
+    }
+
+    &__item {
+        display       : inline-block;
+        vertical-align: middle;
+
+        margin : 5px 2px;
+        padding: 0 5px;
+
+        line-height: 25px;
+
+        min-width: 25px;
+        height   : 25px;
+
+        border-radius: 4px;
+
+        color: $color-blue;
+
+        text-align: center;
+
+        transition: background .2s linear;
+
+        &[data-ng-click] {
+            cursor: pointer;
+        }
+
+        &:hover {
+            background: lighten($color-blue, 45%);
+        }
+
+        &--prev,
+        &--next {
+            color     : $color-white;
+            background: $color-blue;
+
+            font-size  : 24px;
+            line-height: 23px;
+
+            &:hover {
+                background: $color-blue;
+            }
+        }
+
+        &--active,
+        &--disabled {
+            color : $color-dark-grey;
+
+            &[data-ng-click] {
+                cursor: initial;
+            }
+
+            &:hover {
+                background: none;
+            }
+        }
+
+        &--disabled {
+            padding-right: 0;
+            padding-left : 0;
+            margin-right : 0;
+            margin-left  : 0;
+
+            min-width: 15px;
+        }
     }
 }

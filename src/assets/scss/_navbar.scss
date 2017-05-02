@@ -304,7 +304,7 @@ $this: ".aph.navbar";
 
                 &.list {
                     .list__border {
-                        border-color: rgba($color-white, .25);
+                        border-color: rgba($color-white, .5);
                     }
 
                     .list__item,
@@ -428,20 +428,6 @@ $this: ".aph.navbar";
 
                     &__drawer {
                         display: block;
-                    }
-                }
-            }
-        }
-
-        &--inverted {
-            #{$this} {
-                &__nav {
-                    #{$this} {
-                        &__menu {
-                            &__drawer {
-                                background-image   : url("#{map-get($path-assets, icons)}/icon--hamburger-menu--white.svg");
-                            }
-                        }
                     }
                 }
             }
