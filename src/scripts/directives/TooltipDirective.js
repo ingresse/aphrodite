@@ -4,7 +4,6 @@ angular.module('aphrodite')
 .directive('tooltip', function () {
     return {
         restrict   : 'A',
-        transclude : true,
         templateUrl: 'directives/TooltipDirectiveTemplate.html',
         scope      : {
             tooltipOptions: '='
@@ -21,7 +20,7 @@ angular.module('aphrodite')
                 scope.tooltipSize = (scope.options && scope.options.size) ?
                     'tooltip__content--' + scope.options.size : '';
 
-                element.addClass('tooltip');
+                element.addClass('aph tooltip');
             }
         }
     };
