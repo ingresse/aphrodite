@@ -57,10 +57,11 @@ $this: ".aph.form";
         -webkit-appearance: none;
 
         background-color: $color-white;
-        box-shadow      : none;
+        box-shadow      : inset 0 0 4px 0 $color-light-grey;
 
-        border : 1px solid $input-border-color;
-        @include border-radius(3px);
+        border: 1px solid transparent;
+
+        @include border-radius(4px);
         @include transition;
 
         &::placeholder {
@@ -90,20 +91,19 @@ $this: ".aph.form";
         }
 
         &:focus {
-            outline     : none;
-            border-color: $input-border-focus-color;
+            outline   : none;
+            box-shadow: inset 0 0 4px 0 $color-dark-grey;
         }
 
         &.invalid:not(:focus),
         &.ng-invalid.ng-dirty:not(:focus) {
-            color       : $input-invalid-text;
-            border-color: $input-invalid-border;
+            color     : $input-invalid-text;
+            box-shadow: inset 0 0 4px 0 $input-invalid-text;
         }
 
         &:disabled,
         &.disabled {
             color           : $input-disabled-text;
-            border-color    : $input-disabled-border;
             background-color: $input-disabled-background;
 
             &::-webkit-input-placeholder {
@@ -205,7 +205,6 @@ $this: ".aph.form";
 
                     margin-right: 10px;
 
-                    border          : 1px solid $input-border-color;
                     background-color: transparent;
 
                     box-sizing: border-box;
@@ -229,6 +228,8 @@ $this: ".aph.form";
                     top   : -1px;
                     width : 21px;
                     height: 21px;
+
+                    box-shadow: inset 0 0 3px 0 $color-grey;
                 }
             }
 
@@ -241,7 +242,7 @@ $this: ".aph.form";
                     }
 
                     &:after {
-                        border-color: $input-border-focus-color;
+                        box-shadow: inset 0 0 3px 0 $color-dark-grey;
                     }
                 }
             }
@@ -287,7 +288,7 @@ $this: ".aph.form";
             &:focus {
                 + #{$this}__label {
                     &:before {
-                        border-color: transparent;
+                        box-shadow: inset 0 0 3px 0 $color-dark-grey;
                     }
                 }
             }
@@ -336,14 +337,14 @@ $this: ".aph.form";
             &:focus {
                 + #{$this}__label {
                     &:after {
-                        border-color: $input-border-focus-color;
+                        box-shadow: inset 0 0 3px 0 $color-black;
                     }
                 }
 
                 &:checked {
                     + #{$this}__label {
                         &:after {
-                            border-color: $color-lochmara;
+                            box-shadow: inset 0 0 3px 0 $color-black;
                         }
                     }
 
@@ -352,8 +353,7 @@ $this: ".aph.form";
         }
 
         &.ng-pristine {
-            border: 1px solid $input-border-color;
-            color : $text-default-color;
+            color: $text-default-color;
         }
 
         &::-webkit-input-placeholder {
@@ -385,11 +385,6 @@ $this: ".aph.form";
         &--disabled,
         &#{$this}__control--grey-arrow {
             background-image: url("#{map-get($path-assets, icons)}/icon--arrow--down--grey.svg");
-        }
-
-        &:focus,
-        &#{$this}__control--grey-arrow:focus {
-            background-image: url("#{map-get($path-assets, icons)}/icon--arrow--down--blue.svg");
         }
     }
 
