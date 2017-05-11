@@ -77,9 +77,8 @@ angular.module('aphrodite-docs')
                 title: 'Toggle',
             },
             {
-                id        : 'selector',
-                title     : 'Selector',
-                controller: 'ComponentSelectorController'
+                id   : 'selector',
+                title: 'Selector',
             },
             {
                 id   : 'progress-bar',
@@ -88,6 +87,10 @@ angular.module('aphrodite-docs')
             {
                 id   : 'range',
                 title: 'Range',
+            },
+            {
+                id   : 'icons',
+                title: 'SVG Icons',
             },
         ]
     },
@@ -100,11 +103,6 @@ angular.module('aphrodite-docs')
                 id        : 'loader',
                 title     : 'Loader',
                 controller: 'ServiceLoaderController'
-            },
-            {
-                id        : 'overlay',
-                title     : 'Overlay',
-                controller: 'ServiceOverlayController'
             },
         ]
     },

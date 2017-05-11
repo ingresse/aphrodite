@@ -96,4 +96,21 @@ angular.module('aphrodite-docs')
         }
     ];
 
+
+    /*
+     * Icons Directive
+     */
+    $scope.icons = [
+        'check-circle',
+        'close-circle',
+        'plus-circle',
+        'minus-circle',
+        'undo-circle',
+        'arrow-left-circle',
+        'arrow-right-circle',
+        'info-circle',
+        'question-circle',
+        'warning',
+    ];
+
 });

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('aphrodite-docs')
-.controller('ServicesGenericController', function ($scope, $timeout, loader, Overlay) {
+.controller('ServicesGenericController', function ($scope, $timeout, loader) {
 
     /*
      * Loader
@@ -24,29 +24,6 @@ angular.module('aphrodite-docs')
 
     $scope.loaderErrorTest = function (activity) {
         loader.error(activity);
-    };
-
-
-    /*
-     * Overlay
-     */
-    var test;
-
-    $scope.createOverlay = function () {
-        test = new Overlay.create({
-            title: 'Overlay Dialog Test #1',
-            text : 'Venus, Ingresse, Backstage, Brazil, Amazonas, Manaus, São Paulo.',
-
-            cancelText: 'Oh, wait. I won\'t do this',
-            cancel    : function () {
-                console.log('Cancelled by user.');
-            },
-
-            continueText: 'Yep! Go ahead',
-            continue    : function () {
-                console.log('Authorized by user.');
-            }
-        });
     };
 
 });
