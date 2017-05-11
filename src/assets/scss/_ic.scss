@@ -1,0 +1,42 @@
+$this: ".aph.ic";
+
+#{$this} {
+    display       : inline-block;
+    vertical-align: middle;
+    margin-top    : -3px;
+
+    width  : 22px;
+    height : 22px;
+
+    stroke: $color-blue;
+    fill  : $color-blue;
+
+    &-defs {
+        display: none;
+    }
+
+    &--1 {
+        width : 30px;
+        height: 30px;
+    }
+
+    &--2 {
+        width : 40px;
+        height: 40px;
+    }
+
+    &--3 {
+        width : 60px;
+        height: 60px;
+    }
+
+    &--red {
+        fill  : $color-red;
+        stroke: $color-red;
+    }
+
+    &--disabled {
+        fill  : $color-light-grey;
+        stroke: $color-light-grey;
+    }
+}

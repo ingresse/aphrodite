@@ -1,0 +1,59 @@
+
+<h2 class="aph text-grey">
+    Normal
+</h2>
+
+<div class="row middle-xs">
+
+    <div class="col-xs-4 col-sm-3"
+         data-ng-repeat="icon in properties.icons">
+
+        <icon data-title="{{ icon }}"></icon>
+
+        {{ icon }}
+
+    </div>
+
+</div>
+
+<hr class="aph divider" />
+
+<h2 class="aph text-grey">
+    Size 1 - Color 'red'
+</h2>
+
+<div class="row middle-xs">
+
+    <div class="col-xs-4 col-sm-3"
+         data-ng-repeat="icon in properties.icons">
+
+        <icon data-title="{{ icon }}"
+              data-color="red"
+              data-size="1"></icon>
+
+        {{ icon }}
+
+    </div>
+
+</div>
+
+<hr class="aph divider" />
+
+<h2 class="aph text-grey">
+    Size 2 - Disabled
+</h2>
+
+<div class="row middle-xs">
+
+    <div class="col-xs-4 col-sm-3"
+         data-ng-repeat="icon in properties.icons">
+
+        <icon data-title="{{ icon }}"
+              data-size="2"
+              data-state="disabled"></icon>
+
+        {{ icon }}
+
+    </div>
+
+</div>
