@@ -15,17 +15,17 @@ $this: ".aph.ic";
         display: none;
     }
 
-    &--1 {
+    &--1x {
         width : 30px;
         height: 30px;
     }
 
-    &--2 {
+    &--2x {
         width : 40px;
         height: 40px;
     }
 
-    &--3 {
+    &--3x {
         width : 60px;
         height: 60px;
     }
@@ -35,8 +35,19 @@ $this: ".aph.ic";
         stroke: $color-red;
     }
 
-    &--disabled {
+    &--grey {
+        fill  : $color-grey;
+        stroke: $color-grey;
+    }
+
+    &.disabled,
+    &--light-grey {
         fill  : $color-light-grey;
         stroke: $color-light-grey;
+    }
+
+    &--dark-grey {
+        fill  : $color-dark-grey;
+        stroke: $color-dark-grey;
     }
 }
