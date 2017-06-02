@@ -7,10 +7,17 @@ angular.module('aphrodite-docs')
      * Loader
      */
 
+    $scope.info = {
+        message: {
+            text: 'Example: You need to fill your email address.',
+            html: '<div class="aph loader__title">Example</div>You need to fill your email address.',
+        },
+    };
+
     $scope.error = {
         message: {
             text: 'Example: Something\'s wrong. Please contact our support.',
-            html: '<div class="aph loader__content__error__title">Example</div>Something\'s wrong.<br />Please contact our support.',
+            html: '<div class="aph loader__title">Example</div>Something\'s wrong.<br />Please contact our support.',
         },
     };
 
@@ -22,8 +29,12 @@ angular.module('aphrodite-docs')
         }, 5000);
     };
 
-    $scope.loaderErrorTest = function (activity) {
-        loader.error(activity);
+    $scope.loaderInfoTest = function (infoMsg) {
+        loader.info(infoMsg);
+    };
+
+    $scope.loaderErrorTest = function (errorMsg) {
+        loader.error(errorMsg);
     };
 
 });

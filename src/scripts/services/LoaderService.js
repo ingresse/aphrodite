@@ -5,6 +5,7 @@ angular.module('aphrodite')
 
     var factory = {
         activities: [],
+        infos     : [],
         errors    : [],
     };
 
@@ -26,10 +27,22 @@ angular.module('aphrodite')
         }
     };
 
+    factory.info = function (info) {
+        factory.infos.push(info);
+    };
+
     factory.error = function (error, errorObj) {
         factory.errors.push(error);
         if (errorObj) {
             console.error(errorObj);
+        }
+    };
+
+    factory.clearInfo = function (info) {
+        for (var i in factory.infos) {
+            if (factory.infos[i] === info) {
+                factory.infos.splice(i, 1);
+            }
         }
     };
 
