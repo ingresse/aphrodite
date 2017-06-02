@@ -1,0 +1,28 @@
+
+<!-- Controller Example
+"use strict";
+
+angular.module("example-app", [ "aphrodite" ])
+.controller("ExampleController", function ($scope, loader) {
+
+    $scope.info = {
+        message:
+            text: "Example: You need to fill your email address",
+        },
+    };
+
+    $scope.loaderInfoTest = function (message) {
+        loader.info(message);
+    };
+
+});
+-->
+
+
+<!-- Markup -->
+<button type="button"
+        class="aph btn"
+        data-ng-click="loaderInfoTest(info.message.text)">
+    Loader Info
+</button>
+<!-- Markup -->

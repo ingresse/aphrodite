@@ -1,5 +1,5 @@
 <div class="aph loader"
-     data-ng-hide="activities.length === 0 && errors.length === 0">
+     data-ng-hide="activities.length === 0 && infos.length === 0 && errors.length === 0">
     <div class="aph loader__content">
         <div class="aph container">
             <div class="aph loader__content__spinner"
@@ -25,6 +25,16 @@
                 </div>
             </div>
 
+            <div class="aph loader__content__info"
+                 data-ng-repeat="info in infos track by $index">
+                <div data-ng-bind-html="info | unsafe"></div>
+                <button class="aph loader__content__info__icon"
+                        data-ng-click="clearInfo(info)"
+                        title="Fechar esta mensagem">
+                    ×
+                </button>
+            </div>
+
             <div class="aph loader__content__error"
                  data-ng-repeat="error in errors track by $index">
                 <div data-ng-bind-html="error | unsafe"></div>
@@ -34,6 +44,7 @@
                     ×
                 </button>
             </div>
+
         </div>
     </div>
 </div>

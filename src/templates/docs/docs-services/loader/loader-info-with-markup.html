@@ -1,0 +1,28 @@
+
+<!-- Controller Example
+"use strict";
+
+angular.module("example-app", [ "aphrodite" ])
+.controller("ExampleController", function ($scope, loader) {
+
+    $scope.info = {
+        message:
+            html: "<div class="aph loader__title">Example</div>You need to fill your email address.",
+        },
+    };
+
+    $scope.loaderInfoTest = function (info) {
+        loader.info(info);
+    };
+
+});
+-->
+
+
+<!-- Markup -->
+<button type="button"
+        class="aph btn btn--bordered"
+        data-ng-click="loaderInfoTest(info.message.html)">
+    Loader Error
+</button>
+<!-- Markup -->

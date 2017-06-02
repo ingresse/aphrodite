@@ -31,7 +31,7 @@
                 hideTemplate: true
             }">
             <button type="button"
-                    class="aph btn"
+                    class="aph btn btn--black"
                     data-ng-click="loaderTest()">
                 Basic Loader
             </button>
@@ -60,6 +60,32 @@
                     class="aph btn btn--green"
                     data-ng-click="loaderTest({ title: 'Processing your payment', text: 'Please, wait a moment...' })">
                 Loader with Title and Text
+            </button>
+        </component>
+
+        <component
+            data-properties="{
+                title      : 'Info',
+                templateUrl: 'docs/docs-services/loader/loader-info.html',
+                hideTemplate: true
+            }">
+            <button type="button"
+                    class="aph btn"
+                    data-ng-click="loaderInfoTest(info.message.text)">
+                Loader Info
+            </button>
+        </component>
+
+        <component
+            data-properties="{
+                title      : 'Info with Markup',
+                templateUrl: 'docs/docs-services/loader/loader-info-with-markup.html',
+                hideTemplate: true
+            }">
+            <button type="button"
+                    class="aph btn btn--bordered"
+                    data-ng-click="loaderInfoTest(info.message.html)">
+                Loader Info (with markup)
             </button>
         </component>
 
