@@ -23,4 +23,14 @@ $this: ".aph.container";
     &.fluid {
         max-width: 100% !important;
     }
+
+    &.md,
+    &.medium {
+        max-width: 820px;
+    }
+
+    &.sm,
+    &.small {
+        max-width: 580px;
+    }
 }

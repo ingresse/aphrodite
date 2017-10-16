@@ -287,6 +287,12 @@ $this: ".aph.navbar";
                     }
                 }
             }
+
+            &__nav {
+                &__toggle {
+                    color: $color-white;
+                }
+            }
         }
 
         #{$this}__nav {

@@ -59,7 +59,7 @@ $this: ".aph.form";
         background-color: $color-white;
         box-shadow      : inset 0 0 4px 0 $color-light-grey;
 
-        border: 1px solid transparent;
+        border: 0;
 
         @include border-radius(4px);
         @include transition;
@@ -411,7 +411,7 @@ $this: ".aph.form";
         line-height: 20px;
 
         &--large {
-            margin: #{$container-horizontal-padding} 0;
+            margin: #{$container-horizontal-padding} 0 0;
         }
 
         #{$this} {
@@ -432,7 +432,7 @@ $this: ".aph.form";
 
     &__helper {
         font-size  : 13px;
-        line-height: 1.5;
+        line-height: 20px;
 
         margin : 0 0 -9px;
         padding: 5px 0;
@@ -453,5 +453,65 @@ $this: ".aph.form";
         }
     }
 
+    &__range {
+        &__output {
+            font-style: normal;
+        }
+    }
+
     @import "_form__control-with-icon";
+
+    @include xs {
+        select#{$this}__control,
+        textarea#{$this}__control,
+        &__control[type="text"],
+        &__control[type="password"],
+        &__control[type="datetime"],
+        &__control[type="datetime-local"],
+        &__control[type="date"],
+        &__control[type="month"],
+        &__control[type="time"],
+        &__control[type="week"],
+        &__control[type="number"],
+        &__control[type="email"],
+        &__control[type="url"],
+        &__control[type="search"],
+        &__control[type="tel"] {
+            box-shadow: none;
+            border    : 1px solid rgba($color-light-grey, .4);
+
+            &:focus {
+                box-shadow: none;
+
+                border-color: $color-light-grey;
+            }
+        }
+    }
+
+    @include print {
+        &__control {
+            &[type="checkbox"] {
+                + #{$this} {
+                    &__label {
+                        &:after {
+                            border: 1px solid $color-light-grey;
+                        }
+                    }
+                }
+
+                &:checked {
+                    + #{$this} {
+                        &__label {
+                            &:before {
+                                content: "✔";
+                                font-size  : 25px;
+                                line-height: 20px;
+                                margin-left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

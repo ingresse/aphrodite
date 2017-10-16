@@ -39,9 +39,9 @@ $this: ".aph.btn";
     &.disabled,
     &:disabled {
         cursor          : default;
-        color           : darken($color-light-grey, 15%) !important;
-        background-color: $color-light-grey !important;
-        border-color    : $color-light-grey !important;
+        color           : darken($color-light-grey, 15%);
+        background-color: $color-light-grey;
+        border-color    : $color-light-grey;
 
         &:hover,
         &:active,
@@ -55,12 +55,31 @@ $this: ".aph.btn";
         width  : 100%;
     }
 
+    &--sm,
     &--small {
-        min-height: 30px;
+        padding-top   : 0;
+        padding-bottom: 0;
 
         font-size: 13px;
 
-        padding: 5px 12px;
+        min-height: 30px;
+
+        &#{$this}--bordered {
+            line-height: 28px;
+        }
+    }
+
+    &--xs {
+        font-size: 9px;
+
+        padding-top   : 0;
+        padding-bottom: 0;
+
+        min-height: 20px;
+
+        &#{$this}--bordered {
+            line-height: 18px;
+        }
     }
 
     &--bordered {
@@ -81,9 +100,9 @@ $this: ".aph.btn";
 
         &.disabled,
         &:disabled {
-            background-color: lighten($color-light-grey, 10%);
-            color           : darken($color-light-grey, 5%);
-            border-color    : lighten($color-light-grey, 10%);
+            background-color: none;
+            color           : $color-grey;
+            border-color    : $color-grey;
             box-shadow      : none;
         }
 
@@ -157,6 +176,54 @@ $this: ".aph.btn";
         }
     }
 
+    &.loading,
+    &--loading {
+        &.transparent {
+            background-color: transparent;
+
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: transparent;
+            }
+
+            &:before {
+                border-color      : $color-blue;
+                border-right-color: transparent;
+            }
+        }
+
+        &:before {
+            position: relative;
+            content : ' ';
+            display : inline-block;
+
+            box-sizing: border-box;
+            overflow  : hidden;
+
+            vertical-align: middle;
+            text-indent   : -9999px;
+
+            border            : 3px solid $color-white;
+            border-right-color: transparent;
+            border-radius     : 100%;
+
+            width : 18px;
+            height: 18px;
+            margin: -3px 0 0 5px;
+
+            animation: three-quarters 1s infinite linear;
+        }
+
+        &:disabled,
+        &.disabled {
+            &:before {
+                border-color      : $color-grey;
+                border-right-color: transparent;
+            }
+        }
+    }
+
     //Button colors
     $btn_colors:
         ("orange",              $color-orange, 	            $color-white),
@@ -190,6 +257,13 @@ $this: ".aph.btn";
                         color           : $btn_txtColor;
                         background-color: $btn_bgColor;
                     }
+
+                    &.disabled,
+                    &:disabled {
+                        color       : $color-dark-grey;
+                        background  : $color-light-grey;
+                        border-color: $color-grey;
+                    }
                 }
 
                 &--link {
@@ -199,13 +273,13 @@ $this: ".aph.btn";
                     &:hover,
                     &:focus,
                     &:active {
-                        color: $btn_txtColor;
-                        background-color: $btn_bgColor;
+                        color     : inherit;
+                        background: none;
                     }
 
                     &.disabled,
                     &:disabled {
-                        color     : darken($color-light-grey, 15%) !important;
+                        color     : darken($color-light-grey, 15%);
                         box-shadow: none;
                     }
                 }
@@ -213,8 +287,8 @@ $this: ".aph.btn";
 
             &.disabled,
             &:disabled {
-                color           : darken($color-light-grey, 15%) !important;
-                background-color: $color-light-grey !important;
+                color           : darken($color-light-grey, 15%);
+                background-color: $color-light-grey;
 
                 &:hover,
                 &:active,
