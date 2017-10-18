@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('aphrodite-docs')
-.controller('ServicesGenericController', function ($scope, $timeout, loader) {
+.controller('ServicesGenericController', function ($scope, $timeout, loader, ngDialog) {
 
     /*
      * Loader
@@ -37,4 +37,15 @@ angular.module('aphrodite-docs')
         loader.error(errorMsg);
     };
 
+    $scope.openModal = function () {
+        $scope.modal =
+            ngDialog.open({
+                template: 'docs/docs-services/modal/modal-example.html',
+                scope   : $scope,
+            });
+    };
+
+    $scope.closeModal = function () {
+        $scope.modal.close();
+    };
 });

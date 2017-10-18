@@ -5,7 +5,7 @@ $this: ".docs__home";
         text-align: center;
 
         background-color: $color-blue;
-        background-image: linear-gradient(to bottom, lighten($color-blue, 20%), lighten($color-blue-facebook, 20%));
+        background-image: linear-gradient(to bottom, lighten($color-blue, 20%), lighten($rose, 20%));
 
         &__image {
             display: block;

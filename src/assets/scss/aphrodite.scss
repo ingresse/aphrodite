@@ -1,10 +1,11 @@
-/* Version: 1.1.0 */
+/* Version: 1.3.0 */
 
 // CSS Reset
 @import '_reset';
 
 // Foundation
 @import '../../bower_components/flexboxgrid/dist/flexboxgrid';
+@import '../../bower_components/ng-dialog/css/ngDialog';
 @import '_colors';
 @import '_variables';
 @import '_media-querie';
@@ -12,31 +13,37 @@
 @import '_fonts';
 @import '_container';
 @import '_keyframes';
+@import '_responsive';
 @import '_colors-utils';
 
 // Elements
 @import '_alert';
-@import '_button';
+@import '_btn';
 @import '_divider';
 @import '_drag-and-drop';
 @import '_drawer';
 @import '_dropdown';
+@import '_flex';
 @import '_flexboxgrid';
 @import '_form';
 @import '_form__control-with-icon';
 @import '_form__range';
 @import '_form__switch';
 @import '_ic';
+@import '_image-blur';
 @import '_image-crop';
 @import '_img';
 @import '_list';
 @import '_loader';
+@import '_modal';
 @import '_navbar';
 @import '_overlay';
 @import '_pagination';
 @import '_progress-bar';
 @import '_selector';
+@import '_stretch';
 @import '_table';
 @import '_tag';
+@import '_text';
 @import '_toggle';
 @import '_tooltip';

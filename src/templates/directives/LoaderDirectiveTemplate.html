@@ -10,10 +10,6 @@
 
             <div class="aph loader__content__message"
                  data-ng-repeat="activity in activities track by $index">
-                <div data-ng-if="!activity.title && !activity.text"
-                     data-ng-bind-html="activity | unsafe">
-                </div>
-
                 <div class="aph loader__content__message__title"
                      data-ng-if="activity.title"
                      data-ng-bind-html="activity.title | unsafe">

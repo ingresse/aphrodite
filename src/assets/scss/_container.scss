@@ -20,7 +20,16 @@ $this: ".aph.container";
         max-width: $bigDesktop-width + 1em;
     }
 
-    &.fluid {
+    &.fluid,
+    &--fluid {
         max-width: 100% !important;
+    }
+
+    &--md {
+        max-width: 820px;
+    }
+
+    &--sm {
+        max-width: 580px;
     }
 }

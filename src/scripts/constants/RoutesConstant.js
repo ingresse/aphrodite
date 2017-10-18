@@ -77,6 +77,10 @@ angular.module('aphrodite-docs')
                 title: 'Toggle',
             },
             {
+                id   : 'tooltip',
+                title: 'Tooltip',
+            },
+            {
                 id   : 'selector',
                 title: 'Selector',
             },
@@ -100,9 +104,12 @@ angular.module('aphrodite-docs')
         path : '/services/',
         items: [
             {
-                id        : 'loader',
-                title     : 'Loader',
-                controller: 'ServiceLoaderController'
+                id   : 'loader',
+                title: 'Loader',
+            },
+            {
+                id   : 'modal',
+                title: 'Modal',
             },
         ]
     },

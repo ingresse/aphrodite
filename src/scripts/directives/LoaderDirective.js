@@ -7,9 +7,13 @@ angular.module('aphrodite')
         templateUrl: 'directives/LoaderDirectiveTemplate.html',
         scope      : {},
         link       : function (scope) {
-            scope.activities = loader.activities;
-            scope.infos      = loader.infos;
-            scope.errors     = loader.errors;
+            scope.activities  = loader.activities;
+            scope.infos       = loader.infos;
+            scope.errors      = loader.errors;
+
+            scope.stop = function (activity) {
+                loader.stop(activity);
+            };
 
             scope.clearInfo = function (info) {
                 loader.clearInfo(info);

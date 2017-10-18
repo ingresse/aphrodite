@@ -84,6 +84,31 @@
             user-select: none;
 }
 
+// Responsive Utilities
+@mixin responsive-visibility() {
+    display: block !important;
+
+    &-inline {
+        display: inline !important;
+
+        &-block {
+            display: inline-block !important;
+        }
+    }
+}
+
+@mixin responsive-invisibility() {
+    display: none !important;
+
+    &-inline {
+        display: none !important;
+
+        &-block {
+            display: none !important;
+        }
+    }
+}
+
 // Keyframe
 @mixin keyframe ($name) {
     @-webkit-keyframes #{$name} {

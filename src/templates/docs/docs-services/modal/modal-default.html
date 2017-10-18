@@ -1,0 +1,87 @@
+
+<!-- Controller Example
+"use strict";
+
+angular.module("example-app", [ "aphrodite" ])
+.controller("ExampleController", function ($scope, ngDialog) {
+
+    /*
+     * Using Modal
+     */
+    $scope.openModal = function () {
+        $scope.modal =
+            ngDialog.open({
+                className : "aph modal modal--limit my-custom-css-class",   // Optional
+                template  : "folder/external-template.html",                // Required
+                controller: "SpecificModalController",                      // Optional
+                scope     : $scope,                                         // Optional
+                trapFocus : true,                                           // Optional
+            });
+    };
+
+    $scope.cancel = function () {
+        $scope.modal.close();
+    };
+
+});
+-->
+
+<!-- Modal Markup Example
+<section class="aph flex flex--column flex--stretch">
+
+    <div class="aph flex__item flex__item--end modal__header">
+
+        <div class="aph container container--sm text-center">
+
+            <h2 class="aph">
+                Title
+            </h2>
+
+        </div>
+
+    </div>
+
+    <div class="aph flex__item flex__item--start modal__content">
+
+        <div class="aph container container--sm text-center">
+
+            Content
+
+        </div>
+
+    </div>
+
+    <div class="aph flex__item flex__item--start modal__footer">
+
+        <div class="aph container container--sm">
+
+            <div class="row">
+                <div class="col-xs-6 text-right">
+                    <button class="aph btn btn--bordered btn--red modal__footer__btn"
+                            type="button"
+                            data-ng-click="cancel();">
+                        Cancel
+                    </button>
+                </div>
+                <div class="col-xs-6 text-left">
+                    <button class="aph btn modal__footer__btn"
+                            type="button"
+                            data-ng-click="save();">
+                        Save
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+-->
+
+
+<!-- Markup -->
+<button class="aph btn"
+        data-ng-click="openModal()">
+    Modal Test
+</button>
