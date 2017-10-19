@@ -1,0 +1,85 @@
+/* Helpers
+-------------------------------------------------------------------------- */
+
+// Hide ~ Hidden
+$invisible: ".hide, .hidden";
+#{$invisible} {
+    @include lg {
+        &-lg {
+            @include responsive-invisibility();
+        }
+    }
+
+    @include md {
+        &-md {
+            @include responsive-invisibility();
+        }
+    }
+
+    @include sm {
+        &-sm {
+            @include responsive-invisibility();
+        }
+    }
+
+    @include xs {
+        &-xs {
+            @include responsive-invisibility();
+        }
+    }
+
+    @include print {
+        &-print {
+            @include responsive-invisibility();
+        }
+    }
+}
+
+// Show ~ Visible
+$visible: ".show, .visible";
+#{$visible} {
+    &-lg,
+    &-sm,
+    &-xs {
+        @include responsive-invisibility();
+    }
+
+    @include lg {
+        &-lg {
+            @include responsive-visibility();
+        }
+    }
+
+    @include md {
+        &-md {
+            @include responsive-visibility();
+        }
+    }
+
+    @include sm {
+        &-sm {
+            @include responsive-visibility();
+        }
+    }
+
+    @include xs {
+        &-xs {
+            @include responsive-visibility();
+        }
+    }
+
+    @include print {
+        &-print {
+            @include responsive-visibility();
+        }
+    }
+}
+
+$img: ".img";
+#{$img} {
+    &-responsive {
+        max-width: 100%;
+        width    : 100%;
+        height   : auto;
+    }
+}

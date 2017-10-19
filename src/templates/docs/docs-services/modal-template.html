@@ -1,0 +1,45 @@
+<page-header
+    data-properties="{
+        title   : 'Modal',
+        subtitle: 'Service for AngularJS Apps',
+        bg      : 'black',
+    }">
+</page-header>
+
+<section>
+
+    <div class="aph container large">
+
+        <component
+            data-properties="{
+                title       : 'Using ngDialog',
+                templateUrl : 'docs/docs-services/modal/modal-default.html',
+                hideTemplate: true,
+                visible     : true,
+            }">
+
+            <div>
+                Consult
+                <a class="aph"
+                   target="_blank"
+                   title="ngDialog @ github"
+                   href="https://github.com/likeastore/ngDialog"
+                   >ngDialog</a>
+                at github to all documentation.
+            </div>
+
+            <br />
+
+            <button class="aph btn"
+                    data-ng-click="openModal();">
+                Modal Test
+            </button>
+
+            <br />
+            <br />
+
+        </component>
+
+    </div>
+
+</section>

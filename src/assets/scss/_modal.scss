@@ -1,0 +1,145 @@
+$this: ".aph.modal";
+
+body,
+html {
+    &.ngdialog-open {
+        overflow: initial !important;
+    }
+}
+
+#{$this} {
+    position: fixed;
+    top     : 0;
+    right   : 0;
+    bottom  : 0;
+    left    : 0;
+
+    background-color: rgba($color-white, .98);
+
+    width     : 100%;
+    min-height: 100%;
+
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-justify-content: center;
+    justify-content: center;
+
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+
+    align-items: stretch;
+
+    &.ngdialog {
+        &-closing {
+            animation: fadeOut .75s;
+        }
+    }
+
+    .ngdialog {
+        &-overlay {
+            display: none;
+        }
+
+        &-content {
+            background: transparent;
+
+            display: -webkit-flex;
+            display: flex;
+
+            -webkit-flex: 1 auto;
+            flex: 1 auto;
+
+            height: auto !important;
+
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+            -moz-box-orient: vertical;
+            -moz-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -moz-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+    }
+
+    &--limit {
+        #{$this} {
+            &__header,
+            &__footer {
+                min-height : 80px;
+                max-height : 80px;
+                flex-shrink: 0;
+            }
+
+            &__content {
+                flex-grow  : 1;
+                flex-shrink: 1;
+            }
+        }
+
+        &--bh {
+            #{$this} {
+                &__header {
+                    max-height: 100px;
+                }
+            }
+        }
+    }
+
+    &__header {
+        color: $color-dark-grey;
+
+        h2.aph {
+            line-height: 30px;
+            margin     : 15px 0;
+        }
+
+        h4.aph {
+            font-size  : 13px;
+            font-weight: normal;
+            line-height: 20px;
+            margin: -10px 0 0;
+        }
+    }
+
+    &__content {
+        overflow: auto;
+    }
+
+    &__footer {
+        &__btn {
+            &.aph.btn {
+                margin: 20px 0;
+
+                min-width: 130px;
+            }
+        }
+    }
+
+    @include xs {
+        &--limit {
+            &--bh-mob {
+                #{$this} {
+                    &__header {
+                        max-height: 120px;
+                    }
+                }
+            }
+        }
+
+        &__footer {
+            &__btn {
+                &.aph.btn {
+                    display: block;
+                    width  : 100%;
+                }
+            }
+        }
+    }
+}

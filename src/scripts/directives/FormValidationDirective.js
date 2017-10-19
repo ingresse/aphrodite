@@ -11,12 +11,7 @@ angular.module('aphrodite')
         },
         link    : function (scope, element, attrs, formController) {
             if (!attrs.formValidation) {
-                return console.error(
-                    'APH FORM VALIDATION ERROR:\n' +
-                    'Need to declare the attribute "name" and send as param.\n' +
-                    'Example:\n' +
-                    '<form name="myForm" data-form-validation="myForm"></form>'
-                );
+                return;
             }
 
             // Elements lists to listen or not
@@ -38,9 +33,7 @@ angular.module('aphrodite')
                     return;
                 }
 
-                console.info(
-                    'APH FORM VALIDATION:\nForm marked as CHANGED.\n\n'
-                );
+                console.info('APH FORM VALIDATION:\nForm marked as CHANGED.\n\n');
 
                 formController.changed = true;
             }

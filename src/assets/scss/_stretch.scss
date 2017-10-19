@@ -1,0 +1,42 @@
+/* Stretch
+-------------------------------------------------------------------------- */
+$this: ".stretch";
+#{$this} {
+    margin-right: -#{$container-horizontal-padding};
+    margin-left : -#{$container-horizontal-padding};
+
+    @include xl {
+        &-xl {
+            margin-right: -#{$container-horizontal-padding};
+            margin-left : -#{$container-horizontal-padding};
+        }
+    }
+
+    @include md {
+        &-md {
+            margin-right: -#{$container-horizontal-padding};
+            margin-left : -#{$container-horizontal-padding};
+        }
+    }
+
+    @include sm {
+        &-sm {
+            margin-right: -#{$container-horizontal-padding};
+            margin-left : -#{$container-horizontal-padding};
+        }
+    }
+
+    @include xs {
+        &-xs {
+            margin-right: -#{$container-horizontal-padding};
+            margin-left : -#{$container-horizontal-padding};
+        }
+    }
+
+    @include print {
+        &-print {
+            margin-right: -#{$container-horizontal-padding};
+            margin-left : -#{$container-horizontal-padding};
+        }
+    }
+}

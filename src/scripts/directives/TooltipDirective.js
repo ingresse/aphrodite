@@ -1,27 +1,25 @@
 'use strict';
 
 angular.module('aphrodite')
-.directive('tooltip', function () {
+.directive('tooltip', function ($document, $compile, $filter) {
     return {
-        restrict   : 'A',
-        templateUrl: 'directives/TooltipDirectiveTemplate.html',
-        scope      : {
-            tooltipOptions: '='
-        },
-        link       : {
-            pre: function (scope, element, attrs) {
-                scope.content = attrs.tooltip;
-                scope.options = scope.tooltipOptions;
+        restrict: 'A',
+        scope   : true,
+        link    : function (scope, element, attrs) {
+            scope.text = $filter('unsafe')(attrs.tooltip);
 
-                scope.tooltipColor = (scope.options && scope.options.color) ?
-                    'tooltip__content--' + scope.options.color : '';
-                scope.tooltipPosition = (scope.options && scope.options.position) ?
-                    'tooltip__content--' + scope.options.position : '';
-                scope.tooltipSize = (scope.options && scope.options.size) ?
-                    'tooltip__content--' + scope.options.size : '';
+            var tip =
+                $compile(
+                    '<span class="aph tooltip__content" data-ng-bind-html="text"></span>'
+                )(scope);
 
-                element.addClass('aph tooltip');
+            element.addClass('aph tooltip');
+
+            if (attrs.tooltipClass) {
+                tip.addClass(attrs.tooltipClass);
             }
-        }
+
+            element.append(tip);
+        },
     };
 });

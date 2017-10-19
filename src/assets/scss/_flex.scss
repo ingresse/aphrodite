@@ -1,0 +1,157 @@
+$flex: ".aph.flex";
+#{$flex} {
+    width     : 100%;
+    min-height: 100%;
+
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-justify-content: center;
+    justify-content: center;
+
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+
+    &--stretch {
+        min-height: 100%;
+        align-items: stretch;
+    }
+
+    &--column {
+        -webkit-flex-flow: column;
+        flex-flow: column;
+    }
+
+    &__item {
+        display: -webkit-flex;
+        display: flex;
+
+        -webkit-flex: 1 auto;
+        flex: 1 auto;
+
+        height: auto !important;
+
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -moz-box-orient: vertical;
+        -moz-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+
+        &--center {
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -moz-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+        &--start {
+            -webkit-box-pack: start;
+            -webkit-justify-content: start;
+            -moz-box-pack: start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+        }
+
+        &--end {
+            -webkit-box-pack: end;
+            -webkit-justify-content: end;
+            -moz-box-pack: end;
+            -ms-flex-pack: end;
+            justify-content: flex-end;
+        }
+
+        &--sidebar {
+            position: relative;
+            left     : -240px;
+            z-index  : 100;
+            width    : 240px;
+            min-width: 240px;
+            max-width: 240px;
+
+            transition: left .2s linear;
+
+            padding: 10px 20px;
+
+            background-color: $color-white-smoke;
+
+            &.visible {
+                left: 0;
+                box-shadow: 0 -5px 10px -2px $color-black;
+            }
+        }
+
+        &--content {
+            margin-left: -240px;
+
+            &:before {
+                visibility: hidden;
+
+                z-index : 50;
+                position: absolute;
+                top     : 0;
+                right   : 0;
+                bottom  : 0;
+                left    : 0;
+
+                transition: visibility .2s linear;
+
+                background-color: rgba($color-black, .4);
+            }
+        }
+
+        &--footer {
+            min-height: 110px;
+            max-height: 110px;
+
+            &.footer {
+                margin-top: 0px;
+            }
+        }
+
+        &.visible {
+            + .flex__item--content {
+                position: relative;
+
+                &:before {
+                    content : " ";
+                    visibility: visible;
+                }
+            }
+        }
+    }
+
+    @include md {
+        &__item {
+            &--footer {
+                max-height: 211px;
+            }
+        }
+    }
+
+    @include sm {
+        &__item {
+            &--footer {
+                max-height: 302px;
+            }
+        }
+    }
+
+    @include xs {
+        &__item {
+            &--sidebar {
+                display: none;
+            }
+
+            &--content {
+                margin-left: 0;
+            }
+
+            &--footer {
+                max-height: 0;
+            }
+        }
+    }
+}

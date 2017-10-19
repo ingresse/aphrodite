@@ -82,16 +82,58 @@ $this: ".aph.loader";
         }
 
         &__message {
-            font-size  : 20px;
-            line-height: 1.25;
-            text-align : center;
+            position: relative;
+            margin  : 10px 0;
+            padding : 0;
 
-            margin: 10px 0;
+            font-size  : 20px;
+            line-height: 30px;
+            text-align : center;
 
             animation: fadeIn .75s;
 
+            &__container {
+                position: relative;
+                display : inline-block;
+                padding : 0 60px;
+
+                &__dismiss {
+                    position: absolute;
+                    right   : 15px;
+                    bottom  : calc(50% - 15px);
+
+                    width  : 30px;
+                    height : 30px;
+                    padding: 0;
+
+                    color: $color-grey;
+
+                    border       : 1px solid $color-grey;
+                    border-radius: 50%;
+                    background   : none;
+                    outline      : 0;
+
+                    animation : fadeIn .75s;
+                    transition: color .25s linear, border-color .25s linear;
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        color       : $color-blue;
+                        border-color: $color-blue;
+                    }
+
+                    &.left {
+                        right: auto;
+                        left : 15px;
+                    }
+                }
+            }
+
             &__text {
-                font-size : 16px;
+                font-size  : 16px;
+                line-height: 20px;
+
                 margin-top: 10px;
             }
 
@@ -99,6 +141,19 @@ $this: ".aph.loader";
             &.ng-leave {
                 color    : $color-blue;
                 animation: fadeOut .75s;
+
+                #{$this} {
+                    &__content {
+                        &__message {
+                            &__container {
+                                &__dismiss {
+                                    color       : $color-blue;
+                                    border-color: $color-blue;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
 

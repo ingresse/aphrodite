@@ -1,0 +1,49 @@
+/* Text Helpers
+-------------------------------------------------------------------------- */
+$this: ".text";
+#{$this} {
+    // Alignment
+    &-left      {   text-align: left;       }
+    &-center    {   text-align: center;     }
+    &-right     {   text-align: right;      }
+
+    // Weight
+    &-lighter,
+    &-light     {   font-weight: lighter;   }
+    &-normal    {   font-weight: normal;    }
+    &-bolder,
+    &-bold      {   font-weight: 500;       }
+
+    // Style
+    &-italic    {   font-style: italic;     }
+
+    // Transform
+    &-lowercase     {   text-transform: lowercase;      }
+    &-uppercase     {   text-transform: uppercase;      }
+    &-capitalize    {   text-transform: capitalize;     }
+
+     // Sizes
+    &-xs,
+    &-sm,
+    &-small,
+    &-md {
+        line-height: 20px;
+    }
+    &-xs,
+    &-small {
+        font-size: 12px;
+    }
+    &-sm {
+        font-size: 13px;
+    }
+    &-md {
+        font-size: 20px;
+    }
+    &-md,
+    &-lg {
+        line-height: 30px;
+    }
+    &-lg {
+        font-size: 24px;
+    }
+}
