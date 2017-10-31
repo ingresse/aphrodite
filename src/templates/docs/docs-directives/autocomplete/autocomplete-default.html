@@ -1,0 +1,27 @@
+<form class="aph form form--with-fields"
+      novalidate="">
+    <div class="aph form__field">
+        <label class="aph form__label"
+               for="term">
+            Search at GitHub
+        </label>
+        <aph-autocomplete
+            data-model="properties.term"
+            data-list="properties.repos"
+            data-change="properties.findRepo"
+            data-callback="properties.selectRepo">
+        </aph-autocomplete>
+    </div>
+
+    <div class="aph form__field">
+        <label class="aph form__label"
+               for="test">
+            Test
+        </label>
+        <input class="aph form__control"
+               type="text"
+               id="test"
+               name="test" />
+    </div>
+</form>
+

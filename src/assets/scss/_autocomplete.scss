@@ -1,0 +1,99 @@
+$this: ".aph.autocomplete";
+
+#{$this} {
+    position: relative;
+
+    &__list {
+        position  : absolute;
+        overflow   : auto;
+        overflow-x : hidden;
+        width     : 100%;
+        right     : 0;
+        left      : 0;
+        max-height: 250px;
+
+        background: #fff;
+        box-shadow: 0 2px 4px rgba($color-black, 0.15);
+
+        border-radius: 0 0 4px 4px;
+
+        &__item {
+            display: block;
+            width  : 100%;
+
+            padding   : 5px;
+            min-height: 50px;
+
+            text-align: inherit;
+
+            background: $color-white;
+            border    : 0;
+            outline   : 0;
+
+            transition: all linear .1s;
+
+            &[for] {
+                cursor: pointer;
+            }
+
+            &:hover,
+            &:active,
+            &:focus {
+                color     : $color-white;
+                background: $color-blue;
+
+                #{$this} {
+                    &__list {
+                        &__item {
+                            &__description {
+                                color: $color-white;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__image,
+            &__image.col-xs {
+                max-width    : 60px;
+                padding-right: 0;
+            }
+
+            &__pic {
+                display  : block;
+                margin   : 0 auto;
+                max-width: 38px;
+                width    : 100%;
+                height   : auto;
+
+                border-radius: 50%;
+            }
+
+            &__description {
+                font-size: 13px;
+                color    : $color-grey;
+            }
+        }
+
+        &__radio {
+            position: absolute;
+            opacity : 0;
+
+            &:focus,
+            &:checked {
+                + #{$this} {
+                    &__list {
+                        &__item {
+                            color     : $color-white;
+                            background: $color-blue;
+
+                            &__description {
+                                color: $color-white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

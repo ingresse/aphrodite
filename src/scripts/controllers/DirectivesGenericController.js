@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('aphrodite-docs')
-.controller('DirectivesGenericController', function ($scope) {
+.controller('DirectivesGenericController', function ($http, $timeout, $scope) {
 
     /*
      * Selector Directive
@@ -115,4 +115,31 @@ angular.module('aphrodite-docs')
         'warning',
     ];
 
+    /*
+     * Autocomplete Directive
+     */
+    $scope.term      = '';
+    $scope.repos     = [];
+    $scope.searching = false;
+
+    $scope.findRepo = function () {
+        if ($scope.searching || !$scope.term) {
+            $scope.repos = [];
+            $timeout.cancel($scope.searching);
+        }
+
+        if ($scope.term && $scope.term.length >= 2) {
+            var url =
+                'https://api.github.com/search/repositories?q=' + $scope.term;
+
+            $scope.searching = $timeout(function () {
+                $http.get(url)
+                    .then(function (response) {
+                        $scope.repos = response.data.items;
+                    });
+            }, 1000);
+        } else {
+            $scope.repos = [];
+        }
+    };
 });

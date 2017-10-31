@@ -1,0 +1,41 @@
+<div class="aph autocomplete"
+     id="autocomplete">
+    <input class="aph form__control"
+           type="text"
+           id="term"
+           name="term"
+           autocomplete="off"
+           data-ng-model="model"
+           data-ng-change="change();"
+           data-ng-focus="setFocus(true);"
+           data-ng-required="required"
+           data-click-outside="setFocus();"
+           data-outside-if-not="autocomplete" />
+    <div class="aph autocomplete__list"
+         data-ng-show="focused && list.length > 0">
+        <div data-ng-repeat="item in list track by $index">
+            <input class="aph autocomplete__list__radio"
+                   type="radio"
+                   name="autocompleItem"
+                   id="autocompleteItem{{ $index }}"
+                   data-ng-click="selectItem(item);" />
+            <label class="aph autocomplete__list__item"
+                   for="autocompleteItem{{ $index }}">
+                <div class="row middle-xs">
+                    <div class="col-xs aph autocomplete__list__item__image"
+                         data-ng-if="itemImage">
+                        <img class="aph autocomplete__list__item__pic"
+                             data-ng-src="{{ getItemImage(item) }}" />
+                    </div>
+                    <div class="col-xs">
+                        <div class="aph autocomplete__list__item__title"
+                             data-ng-bind-html="item[itemTitle] | unsafe"></div>
+                        <div class="aph autocomplete__list__item__description"
+                             data-ng-if="item[itemDescription]"
+                             data-ng-bind-html="item[itemDescription] | unsafe"></div>
+                    </div>
+                </div>
+            </label>
+        </div>
+    </div>
+</div>

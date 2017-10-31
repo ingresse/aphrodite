@@ -69,6 +69,10 @@ angular.module('aphrodite-docs')
                 title: 'Alert',
             },
             {
+                id   : 'autocomplete',
+                title: 'Autocomplete',
+            },
+            {
                 id   : 'switch',
                 title: 'Switch',
             },
