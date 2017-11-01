@@ -9,6 +9,7 @@
            data-ng-model="term"
            data-ng-focus="setFocus(true);"
            data-ng-required="required"
+           data-ng-class="{ 'autocomplete__input' : focused && list.length > 0 }"
            data-click-outside="setFocus(false);"
            data-outside-if-not="autocomplete" />
     <div class="aph autocomplete__list">

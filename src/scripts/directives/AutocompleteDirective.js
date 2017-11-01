@@ -6,6 +6,7 @@ angular.module('aphrodite')
         restrict   : 'E',
         replace    : true,
         scope      : {
+            term           : '=?',
             change         : '=',
             callback       : '=',
             id             : '@',
