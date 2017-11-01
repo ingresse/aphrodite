@@ -15,12 +15,16 @@
             <div class="aph form__field">
                 <label class="aph form__label"
                        for="term">
-                    Search at GitHub
+                    Search Repositories at GitHub
                 </label>
                 <aph-autocomplete
-                    data-model="term"
-                    data-list="repos"
+                    data-id="term"
                     data-change="findRepo"
+                    data-delay="1000"
+                    data-text-loading="Searching..."
+                    data-text-not-found="Not found"
+                    data-text-error="Error on search"
+                    data-placeholder="Example: ingresse/aphrodite"
                     data-callback="selectRepo"
                     data-item-title="name"
                     data-item-image="owner.avatar_url"

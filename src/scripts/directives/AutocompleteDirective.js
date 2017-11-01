@@ -1,72 +1,87 @@
 'use strict';
 
 angular.module('aphrodite')
-.directive('aphAutocomplete', function () {
+.directive('aphAutocomplete', function ($timeout) {
     return {
         restrict   : 'E',
         replace    : true,
         scope      : {
-            model          : '=',
-            list           : '=',
             change         : '=',
-            required       : '=?',
-            callback       : '=?',
+            callback       : '=',
+            id             : '@',
             itemTitle      : '@',
             itemImage      : '@?',
             itemDescription: '@?',
+            placeholder    : '@?',
+            textLoading    : '@?',
+            textNotFound   : '@?',
+            textError      : '@?',
+            required       : '=?',
+            delay          : '=?',
         },
         templateUrl: 'directives/AutocompleteDirectiveTemplate.html',
         link: function (scope, element) {
-            var radio, input  = angular.element(element.find('input')[0]);
-            scope.displayList = true;
+            var radio;
+            var selectedItem;
+            var searching  = false;
+            var input      = angular.element(element.find('input')[0]);
+            var resultList = angular.element(element.find('div')[0]);
 
             /*
-             * Get Item Image Path
+             * Get Item Path
              */
-            scope.getItemImage = function (item) {
-                if (!scope.itemImage) {
+            scope.getItemPath = function (item, path) {
+                if (!item || !path) {
                     return null;
                 }
 
-                var imagePath     = scope.itemImage.split('.');
-                var imageFullPath = '';
+                path = path.split('.');
 
-                switch (imagePath.length) {
-                    case 2: {
-                        imageFullPath = item[imagePath[0]][imagePath[1]];
-                        break;
-                    }
-                    case 3: {
-                        imageFullPath = item[imagePath[0]][imagePath[1]][imagePath[2]];
-                        break;
-                    }
-                    case 4: {
-                        imageFullPath = item[imagePath[0]][imagePath[1]][imagePath[2]][imagePath[3]];
-                        break;
-                    }
-                    default: {
-                        imageFullPath = item[scope.itemImage];
-                    }
+                for (var i = 0; i < path.length; i++) {
+                    item = item[path[i]];
                 }
 
-                return imageFullPath;
+                return item;
+            };
+
+            /*
+             * Search items base on 'scope.term'
+             */
+            scope.search = function () {
+                scope.error    = false;
+                scope.notFound = false;
+                scope.loading  = true;
+
+                scope.change(scope.term)
+                    .then(function (response) {
+                        scope.list = response;
+                    })
+                    .catch(function () {
+                        scope.error = true;
+                        scope.list  = [];
+                    })
+                    .finally(function () {
+                        scope.loading  = false;
+                        scope.notFound = scope.list.length === 0;
+                    });
             };
 
             /*
              * Select item
              */
-            scope.selectItem = function (item) {
-                console.log(item);
+            scope.selectItem = function (index) {
+                selectedItem   = scope.list[index];
+                scope.list     = [];
+                input[0].value = scope.getItemPath(selectedItem, scope.itemTitle);
 
-                if (!scope.callback) {
-                    return;
-                }
+                scope.setFocus();
+                scope.callback(selectedItem);
 
-                scope.callback(item);
+                scope.$digest();
             };
 
             /*
-             *
+             * Set focus in principal input
              */
             scope.setFocus = function (value) {
                 if (value) {
@@ -81,13 +96,57 @@ angular.module('aphrodite')
              *
              */
             input.on('keyup', function (evt) {
-                if (evt.code === 'ArrowDown' &&
-                    scope.list.length > 0) {
+                radio = element.find('input')[1];
 
-                    radio = element.find('input')[1];
-                    radio.focus();
-
+                if (!radio) {
                     return;
+                }
+
+                if (evt.keyCode === 40 &&
+                    scope.list.length > 0) {
+                    radio.checked = true;
+                    radio.focus();
+                }
+            });
+
+            /*
+             * To select item
+             */
+            resultList.on('keypress mousedown', function (evt) {
+                if (evt.which === 13 || evt.type === 'mousedown') {
+                    $timeout(function () {
+                        var items = [];
+                        angular.extend(items, resultList.find('input'));
+
+                        items.some(function (input, index) {
+                            if (input.checked) {
+                                scope.selectItem(index);
+                                return true;
+                            }
+                        });
+
+                        scope.$digest();
+                    }, 150);
+                }
+            });
+
+            /*
+             * Watch input term to search
+             */
+            scope.$watch('term', function (value) {
+                if (searching || !value) {
+                    scope.notFound = false;
+                    $timeout.cancel(searching);
+                }
+
+                if (value && value.length >= 2) {
+                    searching =
+                        $timeout(function () {
+                            scope.search();
+                        }, scope.delay || 1000);
+
+                } else {
+                    scope.list = [];
                 }
             });
         }
