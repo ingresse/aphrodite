@@ -19,6 +19,7 @@ angular.module('aphrodite')
             textError      : '@?',
             required       : '=?',
             delay          : '=?',
+            clearOnCallback: '=?',
         },
         templateUrl: 'directives/AutocompleteDirectiveTemplate.html',
         link: function (scope, element) {
@@ -73,7 +74,13 @@ angular.module('aphrodite')
             scope.selectItem = function (index) {
                 selectedItem   = scope.list[index];
                 scope.list     = [];
-                input[0].value = scope.getItemPath(selectedItem, scope.itemTitle);
+
+                if (scope.clearOnCallback) {
+                    input[0].value = '';
+
+                } else {
+                    input[0].value = scope.getItemPath(selectedItem, scope.itemTitle);
+                }
 
                 scope.setFocus();
                 scope.callback(selectedItem);
@@ -115,6 +122,8 @@ angular.module('aphrodite')
              */
             resultList.on('keypress mousedown', function (evt) {
                 if (evt.which === 13 || evt.type === 'mousedown') {
+                    evt.preventDefault();
+
                     $timeout(function () {
                         var items = [];
                         angular.extend(items, resultList.find('input'));
