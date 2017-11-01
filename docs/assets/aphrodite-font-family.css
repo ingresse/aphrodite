@@ -2,9 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Kalam:400,700');
 
 html,
-body,
-html.aph,
-body.aph {
+body {
     font-family: "Roboto", "Helvetica Neue", "Arial", sans-serif;
 }
 

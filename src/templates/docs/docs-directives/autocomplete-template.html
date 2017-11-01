@@ -1,0 +1,39 @@
+<page-header
+    data-properties="{
+        title   : 'Autocomplete',
+        subtitle: 'Directive for AngularJS Apps',
+        bg      : 'grey',
+    }">
+</page-header>
+
+<section class="docs-component__autocomplete">
+
+    <div class="aph container sm">
+
+        <form class="aph form form--with-fields"
+              novalidate="">
+            <div class="aph form__field">
+                <label class="aph form__label"
+                       for="term">
+                    Search Repositories at GitHub
+                </label>
+                <aph-autocomplete
+                    data-id="term"
+                    data-change="findRepo"
+                    data-delay="1000"
+                    data-text-loading="Searching..."
+                    data-text-not-found="Not found"
+                    data-text-error="Error on search"
+                    data-placeholder="Example: ingresse/aphrodite"
+                    data-callback="selectRepo"
+                    data-item-title="name"
+                    data-item-image="owner.avatar_url"
+                    data-item-description="full_name"
+                    data-required="true">
+                </aph-autocomplete>
+            </div>
+        </form>
+
+    </div>
+
+</section>

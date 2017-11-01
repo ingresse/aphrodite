@@ -1,0 +1,53 @@
+<div class="aph autocomplete"
+     id="autocomplete{{ id }}">
+    <input class="aph form__control"
+           type="text"
+           id="{{ id }}"
+           name="{{ id }}"
+           autocomplete="off"
+           placeholder="{{ placeholder }}"
+           data-ng-model="term"
+           data-ng-focus="setFocus(true);"
+           data-ng-required="required"
+           data-click-outside="setFocus(false);"
+           data-outside-if-not="autocomplete" />
+    <div class="aph autocomplete__list">
+        <div class="aph autocomplete__list__message"
+             data-ng-if="loading && list.length === 0">
+            {{ textLoading || 'Buscando...' }}
+        </div>
+        <div class="aph autocomplete__list__message"
+             data-ng-if="notFound && !loading && list.length === 0">
+            {{ textNotFound || 'Nada encontrado' }}
+        </div>
+        <div class="aph autocomplete__list__message text-red"
+             data-ng-if="error">
+            {{ textError || 'Houve um erro na busca' }}
+        </div>
+        <div data-ng-show="focused && list.length > 0">
+            <div data-ng-repeat="item in list track by $index">
+                <input class="aph autocomplete__list__radio"
+                       type="radio"
+                       name="autocompleItem{{ id }}"
+                       id="autocompleteItem{{ $index }}" />
+                <label class="aph autocomplete__list__item"
+                       for="autocompleteItem{{ $index }}">
+                    <div class="row middle-xs">
+                        <div class="col-xs aph autocomplete__list__item__image"
+                             data-ng-if="itemImage">
+                            <img class="aph autocomplete__list__item__pic"
+                                 data-ng-src="{{ getItemPath(item, itemImage) }}" />
+                        </div>
+                        <div class="col-xs">
+                            <div class="aph autocomplete__list__item__title"
+                                 data-ng-bind-html="getItemPath(item, itemTitle) | unsafe"></div>
+                            <div class="aph autocomplete__list__item__description"
+                                 data-ng-if="itemDescription"
+                                 data-ng-bind-html="getItemPath(item, itemDescription) | unsafe"></div>
+                        </div>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>

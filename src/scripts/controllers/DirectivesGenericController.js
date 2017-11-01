@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('aphrodite-docs')
-.controller('DirectivesGenericController', function ($scope) {
+.controller('DirectivesGenericController', function ($q, $http, $timeout, $scope) {
 
     /*
      * Selector Directive
@@ -115,4 +115,28 @@ angular.module('aphrodite-docs')
         'warning',
     ];
 
+    /*
+     * Autocomplete Directive
+     */
+    $scope.repos     = [];
+
+    $scope.findRepo = function (term) {
+        var deferred = $q.defer();
+        var url      = 'https://api.github.com/search/repositories?q=' + term;
+
+        $http.get(url)
+            .then(function (response) {
+                $scope.repos = response.data.items;
+                deferred.resolve($scope.repos);
+            })
+            .catch(function () {
+                deferred.reject();
+            });
+
+        return deferred.promise;
+    };
+
+    $scope.selectRepo = function (repo) {
+        console.log(repo);
+    };
 });
