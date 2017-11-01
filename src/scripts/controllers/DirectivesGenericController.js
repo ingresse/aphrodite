@@ -137,6 +137,7 @@ angular.module('aphrodite-docs')
     };
 
     $scope.selectRepo = function (repo) {
+        $scope.term = '';
         console.log(repo);
     };
 });
