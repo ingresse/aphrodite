@@ -20,6 +20,9 @@ angular.module('aphrodite')
             required       : '=?',
             delay          : '=?',
             clearOnCallback: '=?',
+            onInit         : '=?',
+            onFocus        : '=?',
+            onBlur         : '=?',
         },
         templateUrl: 'directives/AutocompleteDirectiveTemplate.html',
         link: function (scope, element) {
@@ -77,9 +80,6 @@ angular.module('aphrodite')
 
                 if (scope.clearOnCallback) {
                     input[0].value = '';
-
-                } else {
-                    input[0].value = scope.getItemPath(selectedItem, scope.itemTitle);
                 }
 
                 scope.setFocus();
