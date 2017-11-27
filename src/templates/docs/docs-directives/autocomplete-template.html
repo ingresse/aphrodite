@@ -21,17 +21,53 @@
                     data-id="term"
                     data-term="term"
                     data-change="findRepo"
+                    data-on-init="repoInit"
+                    data-on-focus="repoFocus"
+                    data-on-blur="repoBlur"
                     data-delay="1000"
                     data-text-loading="Searching..."
                     data-text-not-found="Not found"
                     data-text-error="Error on search"
                     data-placeholder="Example: ingresse/aphrodite"
                     data-callback="selectRepo"
+                    data-clear-on-callback="true"
                     data-item-title="name"
                     data-item-image="owner.avatar_url"
                     data-item-description="full_name"
                     data-required="true">
                 </aph-autocomplete>
+            </div>
+            <div data-ng-if="selectedRepos.length > 0"
+                 class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4"
+                     data-ng-repeat="selectedRepo in selectedRepos">
+                    <div class="aph form__field">
+                        <label class="aph form__label">
+                            Selected Repository #{{ $index }}:
+                        </label>
+                        <div>
+                            <a class="aph"
+                               target="_blank"
+                               href="{{ selectedRepo.homepage || selectedRepo.html_url }}"
+                               title="Visit Repository homepage">
+                                <div class="row middle-xs">
+                                    <div class="col-xs-2">
+                                        <img class="aph img-responsive img-circle"
+                                             data-ng-src="{{ selectedRepo.owner.avatar_url }}" />
+                                    </div>
+                                    <div class="col-xs-10">
+                                        <div>
+                                            {{ selectedRepo.name }}
+                                        </div>
+                                        <div class="aph text-sm">
+                                            {{ selectedRepo.full_name }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </form>
 
