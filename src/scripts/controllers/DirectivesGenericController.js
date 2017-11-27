@@ -118,7 +118,8 @@ angular.module('aphrodite-docs')
     /*
      * Autocomplete Directive
      */
-    $scope.repos     = [];
+    $scope.repos         = [];
+    $scope.selectedRepos = [];
 
     $scope.findRepo = function (term) {
         var deferred = $q.defer();
@@ -137,7 +138,19 @@ angular.module('aphrodite-docs')
     };
 
     $scope.selectRepo = function (repo) {
-        $scope.term = '';
         console.log(repo);
+        $scope.selectedRepos.push(repo);
+    };
+
+    $scope.repoInit = function () {
+        console.log('autocomplete init');
+    };
+
+    $scope.repoFocus = function () {
+        console.log('autocomplete focus');
+    };
+
+    $scope.repoBlur = function () {
+        console.log('autocomplete blur');
     };
 });
