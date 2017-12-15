@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('aphrodite-docs')
-.controller('DirectivesGenericController', function ($q, $http, $timeout, $scope) {
+.controller('DirectivesGenericController', function ($q, $http, $timeout, $scope, states) {
 
     /*
      * Selector Directive
@@ -118,8 +118,15 @@ angular.module('aphrodite-docs')
     /*
      * Autocomplete Directive
      */
-    $scope.repos         = [];
-    $scope.selectedRepos = [];
+    $scope.states         = states.BRA;
+    $scope.selectedStates = [];
+    $scope.repos          = [];
+    $scope.selectedRepos  = [];
+
+    $scope.selectState = function (state) {
+        console.log(state);
+        $scope.selectedStates.push(state);
+    };
 
     $scope.findRepo = function (term) {
         var deferred = $q.defer();
