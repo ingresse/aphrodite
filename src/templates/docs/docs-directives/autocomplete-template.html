@@ -10,66 +10,119 @@
 
     <div class="aph container sm">
 
-        <form class="aph form form--with-fields"
-              novalidate="">
-            <div class="aph form__field">
-                <label class="aph form__label"
-                       for="term">
-                    Search Repositories at GitHub
-                </label>
-                <aph-autocomplete
-                    data-id="term"
-                    data-term="term"
-                    data-change="findRepo"
-                    data-on-init="repoInit"
-                    data-on-focus="repoFocus"
-                    data-on-blur="repoBlur"
-                    data-delay="1000"
-                    data-text-loading="Searching..."
-                    data-text-not-found="Not found"
-                    data-text-error="Error on search"
-                    data-placeholder="Example: ingresse/aphrodite"
-                    data-callback="selectRepo"
-                    data-clear-on-callback="true"
-                    data-item-title="name"
-                    data-item-image="owner.avatar_url"
-                    data-item-description="full_name"
-                    data-required="true">
-                </aph-autocomplete>
-            </div>
-            <div data-ng-if="selectedRepos.length > 0"
-                 class="row">
-                <div class="col-xs-12 col-sm-6 col-md-4"
-                     data-ng-repeat="selectedRepo in selectedRepos">
+        <div class="row top-xs">
+            <div class="col-xs-12 col-sm-6">
+                <form class="aph form form--with-fields"
+                      novalidate="">
                     <div class="aph form__field">
-                        <label class="aph form__label">
-                            Selected Repository #{{ $index }}:
+                        <label class="aph form__label"
+                               for="stateTerm">
+                            Brazilian States
                         </label>
-                        <div>
-                            <a class="aph"
-                               target="_blank"
-                               href="{{ selectedRepo.homepage || selectedRepo.html_url }}"
-                               title="Visit Repository homepage">
-                                <div class="row middle-xs">
-                                    <div class="col-xs-2">
-                                        <img class="aph img-responsive img-circle"
-                                             data-ng-src="{{ selectedRepo.owner.avatar_url }}" />
-                                    </div>
-                                    <div class="col-xs-10">
-                                        <div>
-                                            {{ selectedRepo.name }}
-                                        </div>
-                                        <div class="aph text-sm">
-                                            {{ selectedRepo.full_name }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
+                        <aph-autocomplete
+                            data-id="stateTerm"
+                            data-term="stateTerm"
+                            data-local-data="states"
+                            data-text-loading="Searching..."
+                            data-text-not-found="Not found"
+                            data-text-error="Error on search"
+                            data-placeholder="Example: Amazonas"
+                            data-callback="selectState"
+                            data-item-title="name"
+                            data-item-description="acronym"
+                            data-required="true">
+                        </aph-autocomplete>
+                        <div class="aph form__helper text-grey">
+                            LOCAL SEARCH
                         </div>
                     </div>
-                </div>
+                    <div data-ng-if="selectedStates.length > 0"
+                         class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-4"
+                             data-ng-repeat="selectedState in selectedStates track by $index">
+                            <div class="aph form__field">
+                                <label class="aph form__label">
+                                    Selected State #{{ $index + 1 }}:
+                                </label>
+                                <div>
+                                    <div>
+                                        {{ selectedState.name }}
+                                    </div>
+                                    <div class="aph text-sm">
+                                        {{ selectedState.acronym }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </form>
+            <div class="col-xs-12 col-sm-6">
+                <form class="aph form form--with-fields"
+                      novalidate="">
+                    <div class="aph form__field">
+                        <label class="aph form__label"
+                               for="term">
+                            Repositories at GitHub
+                        </label>
+                        <aph-autocomplete
+                            data-id="term"
+                            data-term="term"
+                            data-change="findRepo"
+                            data-on-init="repoInit"
+                            data-on-focus="repoFocus"
+                            data-on-blur="repoBlur"
+                            data-delay="1000"
+                            data-text-loading="Searching..."
+                            data-text-not-found="Not found"
+                            data-text-error="Error on search"
+                            data-placeholder="Example: ingresse/aphrodite"
+                            data-callback="selectRepo"
+                            data-clear-on-callback="true"
+                            data-item-title="name"
+                            data-item-image="owner.avatar_url"
+                            data-item-description="full_name"
+                            data-required="true">
+                        </aph-autocomplete>
+                        <div class="aph form__helper text-grey">
+                            REMOTE SEARCH
+                        </div>
+                    </div>
+                    <div data-ng-if="selectedRepos.length > 0"
+                         class="row">
+                        <div class="col-xs-12 col-sm-6"
+                             data-ng-repeat="selectedRepo in selectedRepos track by $index">
+                            <div class="aph form__field">
+                                <label class="aph form__label">
+                                    Selected Repository #{{ $index + 1 }}:
+                                </label>
+                                <div>
+                                    <a class="aph"
+                                       target="_blank"
+                                       href="{{ selectedRepo.homepage || selectedRepo.html_url }}"
+                                       title="Visit Repository homepage">
+                                        <div class="row middle-xs">
+                                            <div class="col-xs-2 col-sm-3">
+                                                <img class="aph img-responsive img-circle"
+                                                     data-ng-src="{{ selectedRepo.owner.avatar_url }}" />
+                                            </div>
+                                            <div class="col-xs-10 col-sm-9">
+                                                <div>
+                                                    {{ selectedRepo.name }}
+                                                </div>
+                                                <div class="aph text-sm">
+                                                    {{ selectedRepo.full_name }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
 
     </div>
 

@@ -1,13 +1,14 @@
 'use strict';
 
 angular.module('aphrodite')
-.directive('aphAutocomplete', function ($timeout) {
+.directive('aphAutocomplete', function ($timeout, $filter) {
     return {
         restrict   : 'E',
         replace    : true,
         scope      : {
             term           : '=?',
-            change         : '=',
+            localData      : '=?',
+            change         : '=?',
             callback       : '=',
             id             : '@',
             itemTitle      : '@',
@@ -50,12 +51,48 @@ angular.module('aphrodite')
             };
 
             /*
+             * Verify if has term in item
+             */
+            scope._hasTerm = function (item, property, term) {
+                if (!item[property] || typeof item[property] !== 'string') {
+                    return false;
+                }
+
+                var itemValue = $filter('lowercase')(item[property]);
+                var termValue = $filter('lowercase')(term || scope.term);
+
+                return itemValue.includes(termValue);
+            };
+
+            /*
+             * Search items base on 'scope.term' from local data
+             */
+            scope._localSearch = function () {
+                scope.list = [];
+
+                scope.localData.map(function (localItem) {
+                    if (scope._hasTerm(localItem, scope.itemTitle) ||
+                        scope._hasTerm(localItem, scope.itemDescription)) {
+                        scope.list.push(localItem);
+                    }
+                });
+
+                scope.loading  = false;
+                scope.notFound = scope.list.length === 0;
+            };
+
+            /*
              * Search items base on 'scope.term'
              */
             scope.search = function () {
                 scope.error    = false;
                 scope.notFound = false;
                 scope.loading  = true;
+
+                if (scope.localData) {
+                    scope._localSearch();
+                    return;
+                }
 
                 scope.change(scope.term)
                     .then(function (response) {
@@ -153,7 +190,7 @@ angular.module('aphrodite')
                     searching =
                         $timeout(function () {
                             scope.search();
-                        }, scope.delay || 1000);
+                        }, scope.delay || 0);
 
                 } else {
                     scope.list = [];
