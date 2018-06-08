@@ -8,3 +8,5 @@ DocsViews.js
 
 .sass-cache
 .idea
+
+package-lock.json

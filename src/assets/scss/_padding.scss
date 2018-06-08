@@ -1,0 +1,74 @@
+/* Padding
+-------------------------------------------------------------------------- */
+$margin: ".aph.p";
+
+#{$margin} {
+    @each $size in $margin-sizes {
+        &-#{$size} {
+            margin: #{$size}px !important;
+
+            &-ver {
+                margin-top   : #{$size}px !important;
+                margin-bottom: #{$size}px !important;
+            }
+
+            &-hor {
+                margin-right: #{$size}px !important;
+                margin-left : #{$size}px !important;
+            }
+
+            &-top {
+                margin-top: #{$size}px !important;
+            }
+
+            &-right {
+                margin-right: #{$size}px !important;
+            }
+
+            &-bot {
+                margin-bottom: #{$size}px !important;
+            }
+
+            &-left {
+                margin-left: #{$size}px !important;
+            }
+        }
+    }
+
+    @include xs {
+        @each $size in $margin-sizes {
+            &-#{$size} {
+                &-xs {
+                    margin: #{$size}px !important;
+                }
+
+                &-ver-xs {
+                    margin-top   : #{$size}px !important;
+                    margin-bottom: #{$size}px !important;
+                }
+
+                &-hor-xs {
+                    margin-right: #{$size}px !important;
+                    margin-left : #{$size}px !important;
+                }
+
+                &-top-xs {
+                    margin-top: #{$size}px !important;
+                }
+
+                &-right-xs {
+                    margin-right: #{$size}px !important;
+                }
+
+                &-bot-xs {
+                    margin-bottom: #{$size}px !important;
+                }
+
+                &-left-xs {
+                    margin-left: #{$size}px !important;
+                }
+            }
+        }
+    }
+}
+

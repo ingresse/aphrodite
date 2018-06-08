@@ -84,36 +84,34 @@ $this: ".aph.btn";
         &:hover,
         &:focus,
         &:active {
-            color           : $color-white;
-            background-color: $color-blue;
-            border-color    : $color-blue;
+            color     : inherit;
+            background: none;
         }
 
         &.disabled,
         &:disabled {
-            background-color: lighten($color-light-grey, 10%);
-            color           : darken($color-light-grey, 5%);
-            border-color    : lighten($color-light-grey, 10%);
-            box-shadow      : none;
+            color       : darken($color-light-grey, 5%);
+            border-color: lighten($color-light-grey, 10%);
+            box-shadow  : none;
         }
     }
 
     &--link {
-        background-color: transparent;
-        color           : $color-blue;
+        background: transparent;
+        color     : $color-blue;
 
         &:hover:not(:disabled),
         &:active,
         &:focus {
-            color           : $color-white;
-            background-color: $color-blue;
+            color     : $color-blue;
+            background: rgba($color-blue, .1);
         }
 
         &.disabled,
         &:disabled {
-            color           : darken($color-light-grey, 15%) ;
-            background-color: transparent;
-            box-shadow      : none;
+            color     : darken($color-light-grey, 15%) ;
+            background: transparent;
+            box-shadow: none;
         }
     }
 
@@ -212,12 +210,13 @@ $this: ".aph.btn";
 
     //Button colors
     $btn_colors:
-        ("orange",              $color-orange, 	            $color-white),
-        ("yellow",              $color-lightning-yellow,    $color-black),
-        ("green",               $color-green,               $color-white),
-        ("red",                 $color-red,                 $color-white),
-        ("black",               $color-black,               $color-white),
-        ("facebook",            $color-blue-facebook,       $color-white),
+        ("orange",   $color-orange,           $color-white),
+        ("yellow",   $color-lightning-yellow, $color-black),
+        ("green",    $color-green,            $color-white),
+        ("red",      $color-red,              $color-white),
+        ("black",    $color-black,            $color-white),
+        ("white",    $color-white,            $color-black),
+        ("facebook", $color-blue-facebook,    $color-white),
     ;
 
     @each $btn_class, $btn_bgColor, $btn_txtColor in $btn_colors {
@@ -240,8 +239,8 @@ $this: ".aph.btn";
                     &:hover,
                     &:focus,
                     &:active {
-                        color           : $btn_txtColor;
-                        background-color: $btn_bgColor;
+                        color           : $btn_bgColor;
+                        background-color: transparent;
                     }
                 }
 
@@ -252,8 +251,8 @@ $this: ".aph.btn";
                     &:hover,
                     &:focus,
                     &:active {
-                        color: $btn_txtColor;
-                        background-color: $btn_bgColor;
+                        color           : $btn_bgColor;
+                        background-color: rgba($btn_bgColor, .1);
                     }
 
                     &.disabled,
@@ -266,8 +265,10 @@ $this: ".aph.btn";
 
             &.disabled,
             &:disabled {
+                cursor          : default;
                 color           : darken($color-light-grey, 15%) !important;
                 background-color: $color-light-grey !important;
+                border-color    : $color-light-grey !important;
 
                 &:hover,
                 &:active,
@@ -292,6 +293,28 @@ $this: ".aph.btn";
                     background-color: rgba($color-white, .25);
                 }
             }
+        }
+    }
+
+    @include xs {
+        padding-right: 15px;
+        padding-left : 15px;
+        min-height   : 50px;
+        line-height  : 50px;
+        border-radius: 25px;
+
+        &--xs {
+            min-height : 20px;
+            line-height: 20px;
+        }
+
+        &--sm {
+            min-height : 30px;
+            line-height: 30px;
+        }
+
+        &--bordered {
+            line-height: 48px;
         }
     }
 }
