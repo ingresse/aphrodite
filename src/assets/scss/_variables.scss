@@ -1,14 +1,6 @@
 /* Variables
 -------------------------------------------------------------------------- */
 
-// Paths
-// Use: "#{map-get($path, $key)}";
-$path-assets: (
-    fonts : "./fonts",
-    icons : "./icons",
-    images: "./images",
-);
-
 /// Fonts
 $font-family: Helvetica Neue, Arial, sans-serif;
 $font-size  : 16px;
@@ -23,50 +15,61 @@ $container-big-width         : 1260px;
 $container-huge-width        : 1580px;
 
 // Navbar
-$navbar-min-height           : 60px;
+$navbar-min-height: 60px;
 
 // Form
-$input-height-base           : 40px;
-$input-padding-base          : 5px 10px;
+$input-height-base : 40px;
+$input-padding-base: 5px 10px;
 
 // Text Color
-$text-default-color          : $color-black;
+$text-default-color: $color-black;
 
 // Buttons Color
-$text-button-color           : $color-white;
+$text-button-color: $color-white;
 
 // Label
-$label-font-color            : $color-blue;
-$label-border-color          : $color-blue;
-$label-focus-background      : #ccedf8;
+$label-font-color      : $color-blue;
+$label-border-color    : $color-blue;
+$label-focus-background: #ccedf8;
 
 // Form
-$label-font-color            : $color-grey;
-$input-border-color          : $color-light-grey;
-$input-placeholder-color     : $color-light-grey;
-$input-border-focus-color    : $color-blue;
-$input-invalid-text          : #d62828;
-$input-invalid-border        : $rose;
-$input-disabled-background   : $ice;
-$input-disabled-border       : $cloud;
-$input-disabled-text         : $cloud;
+$label-font-color         : $color-grey;
+$input-border-color       : $color-light-grey;
+$input-placeholder-color  : $color-light-grey;
+$input-border-focus-color : $color-blue;
+$input-invalid-text       : #d62828;
+$input-invalid-border     : $rose;
+$input-disabled-background: $ice;
+$input-disabled-border    : $cloud;
+$input-disabled-text      : $cloud;
 
 // Alerts
-$alert-defaul-background     : #fff;
-$alert-default-color         : $chick;
-$alert-green-color           : $pea;
-$alert-red-color             : $tomato;
-$alert-blue-color            : $sky;
+$alert-defaul-background: #fff;
+$alert-default-color    : $chick;
+$alert-green-color      : $pea;
+$alert-red-color        : $tomato;
+$alert-blue-color       : $sky;
 
 // Icons
-$icon-color-blue             : $sky;
-$icon-color-disabled         : $misty;
-$icon-color-dark             : #2d2d2d;
+$icon-color-blue    : $sky;
+$icon-color-disabled: $misty;
+$icon-color-dark    : #2d2d2d;
 
 // Steps
-$step-active                 : $sky;
-$step-disabled               : $misty;
+$step-active  : $sky;
+$step-disabled: $misty;
 
 // Pagination
-$pagination-color            : $sky;
-$pagination-disabled         : $misty;
+$pagination-color   : $sky;
+$pagination-disabled: $misty;
+
+// Generic Sizes
+$margin-sizes: (-45, -40, -35, -30, -25, -20, -15, -10, -7, -5, 0, 5, 7, 10, 15, 20, 25, 30, 35, 40, 45);
+
+// Paths
+// Use: "#{map-get($path, $key)}";
+$path-assets: (
+    fonts : "./fonts",
+    icons : "./icons",
+    images: "./images",
+);

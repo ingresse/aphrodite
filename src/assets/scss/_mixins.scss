@@ -1,51 +1,53 @@
-//Actions
+
+/* Border Radius
+   -------------------------------------------------------------------------- */
 
 @mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  -ms-border-radius: $radius;
-  border-radius: $radius;
+    border-radius: $radius;
 }
 
 @mixin border-radius-right($radius) {
-  -webkit-border-bottom-right-radius: $radius;
-  -webkit-border-top-right-radius: $radius;
-  -moz-border-radius-bottomright: $radius;
-  -moz-border-radius-topright: $radius;
-  border-bottom-right-radius: $radius;
-  border-top-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    border-top-right-radius   : $radius;
 }
 
 @mixin border-radius-left($radius) {
-  -webkit-border-bottom-left-radius: $radius;
-  -webkit-border-top-left-radius: $radius;
-  -moz-border-radius-bottomleft: $radius;
-  -moz-border-radius-topleft: $radius;
-  border-bottom-left-radius: $radius;
-  border-top-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    border-top-left-radius   : $radius;
 }
 
+
+/* Shadows
+   -------------------------------------------------------------------------- */
+
 @mixin box-shadow($shadow) {
-  -webkit-box-shadow: $shadow;
-  -moz-box-shadow: $shadow;
-  -ms-box-shadow: $shadow;
-  box-shadow: $shadow;
+    box-shadow: $shadow;
 }
 
 @mixin text-shadow($shadow) {
-  -webkit-text-shadow: $shadow;
-  -moz-text-shadow: $shadow;
-  -ms-text-shadow: $shadow;
-  text-shadow: $shadow;
+    text-shadow: $shadow;
 }
 
-//Forms
+
+/* Forms
+   -------------------------------------------------------------------------- */
+
 @mixin placeholder-style {
     font-size  : 16px;
     font-style : normal;
     font-weight: normal !important;
 
     color: $input-placeholder-color;
+}
+
+
+/* Fonts
+   -------------------------------------------------------------------------- */
+
+@mixin font ($size: null, $height: null, $weight: null) {
+    font-size  : $size;
+    line-height: $height;
+    font-weight: $weight;
 }
 
 @mixin font-size-alerts {
@@ -60,7 +62,10 @@
   font-size: 14px;
 }
 
-// Transition
+
+/* Transitions
+   -------------------------------------------------------------------------- */
+
 @mixin transition ($time: .25s) {
     -o-transition     : $time;
     -moz-transition   : $time;
@@ -68,7 +73,10 @@
     transition        : $time;
 }
 
-// Animation
+
+/* Animation
+   -------------------------------------------------------------------------- */
+
 @mixin animation ($name, $time, $loop) {
     -o-animation     : #{$name} $time #{$loop};
     -moz-animation   : #{$name} $time #{$loop};
@@ -76,7 +84,10 @@
     animation        : #{$name} $time #{$loop};
 }
 
-// User no select
+
+/* User no select
+   -------------------------------------------------------------------------- */
+
 @mixin no-select() {
     -webkit-user-select: none;
        -moz-user-select: none;
@@ -84,7 +95,47 @@
             user-select: none;
 }
 
-// Responsive Utilities
+.no-select {
+    @include no-select();
+}
+
+
+/* Text truncate mixin
+   -------------------------------------------------------------------------- */
+
+@mixin truncate() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.text-truncate,
+.truncate-text {
+    @include truncate();
+}
+
+
+/* Wrap Word mixin
+   -------------------------------------------------------------------------- */
+
+@mixin wrap-word () {
+    white-space: -webkit-pre-wrap;   /*Chrome & Safari */
+    white-space: -pre-wrap;          /* Opera 4-6 */
+    white-space: -o-pre-wrap;        /* Opera 7 */
+    white-space: pre-wrap;           /* css-3 */
+    word-wrap: break-word;           /* Internet Explorer 5.5+ */
+    word-break: break-all;
+    white-space: normal;
+}
+
+.wrap-word {
+   @include wrap-word();
+}
+
+
+/* Responsive Utilities
+   -------------------------------------------------------------------------- */
+
 @mixin responsive-visibility() {
     display: block !important;
 
@@ -109,7 +160,10 @@
     }
 }
 
-// Keyframe
+
+/* Keyframe
+   -------------------------------------------------------------------------- */
+
 @mixin keyframe ($name) {
     @-webkit-keyframes #{$name} {
         @content;

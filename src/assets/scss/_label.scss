@@ -1,0 +1,121 @@
+/* Label
+-------------------------------------------------------------------------- */
+$this: ".aph.label";
+
+#{$this} {
+    position      : relative;
+    display       : inline-block;
+    padding       : 6px 15px 4px;
+    margin        : 0;
+    min-height    : 30px;
+    vertical-align: top;
+
+    font-size     : 12px;
+    line-height   : 20px;
+    text-transform: uppercase;
+    text-align    : center;
+
+    color        : $color-white;
+    background   : $color-soft-orange;
+    box-shadow   : 0 0 1px 0 rgba(0, 0, 0, .2);
+    border-radius: 4px;
+
+    &:after {
+        display: table;
+        clear  : both;
+    }
+
+    &--sm {
+        min-height : 20px;
+        font-size  : 8px;
+        line-height: 10px;
+
+        padding-right: 8px;
+        padding-left : 8px;
+
+        border-radius: 2px;
+
+        #{$this} {
+            &__prefix {
+                padding-right: 8px;
+                padding-left : 8px;
+                margin-left  : -8px;
+                margin-right : 6px;
+                border-radius: 2px 0 0 2px;
+            }
+        }
+    }
+
+    &--block {
+        display: block;
+        width  : 100%;
+    }
+
+    &__prefix {
+        display: inline-block;
+        padding: 6px 15px 4px;
+        margin : -6px 10px -4px -15px;
+
+        border-radius: 4px 0 0 4px;
+    }
+
+    &--grey {
+        color     : $color-black;
+        background: $color-white-smoke;
+
+        #{$this} {
+            &__prefix {
+                background: $color-light-grey;
+            }
+        }
+    }
+
+    // Label colors
+    // | Class | Background Color | Prefix Background Color | Text Color
+    $label-colors:
+        ("dark-green",  $color-dark-green,  $color-green,           $color-white),
+        ("green",       $color-green,       $color-dark-green,      $color-white),
+        ("red",         $color-red,         $color-fire-engine-red, $color-white),
+    ;
+
+    @each $label-class, $label-color-bg, $label-color-bg-prefix, $label-color-txt in $label-colors {
+        &--#{$label-class} {
+            color     : $label-color-txt;
+            background: $label-color-bg;
+
+            #{$this} {
+                &__prefix {
+                    background: $label-color-bg-prefix;
+                }
+            }
+        }
+    }
+
+    @include xs {
+        font-size  : 16px;
+        line-height: 20px;
+
+        border-radius: 4px;
+
+        &--sm {
+            font-size  : 16px;
+            line-height: 20px;
+        }
+
+        &--block-xs {
+            display: block;
+            width  : 100%;
+
+            #{$this} {
+                &__prefix {
+                    float: left;
+                    min-width: 150px;
+                }
+            }
+        }
+
+        &__prefix {
+            border-radius: 4px 0 0 4px;
+        }
+    }
+}

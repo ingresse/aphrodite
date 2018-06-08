@@ -92,7 +92,7 @@ _
 - 2.10.1 [angular-click-outside](https://github.com/IamAdamJowett/angular-click-outside)
 - 1.0 [angular-scroll](https://github.com/oblador/angular-scroll)
 - 0.x [angular-ui-utils](https://github.com/angular-ui/ui-utils)
-- 0.6 [ngDialog](https://github.com/likeastore/ngDialog)
+- 1.4.0 [ngDialog](https://github.com/likeastore/ngDialog)
 
 _
 
