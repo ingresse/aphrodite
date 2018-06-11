@@ -84,7 +84,7 @@ $this: ".aph.btn";
         &:hover,
         &:focus,
         &:active {
-            color     : inherit;
+            color     : $color-blue;
             background: none;
         }
 

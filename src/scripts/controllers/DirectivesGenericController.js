@@ -101,6 +101,7 @@ angular.module('aphrodite-docs')
      * Icons Directive
      */
     $scope.icons = [
+        'calendar',
         'check-circle',
         'close-circle',
         'plus-circle',
