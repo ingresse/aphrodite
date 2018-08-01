@@ -5,7 +5,7 @@ $this: ".docs__home";
         text-align: center;
 
         background-color: $color-blue;
-        background-image: linear-gradient(to bottom, lighten($color-blue, 20%), lighten($rose, 20%));
+        background-image: linear-gradient(145deg, #7be0de, $color-blue);
 
         &__image {
             display: block;
@@ -17,10 +17,15 @@ $this: ".docs__home";
             background-repeat  : no-repeat;
             background-position: center;
             background-size    : 150px 150px;
-            background-image   : url("#{map-get($path-assets, images)}/aphrodite-logo.svg");
+            background-image   : url("/assets/images/aphrodite-logo.svg");
         }
 
         .docs-header {
+            &__title,
+            &__subtitle {
+                text-shadow: 2px 2px 4px rgba($color-black, 0.1);
+            }
+
             &__title {
                 color: $color-white;
             }

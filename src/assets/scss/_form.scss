@@ -320,7 +320,7 @@ $this: ".aph.form";
             &:checked {
                 + #{$this}__label {
                     &:before {
-                        background-image: url("#{map-get($path-assets, icons)}/icon--check--blue.svg");
+                        background-image: url("/assets/icons/icon--check--blue.svg");
                     }
                 }
             }
@@ -328,7 +328,7 @@ $this: ".aph.form";
             &:disabled {
                 &:checked + #{$this}__label {
                     &:before {
-                        background-image: url("#{map-get($path-assets, icons)}/icon--check--grey.svg");
+                        background-image: url("/assets/icons/icon--check--grey.svg");
                     }
                 }
             }
@@ -367,7 +367,7 @@ $this: ".aph.form";
         -moz-appearance   : none;
         -webkit-appearance: none;
 
-        background-image   : url("#{map-get($path-assets, icons)}/icon--arrow--down.svg");
+        background-image   : url("/assets/icons/icon--arrow--down.svg");
         background-repeat  : no-repeat;
         background-position: 98.5% center;
         background-size    : 9px;
@@ -383,7 +383,7 @@ $this: ".aph.form";
         &:disabled,
         &--disabled,
         &#{$this}__control--grey-arrow {
-            background-image: url("#{map-get($path-assets, icons)}/icon--arrow--down--grey.svg");
+            background-image: url("/assets/icons/icon--arrow--down--grey.svg");
         }
     }
 
