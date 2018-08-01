@@ -11,7 +11,7 @@ $navbar-override: ".aph.navbar";
         #{$navbar-override} {
             &__brand {
                 &__logo {
-                    background-image: url("#{map-get($path-assets, images)}/aphrodite-logo--blue.svg");
+                    background-image: url("/assets/images/aphrodite-logo--blue.svg");
                 }
             }
         }
@@ -23,7 +23,7 @@ $navbar-override: ".aph.navbar";
                 #{$navbar-override} {
                     &__brand {
                         &__logo {
-                            background-image: url("#{map-get($path-assets, images)}/aphrodite-logo.svg");
+                            background-image: url("/assets/images/aphrodite-logo.svg");
                         }
                     }
                 }

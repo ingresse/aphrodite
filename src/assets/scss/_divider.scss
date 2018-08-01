@@ -33,7 +33,7 @@ $this: ".aph.divider";
             width: 50%;
 
             background-repeat: no-repeat;
-            background-image : url("#{map-get($path-assets, images)}/divider--horizontal.png");
+            background-image : url("/assets/images/divider--horizontal.png");
         }
 
         &:before {

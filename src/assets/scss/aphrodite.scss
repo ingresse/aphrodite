@@ -1,11 +1,13 @@
-/* Version: 1.3.0 */
+/* Version: 1.4.0 */
 
 // CSS Reset
 @import '_reset';
 
-// Foundation
+// External Resources
 @import '../../bower_components/flexboxgrid/dist/flexboxgrid';
 @import '../../bower_components/ng-dialog/css/ngDialog';
+
+// Foundation
 @import '_colors';
 @import '_variables';
 @import '_media-querie';

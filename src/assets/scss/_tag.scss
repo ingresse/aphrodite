@@ -57,7 +57,7 @@ $this: ".aph.tag";
 
             width: 12px;
 
-            background-image   : url("#{map-get($path-assets, icons)}/icon--plus--blue.svg");
+            background-image   : url("/assets/icons/icon--plus--blue.svg");
             background-size    : 12px 12px;
             background-repeat  : no-repeat;
             background-position: center center;
@@ -110,7 +110,7 @@ $this: ".aph.tag";
 
             color: transparent;
 
-            background-image   : url("#{map-get($path-assets, icons)}/icon--close--blue.svg");
+            background-image   : url("/assets/icons/icon--close--blue.svg");
             background-repeat  : no-repeat;
             background-position: center center;
             background-size    : 10px;
