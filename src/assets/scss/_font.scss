@@ -1,0 +1,37 @@
+$this: ".aph.font";
+
+#{$this} {
+    @each $size in $font-sizes {
+        &-#{$size} {
+            font-size: #{$size}px!important;
+        }
+    }
+
+    @each $weight in $font-weight {
+        &-weight {
+            &-#{$weight} {
+                font-weight: #{$weight};
+            }
+        }
+    }
+
+    @include xs {
+        @each $size in $font-sizes {
+            &-#{$size} {
+                &-xs {
+                    font-size: #{$size}px!important;
+                }
+            }
+        }
+
+        @each $weight in $font-weight {
+            &-weight {
+                &-#{$weight} {
+                    &-xs {
+                        font-weight: #{$weight};
+                    }
+                }
+            }
+        }
+    }
+}
