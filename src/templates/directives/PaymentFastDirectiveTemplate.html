@@ -1,0 +1,45 @@
+<div class="aph payment-fast-container">
+    <div class="aph payment-fast"
+         data-ng-class="{
+            'text-center': center,
+         }">
+        <div class="row middle-xs">
+            <div data-ng-class="{
+                    'col-xs-9 col-sm-10': !center,
+                    'col-xs-12': center,
+                 }">
+                <h4 class="aph payment-fast__title">
+                    COMPRA RÁPIDA
+                </h4>
+                <p class="aph payment-fast__text">
+                    <span data-ng-if="!center">
+                        Ative e na próxima vez, compre sem preencher os dados.
+                    </span>
+                    <span data-ng-if="center">
+                        Com cartões salvos, a compra fica mais rápida ainda. Fique tranquilo, nenhuma informação sensível será armazenada.
+                    </span>
+                </p>
+            </div>
+            <div class="col-xs-3 col-sm-2 text-right aph payment-fast__toggle-wrapper"
+                 data-ng-if="!center">
+                <div class="aph form payment-fast__toggle">
+                    <label
+                        for="fastPayment"
+                        class="aph form__switch"
+                        title="Salvar cartão para compras futuras: {{ enabled ? 'SIM' : 'NÃO' }}">
+                        <input
+                            type="checkbox"
+                            id="fastPayment"
+                            name="fastPayment"
+                            class="aph form__switch__check"
+                            data-ng-model="enabled"
+                            data-ng-change="handleChange()"
+                        />
+                        <div class="aph form__switch__slider"></div>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div data-ng-transclude></div>
+    </div>
+</div>

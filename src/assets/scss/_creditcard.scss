@@ -1,0 +1,113 @@
+/* Credit Card
+-------------------------------------------------------------------------- */
+$this: ".aph.creditcard";
+
+#{$this} {
+    position : relative;
+    display  : block;
+    margin   : 20px auto;
+    padding  : 10px;
+    width    : 100%;
+    max-width: 460px;
+
+    border-radius: 4px;
+    box-shadow   : 0 0 4px 0 rgba($color-darkness, 0.2);
+
+    color     : $color-white;
+    background: linear-gradient(90deg, $color-dark-grey 0%, $color-light-grey 100%);
+
+    transition     : transform 0.5s ease-out;
+    transform      : rotateX(0) translateY(0);
+    transform-style: preserve-3d;
+
+    ::selection {
+        background: $color-white;
+    }
+
+    &[data-ng-click] {
+        cursor: pointer;
+    }
+
+    &-wrapper {
+        position   : relative;
+        perspective: 1110px;
+
+        &--animation-in {
+            #{$this} {
+                transform:
+                    rotateX(-90deg)
+                    translateY(500%)
+                ;
+            }
+        }
+    }
+
+    &__brand {
+        position: absolute;
+        top     : 14px;
+        right   : 10px;
+        width   : 30px;
+        height  : 22.5px;
+
+        border-radius: 2px;
+        box-shadow   : 0 0 2px 0 rgba($color-darkness, 0.2);
+
+        background-color   : transparent;
+        background-size    : cover;
+        background-repeat  : no-repeat;
+        background-position: center;
+    }
+
+    &__number {
+        font-weight   : 500;
+        font-size     : 20px;
+        line-height   : 30px;
+        letter-spacing: 1px;
+
+        margin: 0 0 10px;
+    }
+
+    &__expiration,
+    &__owner {
+        font-size  : 16px;
+        line-height: 20px;
+
+        margin: 5px 0;
+    }
+
+    &-brand,
+    &-cvv {
+        background-size    : 32px;
+        background-repeat  : no-repeat;
+        background-position: 98% center;
+        transition: 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    }
+
+    &-cvv {
+        background-size : 26px;
+        background-image: url('./icons/creditcard.svg');
+    }
+
+    @each $brand, $brand-icon, $brand-primary, $brand-secondary in $payment-cards {
+        &--#{$brand} {
+            background-color: $brand-secondary;
+            background      : linear-gradient(90deg, $brand-primary 0%, $brand-secondary 100%);
+
+            ::selection {
+                color: $brand-primary;
+            }
+
+            #{$this} {
+                &__brand {
+                    background-image: url($brand-icon);
+                }
+            }
+        }
+
+        &-brand {
+            &--#{$brand} {
+                background-image: url($brand-icon);
+            }
+        }
+    }
+}

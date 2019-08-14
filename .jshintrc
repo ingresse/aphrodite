@@ -48,6 +48,7 @@
     "globals": {
         "angular": false,
         "Croppie": false,
+        "moment" : false,
         "Prism"  : false
     }
 }

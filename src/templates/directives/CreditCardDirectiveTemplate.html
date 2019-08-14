@@ -1,0 +1,22 @@
+<div class="aph creditcard-wrapper {{ animated ? 'creditcard-wrapper--animation-in' : '' }}">
+    <div class="aph creditcard creditcard--{{ (card.brand || '') | lowercase }}">
+        <span class="aph creditcard__brand"
+              title="{{ card.brand || '' | uppercase }}">
+        </span>
+        <div class="aph creditcard__number">
+            <span title="Últimos Dígitos do Cartão">
+                {{ card.lastFour | creditcardDisplay }}
+            </span>
+        </div>
+        <div class="aph creditcard__expiration text-truncate">
+            <span title="Validade do Cartão: {{ (card.expiration || '') | momentum : 'MMMM[ de ]YYYY' : 'YYYY-MM-DD' }}">
+                {{ (card.expiration || '') | momentum : 'MM/YY' : 'YYYY-MM-DD' }}
+            </span>
+        </div>
+        <div class="aph creditcard__expiration text-truncate">
+            <span title="Titular do Cartão: {{ card.holder.name }}">
+                {{ (card.holder.name || '') | uppercase }}
+            </span>
+        </div>
+    </div>
+</div>

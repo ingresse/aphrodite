@@ -1,7 +1,7 @@
 {
   "name": "aphrodite-ui",
   "description": "UI framework from ingresse.com",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "author": "Ingresse Dev Team <devel@ingresse.com>",
   "private": false,
   "repository": {

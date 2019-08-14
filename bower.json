@@ -1,6 +1,6 @@
 {
   "name": "aphrodite",
-  "version": "1.4.0",
+  "version": "1.6.0",
   "main": [
     "./dist/scripts/aphrodite.js",
     "./dist/assets/aphrodite.css"
@@ -17,6 +17,7 @@
     "angular-scenario": "~1.5.*",
     "angular-route": "~1.5.*",
     "flexboxgrid": "^6.3.2",
+    "momentjs": "2.24.0",
     "ng-dialog": "^1.4.0"
   }
 }

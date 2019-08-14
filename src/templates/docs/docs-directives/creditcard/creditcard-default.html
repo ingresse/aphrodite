@@ -1,0 +1,42 @@
+<div class="aph p-40-ver">
+    <form
+        novalidate
+        name="creditcardForm"
+        class="aph form form--with-fields"
+        data-ng-submit="$event.preventDefault();">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <creditcard-number
+                    data-card="properties.card"
+                    creditcard-form="creditcardForm">
+                </creditcard-number>
+            </div>
+            <div class="col-xs-6 col-sm-3">
+                <creditcard-expiration
+                    data-card="properties.card"
+                    creditcard-form="creditcardForm">
+                </creditcard-expiration>
+            </div>
+            <div class="col-xs-6 col-sm-3">
+                <creditcard-cvv
+                    data-card="properties.card"
+                    creditcard-form="creditcardForm">
+                </creditcard-cvv>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <creditcard-holder
+                    data-card="properties.card"
+                    creditcard-form="creditcardForm">
+                </creditcard-holder>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <creditcard-document
+                    data-card="properties.card"
+                    creditcard-form="creditcardForm">
+                </creditcard-document>
+            </div>
+        </div>
+    </form>
+</div>

@@ -116,6 +116,73 @@ angular.module('aphrodite-docs')
         'warning',
     ];
 
+    /**
+     * Credit Card Directives
+     */
+    $scope.card         = {};
+    $scope.exampleCards = [
+        {
+            brand     : 'visa',
+            default   : false,
+            expiration: '2022-06-01',
+            firstSix  : '444111',
+            holder    : {
+                document: '35577372844',
+                name    : 'Joe Doe'
+            },
+            lastFour: '3344',
+            id      : 'example-creditcard-id-visa'
+        },
+        {
+            brand     : 'master',
+            default   : false,
+            expiration: '2021-07-01',
+            firstSix  : '523234',
+            holder    : {
+                document: '35577372844',
+                name    : 'Joe Doe'
+            },
+            lastFour: '1122',
+            id      : 'example-creditcard-id-master'
+        },
+        {
+            brand     : 'elo',
+            default   : false,
+            expiration: '2024-08-01',
+            firstSix  : '517123',
+            holder    : {
+                document: '35577372844',
+                name    : 'Joe Doe'
+            },
+            lastFour: '8811',
+            id      : 'example-creditcard-id-elo'
+        },
+        {
+            brand     : 'diners',
+            default   : true,
+            expiration: '2023-09-01',
+            firstSix  : '300000',
+            holder    : {
+                document: '35577372844',
+                name    : 'Joe Doe'
+            },
+            lastFour: '0004',
+            id      : 'example-creditcard-id-diners'
+        },
+        {
+            brand     : 'discover',
+            default   : false,
+            expiration: '2027-10-01',
+            firstSix  : '601111',
+            holder    : {
+                document: '35577372844',
+                name    : 'Joe Doe'
+            },
+            lastFour: '0004',
+            id      : 'example-creditcard-id-discover'
+        },
+    ];
+
     /*
      * Autocomplete Directive
      */

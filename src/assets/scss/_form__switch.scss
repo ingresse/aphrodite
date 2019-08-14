@@ -6,7 +6,7 @@ $this: ".aph.form__switch";
     min-height: 30px;
 
     margin : 0;
-    padding: 6px 0 6px 60px;
+    padding: 0 0 0 50px;
 
     font-size     : 13px;
     font-weight   : 500;
@@ -40,19 +40,16 @@ $this: ".aph.form__switch";
     &__check {
         display : inline-block;
         position: absolute;
-        top     : -1px;
+        top     : 0;
         opacity : 0;
 
         &:checked + #{$this}__slider {
             background-color: $color-green;
 
             &:before {
-                -webkit-transform: translateX(20px);
-                -ms-transform    : translateX(20px);
-                transform        : translateX(20px);
+                transform: translateX(20px);
 
                 border-color: $color-green;
-                box-shadow  : -1px 0 2px -1px rgba($color-black, .25);
             }
         }
 
@@ -64,7 +61,6 @@ $this: ".aph.form__switch";
 
                 &:before {
                     background-color: $color-white-smoke;
-                    border-color    : $color-light-grey;
                 }
             }
 
@@ -72,13 +68,6 @@ $this: ".aph.form__switch";
                 + #{$this}__slider {
                     background-color: lighten($color-green, 30%);
                 }
-            }
-        }
-
-        &:focus,
-        &:active {
-            + #{$this}__slider {
-                box-shadow: 0 0 8px $color-light-grey;
             }
         }
     }
@@ -94,8 +83,9 @@ $this: ".aph.form__switch";
         position: absolute;
         cursor  : pointer;
 
-        top   : 49%;
+        top   : 50%;
         bottom: 0;
+        height: 20px;
 
         -webkit-transform: translateY(-49%);
         -ms-transform    : translateY(-49%);
@@ -103,7 +93,7 @@ $this: ".aph.form__switch";
 
         background-color: $color-grey;
 
-        border-radius: 2px;
+        border-radius: 15px;
 
         transition: .1s;
 
@@ -111,15 +101,17 @@ $this: ".aph.form__switch";
             position: absolute;
             content : " ";
 
-            width : 28px;
-            height: 28px;
             top   : 0;
             left  : 0;
+            width : 30px;
+            height: 30px;
+            margin: -5px 0 0;
+            border: 0;
+
+            border-radius: 50%;
 
             background-color: $color-white;
-            border          : 1px solid $color-grey;
-            border-radius   : 3px;
-            box-shadow      : 1px 0 2px -1px rgba($color-black, .25);
+            box-shadow: 0 0 5px 0 rgba(0,0,0,0.25);
 
             transition: .1s;
         }
