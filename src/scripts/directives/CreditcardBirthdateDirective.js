@@ -22,7 +22,7 @@ angular.module('aphrodite')
             scope.handleChange = function () {
                 var birthdateMoment  = (!scope.birthdate ? '' : moment(scope.birthdate, 'DD/MM/YYYY'));
                 scope.card.birthdate = (birthdateMoment ? birthdateMoment.format('YYYY-MM-DD') : '');
-                scope.isInvalid      = (!birthdateMoment ? false : !birthdateMoment.isValid());
+                scope.isInvalid      = (birthdateMoment ? !birthdateMoment.isValid() : false);
             };
         },
     };
