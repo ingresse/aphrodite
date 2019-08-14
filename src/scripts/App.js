@@ -7,11 +7,14 @@ angular.module('aphrodite', [
     'ngDialog',
     'ui.mask',
 ])
-.config(['momentProvider', function (momentProvider) {
+.config([
+    'momentProvider',
+    'ngDialogProvider',
+    function (momentProvider, ngDialogProvider) {
     // Set moment i18n
     momentProvider.locale('pt-br');
-}])
-.config(['ngDialogProvider', function (ngDialogProvider) {
+
+    // Set ngDialog options
     ngDialogProvider.setDefaults({
         className      : 'aph modal modal--limit',
         showClose      : false,
