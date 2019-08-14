@@ -11,7 +11,7 @@ angular.module('aphrodite')
             cvv       : card.cvv,
             number    : card.number,
             holder    : card.name,
-            document  : card.document,
+            document  : (card.document || card.cpf),
             expiration: (card.month + '/' + card.year),
         };
     };

@@ -11,8 +11,11 @@
         data-ng-model="birthdate"
         data-ng-change="handleChange()"
         data-ui-mask="99/99/9999"
-        data-birthdate-validator
         data-prevent-paste
         required
     />
+    <div class="aph form__helper form__helper--error"
+         data-ng-if="isInvalid">
+        Data inválida
+    </div>
 </div>

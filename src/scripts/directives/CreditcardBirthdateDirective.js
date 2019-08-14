@@ -13,16 +13,16 @@ angular.module('aphrodite')
             /**
              * Local values
              */
+            scope.isInvalid = false;
             scope.birthdate = (scope.card.birthdate || '');
 
             /**
              * On birthdate change update the scope.card.birthdate
              */
             scope.handleChange = function () {
-                scope.card.birthdate =
-                    !scope.birthdate ?
-                        '' : moment(scope.birthdate, 'DD/MM/YYYY').format('YYYY-MM-DD')
-                ;
+                var birthdateMoment  = (!scope.birthdate ? '' : moment(scope.birthdate, 'DD/MM/YYYY'));
+                scope.card.birthdate = (birthdateMoment ? birthdateMoment.format('YYYY-MM-DD') : '');
+                scope.isInvalid      = (!birthdateMoment ? false : !birthdateMoment.isValid());
             };
         },
     };
