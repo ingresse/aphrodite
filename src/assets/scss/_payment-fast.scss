@@ -16,7 +16,7 @@ $this: ".aph.payment-fast";
     background-repeat  : no-repeat;
     background-size    : cover;
     background-position: center;
-    background-image   : url('./images/payment-fast-background.png');
+    background-image   : url('/assets/images/payment-fast-background.png');
 
     &:hover {
         #{$this}__title:before {
@@ -67,7 +67,7 @@ $this: ".aph.payment-fast";
             background-repeat  : no-repeat;
             background-size    : cover;
             background-position: center;
-            background-image   : url('./icons/payment-fast.svg');
+            background-image   : url('/assets/icons/payment-fast.svg');
         }
     }
 

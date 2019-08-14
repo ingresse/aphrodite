@@ -85,7 +85,7 @@ $this: ".aph.creditcard";
 
     &-cvv {
         background-size : 26px;
-        background-image: url('./icons/creditcard.svg');
+        background-image: url('/assets/icons/creditcard.svg');
     }
 
     @each $brand, $brand-icon, $brand-primary, $brand-secondary in $payment-cards {
@@ -95,12 +95,6 @@ $this: ".aph.creditcard";
 
             ::selection {
                 color: $brand-primary;
-            }
-
-            #{$this} {
-                &__brand {
-                    background-image: url($brand-icon);
-                }
             }
         }
 

@@ -26,9 +26,17 @@ gulp.task('sass', () => {
         })
         .on('error', sass.logError))
         .pipe(base64({
-            debug  : false,
-            baseDir: './src',
-            exclude: [
+            debug     : true,
+            baseDir   : './src',
+            maxImageSize: (8 * 1024), // bytes
+            extensions: [
+                'svg',
+                'png',
+                'jpg',
+                'jpeg',
+                'gif',
+            ],
+            exclude   : [
                 'VenusGlyphs-Regular.svg',
                 'VenusGlyphs-Regular.eot',
                 'VenusGlyphs-Regular.ttf',
