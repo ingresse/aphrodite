@@ -48,7 +48,11 @@ angular.module('aphrodite')
                 break;
 
             default:
-                newEl.src = src ? src : 'none';
+                newEl.src = src ? src : '';
+        }
+
+        if (!newEl.src && !newEl.href) {
+            return;
         }
 
         head.appendChild(newEl);
