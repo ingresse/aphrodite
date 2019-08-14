@@ -37,6 +37,7 @@ gulp.task('sass', () => {
                 'gif',
             ],
             exclude   : [
+                'payment-fast-background.png',
                 'VenusGlyphs-Regular.svg',
                 'VenusGlyphs-Regular.eot',
                 'VenusGlyphs-Regular.ttf',

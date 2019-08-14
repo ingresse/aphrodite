@@ -8,14 +8,14 @@ angular.module('aphrodite')
         transclude : true,
         templateUrl: 'directives/PaymentFastDirectiveTemplate.html',
         scope      : {
-            card  : '=?',
+            card  : '=',
             layout: '@?',
         },
         link       : function (scope) {
             /**
              * Local Values
              */
-            scope.enabled = (scope.card ? (scope.card.save || false) : false);
+            scope.enabled = false;
             scope.center  = ((scope.layout && (scope.layout === 'center')) ? true : false);
 
             /**
@@ -36,7 +36,7 @@ angular.module('aphrodite')
                     return;
                 }
 
-                scope.card.save = scope.enabled;
+                scope.card.save = angular.copy(scope.enabled);
             };
         },
     };
