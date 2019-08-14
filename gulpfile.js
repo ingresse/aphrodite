@@ -12,11 +12,12 @@ const dir = reqDir('./tasks');
  * Default task
  */
 gulp.task('default', [
-    'ng-template',
+    'node-modules-deps',
     'serve',
     'js-hint',
     'sass',
-    'sassDocs'
+    'sassDocs',
+    'ng-template'
 ], () => {
     gulp.watch(dir.paths.js.src,                        [ 'js-hint' ]);
     gulp.watch([ dir.paths.html, dir.paths.htmlDocs ],  [ 'ng-template' ]);
@@ -28,7 +29,11 @@ gulp.task('default', [
  * Build task
  */
 gulp.task('build', function () {
-    runSeq('clean:dist', [
+    runSeq(
+        [
+            'clean:dist',
+            'node-modules-deps'
+        ],[
             'ng-template',
             'sass',
             'sassDocs',
@@ -37,6 +42,8 @@ gulp.task('build', function () {
             'svg-min',
             'wiredep',
             'usemin'
-        ], 'prepare-dist');
+        ],
+        'prepare-dist'
+    );
 });
 

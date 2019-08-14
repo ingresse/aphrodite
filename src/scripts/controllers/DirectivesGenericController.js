@@ -181,6 +181,30 @@ angular.module('aphrodite-docs')
             lastFour: '0004',
             id      : 'example-creditcard-id-discover'
         },
+        {
+            brand     : 'hipercard',
+            default   : false,
+            expiration: '2025-11-01',
+            firstSix  : '601111',
+            holder    : {
+                document: '35577372844',
+                name    : 'Joe Doe'
+            },
+            lastFour: '7023',
+            id      : 'example-creditcard-id-hipercard'
+        },
+        {
+            brand     : 'jcb',
+            default   : false,
+            expiration: '2022-12-01',
+            firstSix  : '601111',
+            holder    : {
+                document: '35577372844',
+                name    : 'Joe Doe'
+            },
+            lastFour: '4141',
+            id      : 'example-creditcard-id-jcb'
+        },
     ];
 
     /*

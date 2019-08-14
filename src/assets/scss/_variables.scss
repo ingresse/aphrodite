@@ -116,6 +116,18 @@ $payment-cards: (
         #4E5255
     ),
     (
+        "hipercard",
+        "/assets/icons/payment-hipercard.svg",
+        #BE0004,
+        #980003
+    ),
+    (
+        "jcb",
+        "/assets/icons/payment-jcb.svg",
+        #1A75BB,
+        $color-green
+    ),
+    (
         "master",
         "/assets/icons/payment-mastercard.svg",
         #BE0004,

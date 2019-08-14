@@ -23,6 +23,7 @@
   "devDependencies": {
     "bower": "^1.7.9",
     "browser-sync": "^2.15.0",
+    "credit-card-type": "^8.2.0",
     "del": "^1.2.1",
     "gulp": "^3.9.1",
     "gulp-angular-filesort": "^1.1.1",
@@ -44,7 +45,7 @@
     "gulp-ng-annotate": "^2.0.0",
     "gulp-ng-template": "^0.2.3",
     "gulp-prompt": "^0.2.0",
-    "gulp-rename": "^1.2.2",
+    "gulp-rename": "^1.4.0",
     "gulp-replace": "^0.5.3",
     "gulp-ruby-sass": "^1.4.0",
     "gulp-sass": "^4.0.1",

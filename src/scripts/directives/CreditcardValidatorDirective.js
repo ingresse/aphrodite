@@ -10,9 +10,7 @@ angular.module('aphrodite')
                     return true;
                 }
 
-                var card = $filter('creditcardBrand')(model);
-
-                return (card) ? true : false;
+                return ($filter('creditcardBrand')(model)) ? true : false;
             };
         },
     };
