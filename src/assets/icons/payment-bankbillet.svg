@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
-    <title>Pagamento / Boleto</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <rect id="path-1" x="0" y="4" width="30" height="22.5" rx="2"></rect>
-    </defs>
-    <g id="Pagamento-/-Boleto" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <mask id="mask-2" fill="white">
-            <use xlink:href="#path-1"></use>
-        </mask>
-        <use id="Fundo" fill="#F8F8F8" xlink:href="#path-1"></use>
-        <path d="M12.7692308,4 L14.3076923,4 L14.3076923,26.5 L12.7692308,26.5 L12.7692308,4 Z M17.2307692,4 L18.7692308,4 L18.7692308,26.5 L17.2307692,26.5 L17.2307692,4 Z M21.6923077,4 L25.5384615,4 L25.5384615,26.5 L21.6923077,26.5 L21.6923077,4 Z M4.46153846,4 L9.84615385,4 L9.84615385,26.5 L4.46153846,26.5 L4.46153846,4 Z M0,4 L1.53846154,4 L1.53846154,26.5 L0,26.5 L0,4 Z M28.4615385,4 L30,4 L30,26.5 L28.4615385,26.5 L28.4615385,4 Z" id="Código-de-barra" fill="#000000" mask="url(#mask-2)"></path>
-    </g>
-</svg>
+<svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Pagamento / Boleto</title><defs><rect id="a" y="4" width="30" height="22.5" rx="2"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><use fill="#F8F8F8" xlink:href="#a"/><path d="M12.77 4h1.538v22.5h-1.539V4zm4.46 0h1.54v22.5h-1.54V4zm4.462 0h3.846v22.5h-3.846V4zM4.462 4h5.384v22.5H4.462V4zM0 4h1.538v22.5H0V4zm28.462 0H30v22.5h-1.538V4z" fill="#000" mask="url(#b)"/></g></svg>
