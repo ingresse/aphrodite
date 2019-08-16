@@ -16,9 +16,14 @@ angular.module('aphrodite')
             return cardNumber;
         }
 
+        var firstBlock  = cardNumber.slice(0, 4).concat(' ');
+        var secondBlock = cardNumber.slice(4, 6).concat('•• •••• ');
+        var lastBlock   = cardNumber.slice(cardNumber.length - 4);
+
         return (
-            '•••• ' +
-            cardNumber.slice(cardNumber.length - 4)
+            firstBlock +
+            secondBlock +
+            lastBlock
         );
     };
 });

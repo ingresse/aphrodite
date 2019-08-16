@@ -6,10 +6,11 @@ angular.module('aphrodite')
         restrict: 'E',
         replace : true,
         scope   : {
-            card: '=?',
+            card          : '=?',
+            creditcardForm: '=?',
         },
         templateUrl: 'directives/CreditCardHolderDirectiveTemplate.html',
-        link: function (scope) {
+        link       : function (scope) {
             /**
              * Handle with holder name change
              */

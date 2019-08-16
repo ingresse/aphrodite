@@ -4,13 +4,18 @@
         Nome do titular
     </label>
     <input
-        class="aph form__control"
+        class="aph form__control text-uppercase"
         type="text"
         name="name"
         id="cc_name"
         data-ng-model="card.name"
-        data-ng-change="handleChange()"
+        data-ng-change="card.name = (card.name | uppercase)"
+        data-creditcard-holder-validator
         data-prevent-paste
         required
     />
+    <div class="aph form__helper form__helper--error"
+         data-ng-show="creditcardForm.name.$error.holder">
+        Preencha conforme impresso no cartão
+    </div>
 </div>

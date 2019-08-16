@@ -28,7 +28,7 @@ gulp.task('sass', () => {
         .pipe(base64({
             debug     : true,
             baseDir   : './src',
-            maxImageSize: (8 * 1024), // bytes
+            maxImageSize: (16 * 1024), // bytes
             extensions: [
                 'svg',
                 'png',

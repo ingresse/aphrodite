@@ -20,9 +20,12 @@ angular.module('aphrodite')
              * On birthdate change update the scope.card.birthdate
              */
             scope.handleChange = function () {
+                var now              = moment();
                 var birthdateMoment  = (!scope.birthdate ? '' : moment(scope.birthdate, 'DD/MM/YYYY'));
                 scope.card.birthdate = (birthdateMoment ? birthdateMoment.format('YYYY-MM-DD') : '');
-                scope.isInvalid      = (birthdateMoment ? !birthdateMoment.isValid() : false);
+                scope.isInvalid      = (!birthdateMoment ? false : (
+                    birthdateMoment.isValid() && now.isSameOrBefore(birthdateMoment)
+                ));
             };
         },
     };

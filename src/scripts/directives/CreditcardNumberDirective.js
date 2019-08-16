@@ -4,13 +4,13 @@ angular.module('aphrodite')
 .directive('creditcardNumber', function ($filter) {
     return {
         restrict: 'E',
-        replace: true,
-        scope: {
+        replace : true,
+        scope   : {
             card          : '=?',
             creditcardForm: '=?',
         },
         templateUrl: 'directives/CreditCardNumberDirectiveTemplate.html',
-        link: function (scope) {
+        link       : function (scope) {
             /**
              * On creditcard change update the flag value
              */

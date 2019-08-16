@@ -4,8 +4,8 @@
               title="{{ card.brand || '' | uppercase }}">
         </span>
         <div class="aph creditcard__number">
-            <span title="Últimos Dígitos do Cartão">
-                {{ card.lastFour | creditcardDisplay }}
+            <span>
+                {{ (card.number || (card.firstSix + card.lastFour)) | creditcardDisplay }}
             </span>
         </div>
         <div class="aph creditcard__expiration text-truncate">
