@@ -3,7 +3,7 @@
 angular.module('aphrodite')
 .filter('creditcardFormatter', function () {
     return function (card) {
-        if (!card || card.length <= 12) {
+        if (typeof card !== 'object') {
             return card;
         }
 

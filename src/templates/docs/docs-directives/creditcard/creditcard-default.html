@@ -3,22 +3,25 @@
         novalidate
         name="creditcardForm"
         class="aph form form--with-fields"
-        data-ng-submit="$event.preventDefault();">
+        data-ng-submit="$event.preventDefault(); properties.addCard(); creditcardForm.$setPristine(); creditcardForm.number.$$element.focus();">
         <div class="row">
             <div class="col-xs-12 col-sm-6">
                 <creditcard-number
+                    data-label="CREDIT CARD NUMBER"
                     data-card="properties.card"
                     data-creditcard-form="creditcardForm">
                 </creditcard-number>
             </div>
             <div class="col-xs-6 col-sm-3">
                 <creditcard-expiration
+                    data-label="VALID THRU"
                     data-card="properties.card"
                     data-creditcard-form="creditcardForm">
                 </creditcard-expiration>
             </div>
             <div class="col-xs-6 col-sm-3">
                 <creditcard-cvv
+                    data-label="VERIFICATION CODE"
                     data-card="properties.card"
                     data-creditcard-form="creditcardForm">
                 </creditcard-cvv>
@@ -27,21 +30,42 @@
         <div class="row">
             <div class="col-xs-12 col-sm-6">
                 <creditcard-holder
+                    data-label="HOLDER NAME"
                     data-card="properties.card"
                     data-creditcard-form="creditcardForm">
                 </creditcard-holder>
             </div>
             <div class="col-xs-6 col-sm-3">
                 <creditcard-document
+                    data-label="HOLDER CPF"
                     data-card="properties.card"
                     data-creditcard-form="creditcardForm">
                 </creditcard-document>
             </div>
             <div class="col-xs-6 col-sm-3">
                 <creditcard-birthdate
+                    data-label="HOLDER BIRTHDATE"
                     data-card="properties.card"
                     data-creditcard-form="creditcardForm">
                 </creditcard-birthdate>
+            </div>
+        </div>
+        <div class="row center-xs aph p-20-top">
+            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+                <button
+                    type="reset"
+                    class="aph btn btn--block btn--red"
+                    data-ng-click="creditcardForm.$setPristine();">
+                    RESET
+                </button>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+                <button
+                    type="submit"
+                    class="aph btn btn--block btn--green"
+                    data-ng-disabled="creditcardForm.$invalid">
+                    ADD CARD
+                </button>
             </div>
         </div>
     </form>

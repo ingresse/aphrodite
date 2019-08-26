@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('aphrodite-docs')
-.controller('DirectivesGenericController', function ($q, $http, $timeout, $scope, states) {
+.controller('DirectivesGenericController', function ($q, $http, $timeout, $filter, $scope, states) {
 
     /*
      * Selector Directive
@@ -206,6 +206,11 @@ angular.module('aphrodite-docs')
             id      : 'example-creditcard-id-jcb'
         },
     ];
+
+    $scope.addCard = function () {
+        $scope.exampleCards.push($filter('creditcardModel')($scope.card));
+        $scope.card = {};
+    };
 
     /*
      * Autocomplete Directive

@@ -30,19 +30,18 @@ gulp.task('default', [
  */
 gulp.task('build', function () {
     runSeq(
+        'clean:dist',
+        'copy',
         [
-            'clean:dist',
-            'node-modules-deps'
-        ],[
             'ng-template',
             'sass',
             'sassDocs',
-            'copy',
             'image-min',
             'svg-min',
             'wiredep',
-            'usemin'
         ],
+        'node-modules-deps',
+        'minify-js',
         'prepare-dist'
     );
 });

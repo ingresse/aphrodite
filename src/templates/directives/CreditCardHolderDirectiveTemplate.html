@@ -1,7 +1,7 @@
 <div class="aph form__field">
     <label class="aph form__label"
            for="cc_name">
-        Nome do titular
+        {{ label || 'Nome do titular' }}
     </label>
     <input
         class="aph form__control text-uppercase"
@@ -16,6 +16,6 @@
     />
     <div class="aph form__helper form__helper--error"
          data-ng-show="creditcardForm.name.$error.holder">
-        Preencha conforme impresso no cartão
+        {{ errorMessage || 'Preencha conforme impresso no cartão' }}
     </div>
 </div>

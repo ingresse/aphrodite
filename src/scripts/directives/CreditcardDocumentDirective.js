@@ -6,7 +6,9 @@ angular.module('aphrodite')
         restrict: 'E',
         replace : true,
         scope   : {
-            card: '=?',
+            card        : '=?',
+            label       : '@?',
+            errorMessage: '@?',
         },
         templateUrl: 'directives/CreditCardDocumentDirectiveTemplate.html',
     };

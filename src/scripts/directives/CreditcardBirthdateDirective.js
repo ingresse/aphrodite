@@ -6,7 +6,9 @@ angular.module('aphrodite')
         restrict: 'E',
         replace : true,
         scope   : {
-            card: '=?',
+            card        : '=?',
+            label       : '@?',
+            errorMessage: '@?',
         },
         templateUrl: 'directives/CreditCardBirthdateDirectiveTemplate.html',
         link: function (scope) {
@@ -27,6 +29,15 @@ angular.module('aphrodite')
                     birthdateMoment.isValid() && now.isSameOrBefore(birthdateMoment)
                 ));
             };
+
+            /**
+             * Watch for changes
+             */
+            scope.$watch('card', function () {
+                scope.birthdate = (!scope.card ? '' : angular.copy(scope.card.birthdate || ''));
+
+                scope.handleChange();
+            });
         },
     };
 });

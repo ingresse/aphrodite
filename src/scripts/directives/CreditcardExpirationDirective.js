@@ -6,7 +6,8 @@ angular.module('aphrodite')
         restrict: 'E',
         replace : true,
         scope   : {
-            card: '=?',
+            card : '=?',
+            label: '@?',
         },
         templateUrl: 'directives/CreditCardExpirationDirectiveTemplate.html',
         link: function (scope) {
@@ -35,6 +36,19 @@ angular.module('aphrodite')
                 scope.card.month   = expirationDate.format('MM');
                 scope.card.year    = expirationDate.format('YY');
             };
+
+            /**
+             * Watch for changes
+             */
+            scope.$watch('card', function () {
+                scope.expiration = (!scope.card ? '' : angular.copy(
+                    scope.card.expiration || (scope.card.month ?
+                        (scope.card.month + '/' + scope.card.year) : '')
+                    )
+                );
+
+                scope.validateExpiration();
+            });
         },
     };
 });

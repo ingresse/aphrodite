@@ -23,7 +23,7 @@ const gulp  = require('gulp'),
 /**
  * Copy main files to 'dist' and 'docs' folders
  */
-gulp.task('copy', ['usemin', 'clean:dist'], () => {
+gulp.task('copy', ['clean:dist'], () => {
     gulp.src(DIST, { base: './src/' })
         .pipe(gulp.dest(paths.dist));
 

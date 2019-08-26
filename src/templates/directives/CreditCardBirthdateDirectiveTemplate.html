@@ -1,7 +1,7 @@
 <div class="aph form__field">
     <label class="aph form__label"
            for="cc_birthdate">
-        Nascimento
+        {{ label || 'Nascimento' }}
     </label>
     <input
         class="aph form__control"
@@ -16,6 +16,6 @@
     />
     <div class="aph form__helper form__helper--error"
          data-ng-if="isInvalid">
-        Data inválida
+        {{ errorMessage || 'Data inválida' }}
     </div>
 </div>

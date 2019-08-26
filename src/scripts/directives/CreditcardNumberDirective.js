@@ -8,6 +8,8 @@ angular.module('aphrodite')
         scope   : {
             card          : '=?',
             creditcardForm: '=?',
+            label         : '@?',
+            errorMessage  : '@?',
         },
         templateUrl: 'directives/CreditCardNumberDirectiveTemplate.html',
         link       : function (scope) {

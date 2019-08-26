@@ -1,7 +1,7 @@
 <div class="aph form__field">
     <label class="aph form__label"
            for="cc_number">
-        Número do cartão
+        {{ label || 'Número do cartão' }}
     </label>
     <input
         class="aph form__control creditcard-brand creditcard-brand--{{ card.flag || '' }}"
@@ -17,6 +17,6 @@
     />
     <div class="aph form__helper form__helper--error"
          data-ng-show="creditcardForm.number.$error.creditcard">
-        Este não é um número de cartão de crédito válido
+        {{ errorMessage || 'Este não é um número de cartão de crédito válido' }}
     </div>
 </div>

@@ -5,7 +5,7 @@ angular.module('aphrodite-docs')
     return {
         restrict   : 'E',
         scope      : {
-            properties: '='
+            properties: '=?',
         },
         transclude : true,
         templateUrl: 'docs/directives/ComponentDirectiveTemplate.html',
