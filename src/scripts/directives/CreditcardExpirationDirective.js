@@ -19,10 +19,6 @@ angular.module('aphrodite')
              * Validate Expiration
              */
             scope.validateExpiration = function () {
-                if (!scope.card) {
-                    scope.card = {};
-                }
-
                 if (!scope.expiration) {
                     scope.isExpired  = false;
                     scope.isInvalid  = false;
@@ -45,6 +41,10 @@ angular.module('aphrodite')
              * Watch for changes
              */
             scope.$watch('card', function () {
+                if (typeof scope.card !== 'object') {
+                    return;
+                }
+
                 scope.expiration = (!scope.card ? '' : angular.copy(
                     scope.card.expiration || (scope.card.month ?
                         (scope.card.month + '/' + scope.card.year) : '')
