@@ -19,6 +19,10 @@ angular.module('aphrodite')
              * Validate Expiration
              */
             scope.validateExpiration = function () {
+                if (!scope.card) {
+                    scope.card = {};
+                }
+
                 if (!scope.expiration) {
                     scope.isExpired  = false;
                     scope.isInvalid  = false;
