@@ -1,12 +1,20 @@
 'use strict';
 
 angular.module('aphrodite', [
+    'angular-click-outside',
+    'duScroll',
     'ngAnimate',
     'ngDialog',
-    'duScroll',
-    'angular-click-outside',
+    'ui.mask',
 ])
-.config(['ngDialogProvider', function (ngDialogProvider) {
+.config([
+    'momentProvider',
+    'ngDialogProvider',
+    function (momentProvider, ngDialogProvider) {
+    // Set moment i18n
+    momentProvider.locale('pt-br');
+
+    // Set ngDialog options
     ngDialogProvider.setDefaults({
         className      : 'aph modal modal--limit',
         showClose      : false,

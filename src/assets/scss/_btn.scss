@@ -299,9 +299,6 @@ $this: ".aph.btn";
     @include xs {
         padding-right: 15px;
         padding-left : 15px;
-        min-height   : 50px;
-        line-height  : 50px;
-        border-radius: 25px;
 
         &--xs {
             min-height : 20px;
@@ -311,10 +308,6 @@ $this: ".aph.btn";
         &--sm {
             min-height : 30px;
             line-height: 30px;
-        }
-
-        &--bordered {
-            line-height: 48px;
         }
     }
 }

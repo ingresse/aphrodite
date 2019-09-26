@@ -79,3 +79,76 @@ $path-assets: (
     icons : "./icons",
     images: "./images",
 );
+
+
+/* Payment Cards variables
+-------------------------------------------------------------------------- */
+$payment-cards: (
+    /* | Brand | Icon Path | Primary Color | Secondary Color | */
+    (
+        "amex",
+        "/assets/icons/payment-amex.svg",
+        #1A75BB,
+        #15507D
+    ),
+    (
+        "american-express",
+        "/assets/icons/payment-amex.svg",
+        #1A75BB,
+        #15507D
+    ),
+    (
+        "diners",
+        "/assets/icons/payment-diners.svg",
+        #0F4C8A,
+        #092F54
+    ),
+    (
+        "diners-club",
+        "/assets/icons/payment-diners.svg",
+        #0F4C8A,
+        #092F54
+    ),
+    (
+        "discover",
+        "/assets/icons/payment-discover.svg",
+        #FF6A28,
+        #AB461A
+    ),
+    (
+        "elo",
+        "/assets/icons/payment-elo.svg",
+        #7A8085,
+        #4E5255
+    ),
+    (
+        "hipercard",
+        "/assets/icons/payment-hipercard.svg",
+        #BE0004,
+        #980003
+    ),
+    (
+        "jcb",
+        "/assets/icons/payment-jcb.svg",
+        #1A75BB,
+        $color-green
+    ),
+    (
+        "master",
+        "/assets/icons/payment-mastercard.svg",
+        #BE0004,
+        #980003
+    ),
+    (
+        "mastercard",
+        "/assets/icons/payment-mastercard.svg",
+        #BE0004,
+        #980003
+    ),
+    (
+        "visa",
+        "/assets/icons/payment-visa.svg",
+        #293688,
+        #1A2257
+    ),
+);

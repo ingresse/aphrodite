@@ -35,20 +35,43 @@
         <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
         <script src="/bower_components/angular-scroll/angular-scroll.min.js"></script>
         <script src="/bower_components/angular-click-outside/clickoutside.directive.js"></script>
+        <script src="/bower_components/angular-ui-utils/ui-utils.js"></script>
+        <script src="/bower_components/momentjs/min/moment.min.js"></script>
         <script src="/bower_components/ng-dialog/js/ngDialog.min.js"></script>
+        <script src="/scripts/libs/credit-card-type.min.js"></script>
         <!-- endbuild -->
 
         <!-- build:js ./scripts/aphrodite.js -->
         <script src="/scripts/App.js"></script>
         <script src="/scripts/Views.js"></script>
 
+        <script src="/bower_components/momentjs/locale/pt-br.js"></script>
+
+        <script src="/scripts/providers/MomentProvider.js"></script>
+
+        <script src="/scripts/services/InjectService.js"></script>
         <script src="/scripts/services/LoaderService.js"></script>
         <script src="/scripts/services/ScrollService.js"></script>
 
+        <script src="/scripts/filters/CreditcardBrandFilter.js"></script>
+        <script src="/scripts/filters/CreditcardDisplayFilter.js"></script>
+        <script src="/scripts/filters/CreditcardFormatterFilter.js"></script>
+        <script src="/scripts/filters/CreditcardModelFilter.js"></script>
+        <script src="/scripts/filters/MomentumFilter.js"></script>
         <script src="/scripts/filters/UnsafeFilter.js"></script>
 
-        <script src="/scripts/directives/AutocompleteDirective.js"></script>
         <script src="/scripts/directives/AlertDirective.js"></script>
+        <script src="/scripts/directives/AutocompleteDirective.js"></script>
+        <script src="/scripts/directives/BirthdateValidatorDirective.js"></script>
+        <script src="/scripts/directives/CreditcardBirthdateDirective.js"></script>
+        <script src="/scripts/directives/CreditcardCVVDirective.js"></script>
+        <script src="/scripts/directives/CreditcardDirective.js"></script>
+        <script src="/scripts/directives/CreditcardDocumentDirective.js"></script>
+        <script src="/scripts/directives/CreditcardExpirationDirective.js"></script>
+        <script src="/scripts/directives/CreditcardHolderDirective.js"></script>
+        <script src="/scripts/directives/CreditcardHolderValidatorDirective.js"></script>
+        <script src="/scripts/directives/CreditcardNumberDirective.js"></script>
+        <script src="/scripts/directives/CreditcardNumberValidatorDirective.js"></script>
         <script src="/scripts/directives/DrawerDirective.js"></script>
         <script src="/scripts/directives/DropdownDirective.js"></script>
         <script src="/scripts/directives/FormValidationDirective.js"></script>
@@ -56,6 +79,8 @@
         <script src="/scripts/directives/IconDirective.js"></script>
         <script src="/scripts/directives/ImageBlurDirective.js"></script>
         <script src="/scripts/directives/LoaderDirective.js"></script>
+        <script src="/scripts/directives/PaymentFastDirective.js"></script>
+        <script src="/scripts/directives/PreventPasteDirective.js"></script>
         <script src="/scripts/directives/ProgressBarDirective.js"></script>
         <script src="/scripts/directives/SelectorDirective.js"></script>
         <script src="/scripts/directives/TooltipDirective.js"></script>
@@ -86,8 +111,8 @@
         <script src="/scripts/controllers/CSSGenericController.js"></script>
         <script src="/scripts/controllers/ServicesGenericController.js"></script>
 
-        <script src="./scripts/libs/prism.js"></script>
-        <script src="./scripts/libs/prism-config.js"></script>
+        <script src="/scripts/libs/prism.js"></script>
+        <script src="/scripts/libs/prism-config.js"></script>
         <!-- endbuild -->
     </body>
 </html>

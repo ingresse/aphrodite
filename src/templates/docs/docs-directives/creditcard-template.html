@@ -1,0 +1,43 @@
+<page-header
+    data-properties="{
+        title   : 'Credit Card',
+        subtitle: 'Directive for AngularJS Apps',
+        bg      : 'grey',
+    }">
+</page-header>
+
+<section class="docs-component__creditcard">
+
+    <div class="aph container large">
+
+        <component
+            data-properties="{
+                title      : 'Form Fields',
+                templateUrl: 'docs/docs-directives/creditcard/creditcard-default.html',
+                card       : card,
+                addCard    : addCard,
+                visible    : true,
+            }">
+        </component>
+
+        <component
+            data-properties="{
+                title       : 'Display',
+                templateUrl : 'docs/docs-directives/creditcard/creditcard-display.html',
+                exampleCards: exampleCards,
+                visible     : true,
+            }">
+        </component>
+
+        <component
+            data-properties="{
+                title      : 'Fast Payment',
+                templateUrl: 'docs/docs-directives/creditcard/creditcard-payment-fast.html',
+                card       : card,
+                visible    : true,
+            }">
+        </component>
+
+    </div>
+
+</section>

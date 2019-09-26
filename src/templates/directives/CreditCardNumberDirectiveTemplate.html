@@ -1,0 +1,22 @@
+<div class="aph form__field">
+    <label class="aph form__label"
+           for="cc_number">
+        {{ label || 'Número do cartão' }}
+    </label>
+    <input
+        class="aph form__control creditcard-brand creditcard-brand--{{ card.flag || '' }}"
+        name="number"
+        type="tel"
+        id="cc_number"
+        data-ng-model="card.number"
+        data-ui-mask="9999 9999 9999 99?99"
+        data-ng-change="handleChange()"
+        data-creditcard-number-validator
+        data-prevent-paste
+        required
+    />
+    <div class="aph form__helper form__helper--error"
+         data-ng-show="creditcardForm.number.$error.creditcard">
+        {{ errorMessage || 'Este não é um número de cartão de crédito válido' }}
+    </div>
+</div>

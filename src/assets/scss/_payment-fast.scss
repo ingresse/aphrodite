@@ -1,0 +1,132 @@
+/* Payment Fast
+-------------------------------------------------------------------------- */
+$this: ".aph.payment-fast";
+
+#{$this} {
+    position : relative;
+    display  : block;
+    margin   : 0;
+    padding  : 10px 20px;
+
+    border-radius: 5px;
+
+    color: $color-white;
+
+    background-color   : rgba($color-darkness, 0.6);
+    background-repeat  : no-repeat;
+    background-size    : cover;
+    background-position: center;
+    background-image   : url('/assets/images/payment-fast-background.png');
+
+    &:hover {
+        #{$this}__title:before {
+            animation-name           : forwardShaking;
+            animation-duration       : 0.5s;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in-out;
+        }
+    }
+
+    &-container {
+        display  : block;
+        width    : 100%;
+        max-width: 620px;
+        margin   : 20px auto;
+    }
+
+    &__title,
+    &__text {
+        font-size  : 16px;
+        line-height: 20px;
+
+        padding: 0;
+        margin : 15px 0;
+    }
+
+    &__title {
+        position   : relative;
+        display    : inline-block;
+        font-family: 'Fugaz One', cursive;
+        font-weight: 500;
+
+        padding-left : 35px;
+        margin-bottom: 5px;
+
+        &:before {
+            content: " ";
+            margin : -1px 0 0;
+            width  : 30px;
+            height : 20px;
+
+            position      : absolute;
+            left          : 0;
+            display       : inline-block;
+            vertical-align: middle;
+            transform     : perspective(1px) translateZ(0);
+
+            background-repeat  : no-repeat;
+            background-size    : cover;
+            background-position: center;
+            background-image   : url('/assets/icons/payment-fast.svg');
+        }
+    }
+
+    &__toggle {
+        display: inline-block;
+        width  : 50px;
+
+        &-wrapper {
+            line-height: 0;
+        }
+    }
+
+    &.text-center {
+        #{$this} {
+            &__text {
+                max-width   : 560px;
+                margin-right: auto;
+                margin-left : auto;
+            }
+        }
+
+        .btn {
+            min-width: 225px;
+        }
+    }
+
+    @include xs {
+        border-radius: 0;
+
+        &-container {
+            width: auto;
+            margin-right: -#{$container-horizontal-padding};
+            margin-left : -#{$container-horizontal-padding};
+        }
+    }
+}
+
+@keyframes forwardShaking {
+    16.65% {
+        transform: translateX(2px);
+    }
+
+    33.3% {
+        transform: translateX(-2.5px);
+    }
+
+    49.95% {
+        transform: translateX(2px);
+    }
+
+    66.6% {
+        transform: translateX(-1.5px);
+    }
+
+    83.25% {
+        transform: translateX(1px);
+    }
+
+    100% {
+        transform: translateX(0, 0);
+    }
+}

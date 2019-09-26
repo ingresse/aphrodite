@@ -1,0 +1,25 @@
+<div class="aph form__field">
+    <label class="aph form__label"
+           for="cc_expiration">
+        {{ label || 'Validade' }}
+    </label>
+    <input
+        class="aph form__control month"
+        name="expiration"
+        type="tel"
+        id="cc_expiration"
+        data-ui-mask="99/99"
+        data-ui-mask-placeholder="MM/AA"
+        data-ui-mask-placeholder-char="space"
+        data-ng-model="expiration"
+        data-ng-blur="validateExpiration()"
+        data-ng-change="validateExpiration()"
+        data-prevent-paste
+        required
+    />
+    <div class="aph form__helper form__helper--error"
+         data-ng-if="isExpired || isInvalid">
+        {{ isInvalid ? 'Data inválida' : 'Vencido' }}
+    </div>
+</div>
+

@@ -46,8 +46,10 @@
     "smarttabs": true,
     "camelcase":false,
     "globals": {
-        "angular": false,
-        "Croppie": false,
-        "Prism"  : false
+        "angular"       : false,
+        "creditCardType": false,
+        "Croppie"       : false,
+        "moment"        : false,
+        "Prism"         : false
     }
 }

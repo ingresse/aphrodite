@@ -3,6 +3,7 @@ bower_components
 node_modules
 
 src/assets/*.css
+src/scripts/libs/credit-card-type.min.js
 Views.js
 DocsViews.js
 

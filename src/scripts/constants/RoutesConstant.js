@@ -73,6 +73,10 @@ angular.module('aphrodite-docs')
                 title: 'Autocomplete',
             },
             {
+                id   : 'creditcard',
+                title: 'Credit Card',
+            },
+            {
                 id   : 'switch',
                 title: 'Switch',
             },
