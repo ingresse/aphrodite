@@ -9,14 +9,18 @@ angular.module('aphrodite')
         templateUrl: 'directives/PaymentFastDirectiveTemplate.html',
         scope      : {
             card  : '=',
+            id    : '@?',
             layout: '@?',
+            title : '@?',
+            text  : '@?',
         },
         link       : function (scope) {
             /**
              * Local Values
              */
-            scope.enabled = false;
-            scope.center  = ((scope.layout && (scope.layout === 'center')) ? true : false);
+            scope.elementId = ('fastPayment' + (scope.id || Math.random()));
+            scope.enabled   = false;
+            scope.center    = ((scope.layout && (scope.layout === 'center')) ? true : false);
 
             /**
              * Load Font
