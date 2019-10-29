@@ -6,17 +6,17 @@
         <div class="row middle-xs">
             <div data-ng-class="{
                     'col-xs-9 col-sm-10': !center,
-                    'col-xs-12': center,
+                    'col-xs-12'         : center,
                  }">
                 <h4 class="aph payment-fast__title">
-                    COMPRA RÁPIDA
+                    {{ title || 'COMPRA COM 1-CLIQUE' }}
                 </h4>
                 <p class="aph payment-fast__text">
                     <span data-ng-if="!center">
-                        Ative e na próxima vez, compre sem preencher os dados.
+                        {{ text || 'Ative e na próxima vez, compre sem preencher os dados.' }}
                     </span>
                     <span data-ng-if="center">
-                        Com cartões salvos, a compra fica mais rápida ainda. Fique tranquilo, nenhuma informação sensível será armazenada.
+                        {{ text || 'Com cartões salvos, a compra fica mais rápida ainda. Fique tranquilo, nenhuma informação sensível será armazenada.' }}
                     </span>
                 </p>
             </div>
@@ -24,13 +24,13 @@
                  data-ng-show="!center">
                 <div class="aph form payment-fast__toggle">
                     <label
-                        for="fastPayment"
+                        for="{{ elementId }}"
                         class="aph form__switch"
                         title="Salvar cartão para compras futuras: {{ enabled ? 'SIM' : 'NÃO' }}">
                         <input
                             type="checkbox"
-                            id="fastPayment"
-                            name="fastPayment"
+                            id="{{ elementId }}"
+                            name="{{ elementId }}"
                             class="aph form__switch__check"
                             data-ng-model="enabled"
                             data-ng-change="handleChange()"
