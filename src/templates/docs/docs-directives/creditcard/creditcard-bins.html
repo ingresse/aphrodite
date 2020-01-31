@@ -1,0 +1,21 @@
+<div>
+    <form
+        novalidate
+        name="creditcardBinsForm"
+        class="aph form form--with-fields"
+        data-ng-submit="$event.preventDefault(); properties.addCard(); creditcardBinsForm.$setPristine(); creditcardBinsForm.number.$$element.focus();">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <creditcard-number
+                    data-id="cc_number_exclusive"
+                    data-label="CREDIT CARD NUMBER"
+                    data-bins="properties.cardBinsRegEx"
+                    data-card="properties.cardBins"
+                    data-creditcard-form="creditcardBinsForm"
+                    data-error-message="Este número não contempla os cartões permitidos ({{ properties.cardBinsRegEx.toString() }})">
+                </creditcard-number>
+            </div>
+        </div>
+    </form>
+</div>
+

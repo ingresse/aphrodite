@@ -6,6 +6,7 @@ angular.module('aphrodite')
         restrict: 'E',
         replace : true,
         scope   : {
+            id          : '@?',
             card        : '=?',
             label       : '@?',
             errorMessage: '@?',

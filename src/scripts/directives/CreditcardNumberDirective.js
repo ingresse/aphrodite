@@ -6,6 +6,9 @@ angular.module('aphrodite')
         restrict: 'E',
         replace : true,
         scope   : {
+            id            : '@?',
+            bins          : '=?',
+            brands        : '=?',
             card          : '=?',
             creditcardForm: '=?',
             label         : '@?',
@@ -17,7 +20,7 @@ angular.module('aphrodite')
              * On creditcard change update the flag value
              */
             scope.handleChange = function () {
-                var flag        = $filter('creditcardBrand')(scope.card.number);
+                var flag        = $filter('creditcardBrand')(scope.card.number, scope.brands);
                 scope.card.flag = (flag || null);
             };
         },

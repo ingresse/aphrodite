@@ -2,7 +2,7 @@
 
 angular.module('aphrodite')
 .filter('creditcardBrand', function () {
-    return function (creditCardNumber) {
+    return function (creditCardNumber, allowedBrands) {
         var brand    = '';
         var accepted = [
             creditCardType.types.VISA,
@@ -14,6 +14,22 @@ angular.module('aphrodite')
             creditCardType.types.ELO,
             creditCardType.types.HIPERCARD,
         ];
+
+        if (angular.isArray(allowedBrands)) {
+            accepted = [];
+
+            allowedBrands.map(function (allowedBrand) {
+                var allowedBrandRef = angular.copy(creditCardType.types[allowedBrand]);
+
+                if (!allowedBrandRef) {
+                    return false;
+                }
+
+                accepted.push(allowedBrandRef);
+
+                return true;
+            });
+        }
 
         creditCardType(creditCardNumber + '').filter(function (card) {
             if (accepted.indexOf(card.type) >= 0) {

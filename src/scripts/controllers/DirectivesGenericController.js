@@ -119,8 +119,10 @@ angular.module('aphrodite-docs')
     /**
      * Credit Card Directives
      */
-    $scope.card         = {};
-    $scope.exampleCards = [
+    $scope.card          = {};
+    $scope.cardBins      = {};
+    $scope.cardBinsRegEx = /^(41111|41112)/;
+    $scope.exampleCards  = [
         {
             brand     : 'visa',
             default   : false,

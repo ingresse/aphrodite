@@ -6,6 +6,13 @@ angular.module('aphrodite')
         require: 'ngModel',
         link   : function (scope, elm, attrs, ctrl) {
             /**
+             * Optional bins
+             */
+            var authorizedBins = (
+                (!scope.bins) ? null : new RegExp(scope.bins)
+            );
+
+            /**
              * Validate the card number
              *
              * @oaram {string} model
@@ -15,7 +22,9 @@ angular.module('aphrodite')
                     return true;
                 }
 
-                return ($filter('creditcardBrand')(model)) ? true : false;
+                var validBin = (!authorizedBins ? true : authorizedBins.test(model));
+
+                return (validBin && $filter('creditcardBrand')(model, scope.brands)) ? true : false;
             };
         },
     };

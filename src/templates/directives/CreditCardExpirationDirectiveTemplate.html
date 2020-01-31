@@ -1,13 +1,13 @@
 <div class="aph form__field">
     <label class="aph form__label"
-           for="cc_expiration">
+           for="{{ id || 'cc_expiration' }}">
         {{ label || 'Validade' }}
     </label>
     <input
         class="aph form__control month"
         name="expiration"
         type="tel"
-        id="cc_expiration"
+        id="{{ id || 'cc_expiration' }}"
         data-ui-mask="99/99"
         data-ui-mask-placeholder="MM/AA"
         data-ui-mask-placeholder-char="space"
