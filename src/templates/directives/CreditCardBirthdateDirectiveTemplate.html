@@ -1,13 +1,13 @@
 <div class="aph form__field">
     <label class="aph form__label"
-           for="cc_birthdate">
+           for="{{ id || 'cc_birthdate' }}">
         {{ label || 'Nascimento' }}
     </label>
     <input
         class="aph form__control"
         type="tel"
         name="birthdate"
-        id="cc_birthdate"
+        id="{{ id || 'cc_birthdate' }}"
         data-ng-model="birthdate"
         data-ng-change="handleChange()"
         data-ui-mask="99/99/9999"

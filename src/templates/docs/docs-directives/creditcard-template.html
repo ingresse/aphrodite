@@ -12,12 +12,27 @@
 
         <component
             data-properties="{
-                title      : 'Form Fields',
+                title      : 'Credit Card Form Fields',
                 templateUrl: 'docs/docs-directives/creditcard/creditcard-default.html',
                 card       : card,
                 addCard    : addCard,
+            }">
+        </component>
+
+        <component
+            data-properties="{
+                title      : 'Credit Card Bin Validation',
+                templateUrl: 'docs/docs-directives/creditcard/creditcard-bins.html',
+                cardBins   : cardBins,
+                cardBinsRegEx: cardBinsRegEx,
+                addCard    : addCard,
                 visible    : true,
             }">
+            <p class="aph">
+                Only accept cards who match with this RegEx:
+            </p>
+            <pre>{{ cardBinsRegEx.toString() }}</pre>
+            </code>
         </component>
 
         <component

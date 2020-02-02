@@ -1,13 +1,13 @@
 <div class="aph form__field">
     <label class="aph form__label"
-           for="cc_name">
+           for="{{ id || 'cc_name' }}">
         {{ label || 'Nome impresso no cartão' }}
     </label>
     <input
         class="aph form__control text-uppercase"
         type="text"
         name="name"
-        id="cc_name"
+        id="{{ id || 'cc_name' }}"
         data-ng-model="card.name"
         data-ng-change="card.name = (card.name | uppercase)"
         data-creditcard-holder-validator
