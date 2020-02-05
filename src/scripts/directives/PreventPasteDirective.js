@@ -4,8 +4,7 @@ angular.module('aphrodite')
 .directive('preventPaste', function () {
     return {
         restrict: 'A',
-        scope: {},
-        link: function (scope, element) {
+        link    : function (scope, element) {
             /**
              * Remove paste option in a field
              */

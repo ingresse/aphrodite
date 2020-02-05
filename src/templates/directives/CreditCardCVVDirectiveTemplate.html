@@ -8,9 +8,12 @@
         type="tel"
         name="csv"
         id="{{ id || 'cc_cvv' }}"
+        placeholder="{{ placeholder || 'CVV' }}"
         data-ng-model="card.cvv"
-        data-ui-mask="999?9"
         data-prevent-paste
+        data-only-digits
+        data-only-digits-min-length="{{ minLength || 3 }}"
+        data-only-digits-max-length="{{ maxLength || 4 }}"
         required
     />
 </div>
