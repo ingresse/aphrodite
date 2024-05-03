@@ -9,6 +9,8 @@ angular.module('aphrodite')
             id   : '@?',
             card : '=?',
             label: '@?',
+            defaultErrorMessage: '@?',
+            invalidErrorMessage: '@?',
         },
         templateUrl: 'directives/CreditCardExpirationDirectiveTemplate.html',
         link: function (scope) {
