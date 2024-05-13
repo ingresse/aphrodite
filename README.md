@@ -86,6 +86,18 @@ Include files in your App `index` file.
 ```
 _
 
+### Local debug
+You can debug `Aphrodite` locally in your project, for example, if you are running a project like `embedstore`, you can make adjustments to `Aphrodite` locally and see how it will behave in your `embedstore` project. To do this, you'll need to follow these steps:
+
+1. Have the project you are developing cloned, for example, the previously mentioned `embedstore` and `Aphrodite`.
+2. Run the `npm i` and `bower install` commands in the `Aphrodite` project directory.
+3. Make the desired changes to `Aphrodite`.
+4. Run npm `run build` in `Aphrodite`.
+5. In the project where you need to check the changes to `Aphrodite`, which in our example is `embedstore`, there is a directory with the installed components from `bower` called `bower_components`, and `Aphrodite` is one of them. Access the directory of `Aphrodite`.
+6. Replace the `dist` directory inside the `Aphrodite` directory within `bower_components` in your project (which in our example is `embedstore`) with the `dist` generated in the `build` of `Aphrodite`.
+
+> Following these steps, the changes made to `Aphrodite` locally will be reflected in the project that is using `Aphrodite`. Remember that these changes will *not persist* because the `bower_components` folder is ignored by git; *this is only for local development environment*.
+
 ## AngularJS dependencies included in 'aphrodite-vendors'
 - 3.x [animate.css](https://github.com/daneden/animate.css/)
 - 1.6.4 [angular-animate](https://github.com/angular/bower-angular-animate)

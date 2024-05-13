@@ -5,11 +5,11 @@
     </label>
     <input
         class="aph form__control"
-        type="tel"
+        type="text"
         name="cpf"
         id="{{ id || 'cc_cpf' }}"
         data-ng-model="card.cpf"
-        data-ui-mask="999.999.999-99"
+        data-ui-mask="{{ isBrazilian && '999.999.999-99' }}"
         required
     />
 </div>
