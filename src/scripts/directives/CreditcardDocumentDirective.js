@@ -10,6 +10,7 @@ angular.module('aphrodite')
             card        : '=?',
             label       : '@?',
             errorMessage: '@?',
+            isBrazilian : '=?',
         },
         templateUrl: 'directives/CreditCardDocumentDirectiveTemplate.html',
     };
