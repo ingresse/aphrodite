@@ -10,6 +10,7 @@ angular.module('aphrodite')
             label         : '@?',
             card          : '=?',
             creditcardForm: '=?',
+            errorMessage  : '@?',
         },
         templateUrl: 'directives/CreditCardHolderDirectiveTemplate.html',
         link       : function (scope) {
