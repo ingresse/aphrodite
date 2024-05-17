@@ -18,7 +18,7 @@
     />
     <div class="aph form__helper form__helper--error"
          data-ng-if="isExpired || isInvalid">
-        {{ isInvalid ? 'Data inválida' : 'Vencido' }}
+        {{ isInvalid ? invalidErrorMessage || 'Data inválida' : dafaultErrorMessage || 'Vencido' }}
     </div>
 </div>
 
